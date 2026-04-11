@@ -3,228 +3,222 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>バレーボールチーム公式HP（仮称）</title>
+    <title>AIRFORTH | バレーボールクラブ</title>
     <style>
-        /* 基本設定 */
         :root {
-            --primary-color: #003366; /* チームカラー：ネイビー */
-            --accent-color: #ff9900;  /* アクセントカラー：オレンジ */
-            --text-color: #333;
-            --bg-light: #f4f4f4;
+            --primary: #001D44; /* 深いネイビー（信頼・強さ） */
+            --accent: #CCFF00;  /* ネオンイエロー（エネルギー・希望） */
+            --bg-light: #F8F9FA;
+            --text-main: #333;
         }
 
         body {
-            font-family: 'Helvetica Neue', Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
-            line-height: 1.6;
+            font-family: 'Avenir Next', 'Helvetica Neue', 'Hiragino Kaku Gothic ProN', sans-serif;
             margin: 0;
-            color: var(--text-color);
+            color: var(--text-main);
             background-color: #fff;
+            overflow-x: hidden;
         }
 
-        /* ヘッダー・ナビゲーション */
+        /* ヘッダー */
         header {
-            background-color: var(--primary-color);
-            color: #fff;
-            padding: 1rem 0;
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-        }
-
-        nav {
+            background: var(--primary);
+            padding: 15px 5%;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 2px solid var(--accent);
         }
 
         .logo {
-            font-size: 1.5rem;
-            font-weight: bold;
+            font-size: 1.8rem;
+            font-weight: 900;
+            color: #fff;
+            letter-spacing: 2px;
         }
 
-        .nav-links {
-            list-style: none;
-            display: flex;
-        }
+        .logo span { color: var(--accent); }
 
-        .nav-links li {
-            margin-left: 20px;
-        }
-
-        .nav-links a {
+        nav a {
             color: #fff;
             text-decoration: none;
+            margin-left: 20px;
+            font-size: 0.9rem;
             font-weight: bold;
-            transition: color 0.3s;
-        }
-
-        .nav-links a:hover {
-            color: var(--accent-color);
         }
 
         /* ヒーローセクション */
         .hero {
-            height: 80vh;
-            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), 
-                        url('https://images.unsplash.com/photo-1592656094267-764a45160876?auto=format&fit=crop&q=80&w=1470') no-repeat center center/cover;
+            height: 70vh;
+            background: linear-gradient(135deg, rgba(0,29,68,0.9) 0%, rgba(0,29,68,0.4) 100%),
+                        url('https://images.unsplash.com/photo-1592656094267-764a45160876?auto=format&fit=crop&q=80&w=1470');
+            background-size: cover;
+            background-position: center;
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
-            color: #fff;
             text-align: center;
+            color: #fff;
             padding: 0 20px;
         }
 
         .hero h1 {
-            font-size: 3rem;
-            margin-bottom: 1rem;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+            font-size: clamp(2.5rem, 8vw, 4.5rem);
+            margin-bottom: 0;
+            text-transform: uppercase;
+            font-style: italic;
         }
 
         .hero p {
             font-size: 1.2rem;
-            margin-bottom: 2rem;
+            margin-top: 10px;
+            letter-spacing: 1px;
         }
 
         .btn {
-            background-color: var(--accent-color);
-            color: #fff;
-            padding: 12px 30px;
+            background: var(--accent);
+            color: var(--primary);
+            padding: 15px 40px;
             text-decoration: none;
-            border-radius: 5px;
-            font-weight: bold;
-            transition: opacity 0.3s;
+            font-weight: 900;
+            border-radius: 50px;
+            margin-top: 30px;
+            transition: 0.3s;
+            display: inline-block;
         }
 
-        .btn:hover {
-            opacity: 0.8;
-        }
+        .btn:hover { transform: scale(1.05); box-shadow: 0 0 20px rgba(204,255,0,0.4); }
 
-        /* セクション共通 */
-        section {
-            padding: 80px 20px;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
+        /* コンテンツセクション */
+        section { padding: 80px 5%; max-width: 1000px; margin: 0 auto; }
 
         h2 {
-            text-align: center;
             font-size: 2rem;
-            margin-bottom: 40px;
+            text-align: center;
+            margin-bottom: 50px;
             position: relative;
         }
 
         h2::after {
             content: '';
-            width: 50px;
-            height: 3px;
-            background: var(--accent-color);
+            width: 60px;
+            height: 4px;
+            background: var(--accent);
             position: absolute;
-            bottom: -10px;
+            bottom: -15px;
             left: 50%;
             transform: translateX(-50%);
         }
 
-        /* ニュース・トピックス */
-        .news-list {
-            list-style: none;
-            padding: 0;
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
         }
 
-        .news-item {
+        .card {
+            background: var(--bg-light);
+            padding: 30px;
+            border-radius: 15px;
+            border-left: 5px solid var(--primary);
+        }
+
+        .card h3 { color: var(--primary); margin-top: 0; }
+
+        /* 募集要項テーブル */
+        .info-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 30px;
+        }
+
+        .info-table th, .info-table td {
             padding: 15px;
             border-bottom: 1px solid #ddd;
-            display: flex;
-            justify-content: space-between;
+            text-align: left;
         }
 
-        .news-date {
-            color: #888;
-            margin-right: 20px;
-        }
+        .info-table th { background: var(--primary); color: #fff; width: 30%; }
 
-        /* フッター */
         footer {
-            background-color: #222;
+            background: var(--primary);
             color: #fff;
             text-align: center;
-            padding: 40px 20px;
-            margin-top: 40px;
+            padding: 50px 20px;
+            border-top: 5px solid var(--accent);
         }
 
-        /* レスポンシブ対応 */
-        @media (max-width: 768px) {
-            .nav-links {
-                display: none; /* スマホ用メニューは別途実装が必要ですが、今回はシンプル化のため非表示 */
-            }
-            .hero h1 {
-                font-size: 2rem;
-            }
-        }
+        .tagline { color: var(--accent); font-weight: bold; margin-bottom: 10px; }
     </style>
 </head>
 <body>
 
     <header>
+        <div class="logo">AIR<span>FORTH</span></div>
         <nav>
-            <div class="logo">TEAM NAME (仮)</div>
-            <ul class="nav-links">
-                <li><a href="#about">ABOUT</a></li>
-                <li><a href="#schedule">SCHEDULE</a></li>
-                <li><a href="#contact">CONTACT</a></li>
-            </ul>
+            <a href="#concept">CONCEPT</a>
+            <a href="#join">JOIN</a>
         </nav>
     </header>
 
     <section class="hero">
-        <h1>さあ、共に頂点へ。</h1>
-        <p>初心者から経験者まで、バレーボールを楽しむクラブチームです。</p>
-        <a href="#contact" class="btn">メンバー募集中</a>
+        <p>高く、前へ。バレーボールで未来を拓く。</p>
+        <h1>AIRFORTH</h1>
+        <p>男子ジュニアクラブ（小4〜中3）</p>
+        <a href="#join" class="btn">体験入部に応募する</a>
     </section>
 
-    <section id="about">
-        <h2>チームについて</h2>
-        <div style="text-align: center; max-width: 800px; margin: 0 auto;">
-            <p>
-                私たちのチームは、バレーボールを通じて技術の向上とメンバー間の親睦を目的として活動しています。<br>
-                毎週土曜日に〇〇市立体育館で練習を行っています。明るく、時には厳しく、切磋琢磨し合える仲間を募集しています。
-            </p>
+    <section id="concept">
+        <h2>AIRFORTHのこだわり</h2>
+        <div class="features">
+            <div class="card">
+                <h3>1. 個性を伸ばす技術指導</h3>
+                <p>「勝てるチーム」を目指すと同時に、一人ひとりの身体能力に合わせたフォーム指導を行います。中学生から始めても遅くありません。</p>
+            </div>
+            <div class="card">
+                <h3>2. 人間力の育成</h3>
+                <p>バレーボールを通じて、礼儀、協力、そして困難に立ち向かう「折れない心」を育てます。これらは受験や将来の大きな財産になります。</p>
+            </div>
+            <div class="card">
+                <h3>3. 文武両道のサポート</h3>
+                <p>スポーツを理由に勉強を疎かにしない。メリハリのある練習スケジュールで、学問とスポーツの両立を応援します。</p>
+            </div>
         </div>
     </section>
 
-    <section id="schedule" style="background-color: var(--bg-light);">
-        <h2>お知らせ / 練習日程</h2>
-        <ul class="news-list">
-            <li class="news-item">
-                <span class="news-date">2024.04.15</span>
-                <span class="news-title">5月の練習スケジュールを更新しました</span>
-            </li>
-            <li class="news-item">
-                <span class="news-date">2024.04.01</span>
-                <span class="news-title">新入団メンバーを募集中です！</span>
-            </li>
-            <li class="news-item">
-                <span class="news-date">2024.03.20</span>
-                <span class="news-title">市民大会で準優勝しました！</span>
-            </li>
-        </ul>
-    </section>
-
-    <section id="contact">
-        <h2>お問い合わせ</h2>
-        <div style="text-align: center;">
-            <p>見学・体験入部のご希望は、以下のボタンから（またはSNS等へ）ご連絡ください。</p>
-            <br>
-            <a href="mailto:example@example.com" class="btn">メールを送る</a>
+    <section id="join" style="background: #fff;">
+        <h2>メンバー募集要項</h2>
+        <table class="info-table">
+            <tr>
+                <th>対象</th>
+                <td>小学4年生 〜 中学3年生（男子）</td>
+            </tr>
+            <tr>
+                <th>レベル</th>
+                <td>初心者から経験者まで大歓迎！</td>
+            </tr>
+            <tr>
+                <th>活動日</th>
+                <td>毎週〇曜日・〇曜日（詳細は連絡時に）</td>
+            </tr>
+            <tr>
+                <th>場所</th>
+                <td>〇〇市内 体育館</td>
+            </tr>
+        </table>
+        <div style="text-align: center; margin-top: 40px;">
+            <p>※会費等は地域のクラブチーム基準です。お気軽にお問い合わせください。</p>
+            <a href="mailto:contact@example.com" class="btn">お問い合わせはこちら</a>
         </div>
     </section>
 
     <footer>
-        <p>&copy; 2024 バレーボールチーム公式HP. All rights reserved.</p>
+        <div class="tagline">HIGHER AND FORTH - 高く、前へ。</div>
+        <p>&copy; 2026 AIRFORTH Volleyball Club. All rights reserved.</p>
     </footer>
 
 </body>
