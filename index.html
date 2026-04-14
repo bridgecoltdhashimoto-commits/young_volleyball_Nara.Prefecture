@@ -7,11 +7,12 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@800;900&family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet">
     <style>
         :root {
-            --navy: #001D44;       /* 盾のメインネイビー */
-            --navy-light: #002b66; /* 少し明るいネイビー（視認性向上用） */
-            --lime: #CCFF00;       /* ライム（アクセント） */
-            --magenta: #FF007A;    /* マゼンタ（情熱） */
-            --gold: #FFB300;       /* ゴールド（勝利） */
+            /* ロゴから正確に抽出したカラー */
+            --navy: #001D44;
+            --navy-dark: #000c1d;
+            --gold: #FFB300;     /* ロゴの AIR の色 */
+            --magenta: #FF007A;  /* ロゴの FORTH の色 */
+            --lime: #CCFF00;     /* ロゴのアクセントラインの色 */
             --white: #FFFFFF;
         }
 
@@ -23,20 +24,18 @@
             background-color: var(--navy);
             color: var(--white);
             line-height: 1.8;
-            word-break: break-all;
         }
 
-        /* --- ヘッダー（色味をロゴに完全同期） --- */
+        /* --- ヘッダー --- */
         header {
-            background: rgba(0, 15, 35, 0.95);
+            background: rgba(0, 15, 35, 0.98);
             padding: 15px 5%;
             display: flex;
             justify-content: space-between;
             align-items: center;
             position: fixed;
             width: 100%; top: 0; z-index: 1000;
-            border-bottom: 3px solid var(--lime);
-            backdrop-filter: blur(5px);
+            border-bottom: 2px solid var(--lime);
         }
 
         .header-logo {
@@ -44,49 +43,41 @@
             font-weight: 900;
             text-decoration: none;
             font-size: 1.6rem;
+            color: var(--gold); /* AIR */
             letter-spacing: 1px;
-            color: var(--gold); /* AIRの部分 */
         }
-        .header-logo span { color: var(--magenta); } /* FORTHの部分 */
+        .header-logo span { color: var(--magenta); } /* FORTH */
 
         nav a {
             color: var(--white);
             text-decoration: none;
             margin-left: 20px;
             font-weight: bold;
-            font-size: 0.9rem;
-            text-transform: uppercase;
+            font-size: 0.85rem;
             transition: 0.3s;
         }
         nav a:hover { color: var(--lime); }
 
-        /* --- ヒーローセクション（ロゴの背景問題を解決） --- */
+        /* --- ヒーローセクション --- */
         .hero {
             height: 100vh;
             display: flex; flex-direction: column; justify-content: center; align-items: center;
             text-align: center; padding: 0 5%;
-            background: radial-gradient(circle at center, var(--navy-light) 0%, var(--navy) 100%);
-        }
-
-        .hero-logo-container {
-            width: 500px; max-width: 90%;
-            margin-bottom: 20px;
-            position: relative;
+            background: radial-gradient(circle at center, #002d6b 0%, var(--navy) 100%);
         }
 
         .hero-logo-img {
-            width: 100%; height: auto;
-            /* ★重要：市松模様が目立つ場合、ロゴを少し明るくして背景に馴染ませる */
-            filter: drop-shadow(0 10px 30px rgba(0,0,0,0.5));
+            width: 500px; max-width: 90%; height: auto;
+            filter: drop-shadow(0 15px 30px rgba(0,0,0,0.5));
+            margin-bottom: 20px;
         }
 
         .hero-copy {
             font-size: 1.2rem;
-            font-weight: 700;
-            letter-spacing: 0.3em;
+            font-weight: bold;
+            letter-spacing: 0.4em;
             color: var(--lime);
-            margin: 20px 0 40px;
-            text-shadow: 0 2px 10px rgba(0,0,0,0.5);
+            margin: 10px 0 40px;
         }
 
         /* --- ボタン --- */
@@ -99,30 +90,28 @@
             border-radius: 4px;
             display: inline-block;
             transition: 0.3s;
-            box-shadow: 4px 4px 0 var(--gold);
-            text-transform: uppercase;
+            box-shadow: 5px 5px 0 var(--gold);
         }
-        .btn:hover { transform: translate(-2px, -2px); box-shadow: 7px 7px 0 var(--gold); }
+        .btn:hover { transform: translate(-2px, -2px); box-shadow: 8px 8px 0 var(--gold); }
 
-        /* --- コンテンツセクション共通 --- */
+        /* --- コンテンツ --- */
         section { padding: 100px 5%; max-width: 1000px; margin: 0 auto; }
         
         .section-title {
             font-family: 'Montserrat', sans-serif;
-            font-size: 2.5rem;
+            font-size: 2.2rem;
             font-weight: 900;
             text-align: center;
             margin-bottom: 60px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
+            color: var(--white);
+            letter-spacing: 2px;
         }
-        .section-title::before {
+        .section-title::after {
             content: '';
-            width: 8px; height: 45px;
-            background: var(--magenta);
-            margin-right: 15px;
             display: block;
+            width: 50px; height: 5px;
+            background: var(--magenta);
+            margin: 15px auto 0;
         }
 
         .features { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; }
@@ -130,90 +119,73 @@
             background: rgba(255, 255, 255, 0.05);
             padding: 40px;
             border-radius: 8px;
-            border-left: 6px solid var(--lime);
-            transition: 0.3s;
+            border-top: 5px solid var(--lime);
         }
-        .card:hover { background: rgba(255, 255, 255, 0.1); transform: translateY(-5px); }
-        .card h3 { color: var(--lime); font-size: 1.4rem; margin-top: 0; }
+        .card h3 { color: var(--lime); margin-top: 0; font-size: 1.4rem; }
 
-        /* --- 募集要項（視認性を劇的に改善） --- */
+        /* --- 募集要項（見やすさを改善） --- */
         .info-box {
-            background: #000c1d;
-            border: 2px solid rgba(255, 0, 122, 0.3);
-            border-radius: 12px;
+            background: var(--navy-dark);
+            border: 2px solid var(--magenta);
+            border-radius: 8px;
             overflow: hidden;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
         }
 
         .info-table { width: 100%; border-collapse: collapse; }
-        .info-table th, .info-table td { padding: 25px; border-bottom: 1px solid rgba(255,255,255,0.05); }
+        .info-table th, .info-table td { padding: 20px; border-bottom: 1px solid rgba(255,255,255,0.05); }
         
         .info-table th {
-            background: linear-gradient(to right, var(--magenta), #d10064);
-            color: white;
-            width: 25%;
+            background: rgba(255, 0, 122, 0.1);
+            color: var(--magenta);
+            width: 30%;
             text-align: left;
-            font-size: 1rem;
-            font-weight: 700;
+            font-weight: bold;
         }
 
-        .info-table td {
-            background: transparent;
-            font-size: 1.05rem;
-            color: #eee;
-        }
+        .info-table td { color: #ddd; }
 
-        .info-table tr:last-child th, .info-table tr:last-child td { border-bottom: none; }
-
-        /* --- フーター（圧倒的なかっこよさへ） --- */
+        /* --- フッター（プロ仕様の統一感） --- */
         footer {
-            background: #000814;
+            background: #00050d;
             padding: 80px 5% 40px;
             text-align: center;
             border-top: 5px solid var(--magenta);
         }
 
-        .footer-logo-wrap {
-            margin-bottom: 30px;
-        }
-
         .footer-logo-img {
-            width: 140px;
-            height: auto;
-            opacity: 0.9;
+            width: 120px; height: auto;
+            margin-bottom: 20px;
+            opacity: 0.8;
         }
 
-        .footer-club-name {
+        .footer-name {
             font-family: 'Montserrat', sans-serif;
-            font-size: 2.2rem;
+            font-size: 1.8rem;
             font-weight: 900;
-            color: var(--gold);
             margin-bottom: 5px;
-            letter-spacing: 2px;
+            color: var(--gold);
         }
-        .footer-club-name span { color: var(--magenta); }
+        .footer-name span { color: var(--magenta); }
 
-        .footer-tagline {
+        .footer-sub {
             color: var(--lime);
-            font-weight: 700;
-            font-size: 1rem;
-            letter-spacing: 5px;
-            margin-bottom: 40px;
+            font-size: 0.9rem;
+            letter-spacing: 4px;
             text-transform: uppercase;
+            margin-bottom: 40px;
         }
 
         .footer-bottom {
+            font-size: 0.8rem;
+            color: rgba(255,255,255,0.3);
             border-top: 1px solid rgba(255,255,255,0.05);
             padding-top: 30px;
-            color: rgba(255,255,255,0.3);
-            font-size: 0.8rem;
         }
 
         @media (max-width: 768px) {
-            .hero-logo-img { width: 90%; }
-            .section-title { font-size: 2rem; }
+            .section-title { font-size: 1.8rem; }
             .info-table th, .info-table td { display: block; width: 100%; }
-            .info-table th { padding: 15px 25px; }
+            .info-table th { border-bottom: none; padding-bottom: 5px; }
         }
     </style>
 </head>
@@ -228,9 +200,7 @@
     </header>
 
     <section class="hero">
-        <div class="hero-logo-container">
-            <img src="logo-transparent.png" alt="AIRFORTH Logo" class="hero-logo-img">
-        </div>
+        <img src="logo-transparent.png" alt="AIRFORTH Logo" class="hero-logo-img">
         <div class="hero-copy">HIGHER AND FORTH - 高く、前へ。</div>
         <a href="#join" class="btn">体験入部に応募する</a>
     </section>
@@ -248,7 +218,7 @@
             </div>
             <div class="card">
                 <h3>文武両道</h3>
-                <p>スポーツを理由に勉強を疎かにしない。メリハリのある練習スケジュールで、学問とスポーツの両立を応援します。</p>
+                <p>学問とスポーツの両立を応援。メリハリのある練習スケジュールで、将来の財産を築きます。</p>
             </div>
         </div>
     </section>
@@ -270,11 +240,9 @@
     </section>
 
     <footer>
-        <div class="footer-logo-wrap">
-            <img src="logo-transparent.png" alt="AIRFORTH Logo" class="footer-logo-img">
-        </div>
-        <div class="footer-club-name">AIR<span>FORTH</span></div>
-        <div class="footer-tagline">Volleyball Club</div>
+        <img src="logo-transparent.png" alt="AIRFORTH Logo" class="footer-logo-img">
+        <div class="footer-name">AIR<span>FORTH</span></div>
+        <div class="footer-sub">Volleyball Club</div>
         <div class="footer-bottom">
             &copy; 2026 AIRFORTH. All rights reserved.
         </div>
