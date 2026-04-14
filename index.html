@@ -14,6 +14,7 @@
             --gold: #FFB300;       /* 勝利：星のゴールド */
             --white: #FFFFFF;
             --dark-gray: #1a1a1a;
+            --footer-navy: #000c1d; /* フッター用のより濃いネイビー */
         }
 
         * {
@@ -25,7 +26,7 @@
             font-family: 'Noto Sans JP', sans-serif;
             margin: 0;
             padding: 0;
-            background-color: var(--navy); /* 全体の背景をネイビーに固定 */
+            background-color: var(--navy);
             color: var(--white);
             line-height: 1.6;
         }
@@ -63,7 +64,7 @@
         }
         nav a:hover { color: var(--lime); }
 
-        /* --- ヒーローエリア（写真を削除しロゴを強調） --- */
+        /* --- ヒーローエリア（透過ロゴを配置し白い枠をなくす） --- */
         .hero {
             height: 100vh;
             display: flex;
@@ -72,16 +73,36 @@
             align-items: center;
             text-align: center;
             padding: 0 5%;
-            /* ネイビーの深いグラデーションでロゴを浮かび上がらせる */
+            /* ネイビーの深いグラデーションで透過ロゴを浮かび上がらせる */
             background: radial-gradient(circle at center, #002b66 0%, var(--navy) 100%);
         }
 
+        /* ★透过ロゴ用のスタイル */
         .hero-logo-img {
             width: 550px;
             max-width: 90%;
             height: auto;
-            filter: drop-shadow(0 20px 40px rgba(0,0,0,0.6));
-            margin-bottom: 30px;
+            /* ★box-shadowの代わりにドロップシャドウを少し添えて立体感を出す */
+            filter: drop-shadow(0 15px 30px rgba(0,0,0,0.5));
+            margin-bottom: 20px;
+        }
+
+        /* ★ロゴの後ろに光を添えてかっこよさを増す */
+        .hero-logo-container {
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .hero-logo-glow {
+            position: absolute;
+            width: 300px;
+            height: 300px;
+            background: radial-gradient(circle, var(--lime) 0%, rgba(204, 255, 0, 0) 70%);
+            border-radius: 50%;
+            filter: blur(50px);
+            opacity: 0.2;
+            z-index: -1;
         }
 
         .hero-copy {
@@ -89,10 +110,10 @@
             font-weight: bold;
             letter-spacing: 0.2em;
             color: var(--lime);
-            margin-bottom: 40px;
+            margin-bottom: 30px;
         }
 
-        /* --- ボタン（ロゴのピンクとライムを活用） --- */
+        /* --- ボタン（ゴールドの影でよりかっこよく） --- */
         .btn {
             background: var(--magenta);
             color: white;
@@ -102,12 +123,12 @@
             border-radius: 4px;
             display: inline-block;
             transition: 0.3s;
-            box-shadow: 6px 6px 0 var(--lime);
+            box-shadow: 6px 6px 0 var(--gold); /* ★ゴールドの影 */
             text-transform: uppercase;
         }
         .btn:hover {
             transform: translate(-3px, -3px);
-            box-shadow: 9px 9px 0 var(--lime);
+            box-shadow: 9px 9px 0 var(--gold);
         }
 
         /* --- コンテンツ --- */
@@ -177,20 +198,58 @@
             background: rgba(255,255,255,0.02);
         }
 
-        /* --- フッター --- */
+        /* ★フッターの改善（かっこよく！） --- */
         footer {
-            background: #000c1d;
+            background: var(--footer-navy);
             padding: 80px 5%;
             text-align: center;
             border-top: 5px solid var(--magenta);
+            position: relative;
+        }
+
+        /* フッター上部にロゴの盾の要素を模した光を追加 */
+        footer::before {
+            content: '';
+            position: absolute;
+            top: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 100px;
+            background: radial-gradient(circle, var(--gold) 0%, rgba(255, 179, 0, 0) 70%);
+            border-radius: 50%;
+            filter: blur(20px);
+            opacity: 0.1;
+        }
+
+        .footer-logo-img {
+            width: 120px;
+            max-width: 50%;
+            height: auto;
+            margin-bottom: 20px;
+            /* 透画像にドロップシャドウを少し */
+            filter: drop-shadow(0 5px 10px rgba(0,0,0,0.4));
+        }
+
+        .footer-club-name {
+            font-size: 1rem;
+            font-weight: bold;
+            margin-bottom: 15px;
+            color: var(--white);
         }
 
         .footer-tagline {
             color: var(--lime);
             font-weight: 900;
             font-size: 1.5rem;
-            margin-bottom: 20px;
+            margin-bottom: 15px;
             font-family: 'Montserrat', sans-serif;
+            text-transform: uppercase;
+        }
+
+        .footer-copyright {
+            color: rgba(255,255,255,0.5);
+            font-size: 0.8rem;
         }
 
         @media (max-width: 768px) {
@@ -211,7 +270,10 @@
     </header>
 
     <section class="hero">
-        <img src="logo.png" alt="AIRFORTH Logo" class="hero-logo-img">
+        <div class="hero-logo-container">
+            <img src="logo-transparent.png" alt="AIRFORTH Logo" class="hero-logo-img">
+            <div class="hero-logo-glow"></div>
+        </div>
         <div class="hero-copy">HIGHER AND FORTH - 高く、前へ。</div>
         <a href="#join" class="btn">体験入部に応募する</a>
     </section>
@@ -226,7 +288,7 @@
             <div class="card">
                 <h3>人間力の育成</h3>
                 <p>バレーボールを通じて、礼儀、協力、そして困難に立ち向かう「折れない心」を育てます。これらは受験や将来の大きな財産になります。</p>
-            </div>
+                </div>
             <div class="card">
                 <h3>文武両道</h3>
                 <p>スポーツを理由に勉強を疎かにしない。メリハリのある練習スケジュールで、学問とスポーツの両立を応援します。</p>
@@ -266,8 +328,10 @@
     </section>
 
     <footer>
-        <div class="footer-tagline">AIRFORTH VOLLEYBALL CLUB</div>
-        <p style="color: rgba(255,255,255,0.5);">&copy; 2026 AIRFORTH. All rights reserved.</p>
+        <img src="logo-transparent.png" alt="AIRFORTH Logo" class="footer-logo-img">
+        <div class="footer-club-name">AIRFORTH VOLLEYBALL CLUB</div>
+        <div class="footer-tagline">HIGHER AND FORTH</div>
+        <p class="footer-copyright">&copy; 2026 AIRFORTH. All rights reserved.</p>
     </footer>
 
 </body>
