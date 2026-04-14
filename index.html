@@ -3,58 +3,75 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AIRFORTH | バレーボールクラブ</title>
+    <title>AIRFORTH | 奈良・ヤングバレーボールクラブ</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;900&family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet">
     <style>
         :root {
-            --primary: #001D44; /* 深いネイビー（信頼・強さ） */
-            --accent: #CCFF00;  /* ネオンイエロー（エネルギー・希望） */
-            --bg-light: #F8F9FA;
-            --text-main: #333;
+            --primary: #001D44;    /* ロゴの深いネイビー */
+            --accent: #CCFF00;     /* ロゴのライムグリーン */
+            --sub-accent: #E91E63; /* ロゴのピンク（アクセント用） */
+            --text-main: #222;
+            --white: #ffffff;
+            --gray-bg: #f4f7f6;
+        }
+
+        * {
+            box-sizing: border-box;
+            scroll-behavior: smooth;
         }
 
         body {
-            font-family: 'Avenir Next', 'Helvetica Neue', 'Hiragino Kaku Gothic ProN', sans-serif;
+            font-family: 'Noto Sans JP', sans-serif;
             margin: 0;
             color: var(--text-main);
-            background-color: #fff;
-            overflow-x: hidden;
+            background-color: var(--white);
+            line-height: 1.8;
         }
 
-        /* ヘッダー */
+        h1, h2, h3, .logo {
+            font-family: 'Montserrat', sans-serif;
+            text-transform: uppercase;
+        }
+
+        /* --- ヘッダー --- */
         header {
-            background: var(--primary);
-            padding: 15px 5%;
+            background: rgba(0, 29, 68, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 10px 5%;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            position: sticky;
+            position: fixed;
+            width: 100%;
             top: 0;
             z-index: 1000;
-            border-bottom: 2px solid var(--accent);
+            border-bottom: 3px solid var(--accent);
         }
 
-        .logo {
-            font-size: 1.8rem;
+        .header-logo {
+            color: var(--white);
             font-weight: 900;
-            color: #fff;
-            letter-spacing: 2px;
+            font-size: 1.5rem;
             text-decoration: none;
+            letter-spacing: 1px;
         }
-
-        .logo span { color: var(--accent); }
+        .header-logo span { color: var(--accent); }
 
         nav a {
-            color: #fff;
+            color: var(--white);
             text-decoration: none;
-            margin-left: 20px;
-            font-size: 0.9rem;
-            font-weight: bold;
+            margin-left: 25px;
+            font-size: 0.85rem;
+            font-weight: 700;
+            transition: 0.3s;
         }
+        nav a:hover { color: var(--accent); }
 
-        /* ヒーローセクション */
+        /* --- ヒーローエリア --- */
         .hero {
-            height: 75vh;
-            background: linear-gradient(135deg, rgba(0,29,68,0.8) 0%, rgba(0,29,68,0.3) 100%),
+            height: 90vh;
+            min-height: 600px;
+            background: linear-gradient(135deg, rgba(0, 29, 68, 0.85) 0%, rgba(0, 29, 68, 0.5) 100%),
                         url('https://images.unsplash.com/photo-1592656094267-764a45160876?auto=format&fit=crop&q=80&w=1470');
             background-size: cover;
             background-position: center;
@@ -63,106 +80,168 @@
             justify-content: center;
             align-items: center;
             text-align: center;
-            color: #fff;
-            padding: 0 20px;
+            color: var(--white);
+            padding-top: 80px;
         }
 
-        /* ★追加：ロゴ画像用のスタイル */
-        .hero-logo {
-            width: 450px; /* PCでの表示サイズ */
-            max-width: 85%; /* スマホでは画面に収まるように */
+        .hero-logo-img {
+            width: 500px;
+            max-width: 90%;
             height: auto;
+            filter: drop-shadow(0 15px 30px rgba(0,0,0,0.5));
+            animation: fadeInDown 1.2s ease-out;
+        }
+
+        .hero-tagline {
+            font-size: 1.4rem;
+            font-weight: 700;
             margin: 20px 0;
-            filter: drop-shadow(0 10px 20px rgba(0,0,0,0.3)); /* ロゴに少し影をつけて目立たせる */
+            background: var(--sub-accent);
+            padding: 5px 20px;
+            display: inline-block;
+            transform: skewX(-10deg);
         }
 
-        .hero p {
-            font-size: 1.2rem;
-            margin: 10px 0;
-            letter-spacing: 1px;
-            text-shadow: 0 2px 4px rgba(0,0,0,0.5);
+        .hero-sub {
+            font-size: 1.1rem;
+            letter-spacing: 2px;
+            margin-bottom: 30px;
         }
 
+        @keyframes fadeInDown {
+            from { opacity: 0; transform: translateY(-30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* --- ボタン --- */
         .btn {
             background: var(--accent);
             color: var(--primary);
-            padding: 15px 40px;
+            padding: 18px 45px;
             text-decoration: none;
             font-weight: 900;
-            border-radius: 50px;
-            margin-top: 20px;
+            font-size: 1.1rem;
+            border-radius: 4px; /* あえて少し角を残して力強さを出す */
             transition: 0.3s;
             display: inline-block;
+            box-shadow: 4px 4px 0px var(--sub-accent);
+        }
+        .btn:hover {
+            transform: translate(-2px, -2px);
+            box-shadow: 6px 6px 0px var(--sub-accent);
         }
 
-        .btn:hover { transform: scale(1.05); box-shadow: 0 0 20px rgba(204,255,0,0.4); }
+        /* --- セクション共通 --- */
+        section { padding: 100px 5%; max-width: 1100px; margin: 0 auto; }
 
-        /* コンテンツセクション */
-        section { padding: 80px 5%; max-width: 1000px; margin: 0 auto; }
-
-        h2 {
-            font-size: 2rem;
+        h2.section-title {
+            font-size: 2.5rem;
             text-align: center;
-            margin-bottom: 50px;
+            margin-bottom: 60px;
+            font-weight: 900;
+            color: var(--primary);
             position: relative;
         }
-
-        h2::after {
-            content: '';
-            width: 60px;
-            height: 4px;
-            background: var(--accent);
+        h2.section-title::after {
+            content: 'HIGHER AND FORTH';
             position: absolute;
-            bottom: -15px;
+            bottom: -20px;
             left: 50%;
             transform: translateX(-50%);
+            font-size: 0.8rem;
+            color: var(--sub-accent);
+            letter-spacing: 5px;
         }
 
+        /* --- こだわり（カード） --- */
         .features {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 30px;
         }
 
         .card {
-            background: var(--bg-light);
-            padding: 30px;
-            border-radius: 15px;
-            border-left: 5px solid var(--primary);
+            background: var(--white);
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            border-top: 8px solid var(--primary);
+            transition: 0.3s;
+        }
+        .card:hover {
+            transform: translateY(-10px);
+            border-top-color: var(--accent);
+        }
+        .card h3 {
+            color: var(--primary);
+            font-size: 1.3rem;
+            margin-top: 0;
+            display: flex;
+            align-items: center;
+        }
+        .card h3::before {
+            content: '';
+            width: 10px;
+            height: 25px;
+            background: var(--sub-accent);
+            display: inline-block;
+            margin-right: 15px;
         }
 
-        .card h3 { color: var(--primary); margin-top: 0; }
+        /* --- 募集要項テーブル --- */
+        .info-container {
+            background: var(--primary);
+            color: var(--white);
+            padding: 40px;
+            border-radius: 12px;
+            margin-top: 50px;
+        }
 
-        /* 募集要項テーブル */
         .info-table {
             width: 100%;
             border-collapse: collapse;
-            margin-top: 30px;
         }
 
         .info-table th, .info-table td {
-            padding: 15px;
-            border-bottom: 1px solid #ddd;
+            padding: 20px;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
             text-align: left;
         }
 
-        .info-table th { background: var(--primary); color: #fff; width: 30%; }
-
-        footer {
-            background: var(--primary);
-            color: #fff;
-            text-align: center;
-            padding: 50px 20px;
-            border-top: 5px solid var(--accent);
+        .info-table th {
+            color: var(--accent);
+            font-size: 1rem;
+            width: 25%;
         }
 
-        .tagline { color: var(--accent); font-weight: bold; margin-bottom: 10px; }
+        /* --- フッター --- */
+        footer {
+            background: var(--primary);
+            color: var(--white);
+            text-align: center;
+            padding: 60px 20px;
+            border-top: 10px solid var(--accent);
+        }
+
+        .footer-logo {
+            font-size: 2rem;
+            font-weight: 900;
+            margin-bottom: 20px;
+        }
+
+        @media (max-width: 768px) {
+            .hero-logo-img { width: 85%; }
+            .info-table th, .info-table td { display: block; width: 100%; }
+            .info-table th { padding-bottom: 0; border-bottom: none; }
+            h2.section-title { font-size: 1.8rem; }
+            nav { display: none; } /* スマホではシンプルに */
+        }
     </style>
 </head>
 <body>
 
     <header>
-        <a href="#" class="logo">AIR<span>FORTH</span></a>
+        <a href="#" class="header-logo">AIR<span>FORTH</span></a>
         <nav>
             <a href="#concept">CONCEPT</a>
             <a href="#join">JOIN</a>
@@ -170,60 +249,64 @@
     </header>
 
     <section class="hero">
-        <p>高く、前へ。バレーボールで未来を拓く。</p>
-        
-        <img src="logo.png" alt="AIRFORTH Logo" class="hero-logo">
-        
-        <p>ヤングバレーボールクラブ（小4〜中3）</p>
+        <div class="hero-tagline">高く、前へ。バレーボールで未来を拓く。</div>
+        <img src="logo.png" alt="AIRFORTH Logo" class="hero-logo-img">
+        <div class="hero-sub">奈良県中南部：ヤングバレーボールクラブ（小4〜中3）</div>
         <a href="#join" class="btn">体験入部に応募する</a>
     </section>
 
     <section id="concept">
-        <h2>AIRFORTHのこだわり</h2>
+        <h2 class="section-title">AIRFORTHのこだわり</h2>
         <div class="features">
             <div class="card">
-                <h3>1. 個性を伸ばす技術指導</h3>
+                <h3>個性を伸ばす技術指導</h3>
                 <p>「勝てるチーム」を目指すと同時に、一人ひとりの身体能力に合わせたフォーム指導を行います。中学生から始めても遅くありません。</p>
             </div>
             <div class="card">
-                <h3>2. 人間力の育成</h3>
+                <h3>人間力の育成</h3>
                 <p>バレーボールを通じて、礼儀、協力、そして困難に立ち向かう「折れない心」を育てます。これらは受験や将来の大きな財産になります。</p>
             </div>
             <div class="card">
-                <h3>3. 文武両道のサポート</h3>
+                <h3>文武両道のサポート</h3>
                 <p>スポーツを理由に勉強を疎かにしない。メリハリのある練習スケジュールで、学問とスポーツの両立を応援します。</p>
             </div>
         </div>
     </section>
 
-    <section id="join" style="background: #fff;">
-        <h2>メンバー募集要項</h2>
-        <table class="info-table">
-            <tr>
-                <th>対象</th>
-                <td>小学4年生 〜 中学3年生（男子・女子）</td>
-            </tr>
-            <tr>
-                <th>レベル</th>
-                <td>初心者から経験者まで大歓迎！スポーツが苦手な方でも大歓迎！</td>
-            </tr>
-            <tr>
-                <th>活動日</th>
-                <td>平日：18：00～21：00　土日祝　10：00～18：00（詳細は連絡時に）</td>
-            </tr>
-            <tr>
-                <th>場所</th>
-                <td>奈良県中南部の体育館</td>
-            </tr>
-        </table>
-        <div style="text-align: center; margin-top: 40px;">
-            <p>※会費等は、月額2000円。</p>
-            <a href="mailto:contact@example.com" class="btn">お問い合わせはこちら</a>
+    <section id="join">
+        <h2 class="section-title">メンバー募集要項</h2>
+        <div class="info-container">
+            <table class="info-table">
+                <tr>
+                    <th>対象</th>
+                    <td>小学4年生 〜 中学3年生（男子・女子）</td>
+                </tr>
+                <tr>
+                    <th>レベル</th>
+                    <td>初心者から経験者まで大歓迎！スポーツが苦手な方でも大丈夫です。</td>
+                </tr>
+                <tr>
+                    <th>活動日</th>
+                    <td>平日：18:00～21:00 / 土日祝：10:00～18:00<br><small>※詳細は入部検討時に個別にお伝えします。</small></td>
+                </tr>
+                <tr>
+                    <th>場所</th>
+                    <td>奈良県中南部の体育館</td>
+                </tr>
+                <tr>
+                    <th>会費</th>
+                    <td>月額 2,000円</td>
+                </tr>
+            </table>
+            <div style="text-align: center; margin-top: 50px;">
+                <a href="mailto:contact@example.com" class="btn" style="background: var(--sub-accent); color: white; box-shadow: 4px 4px 0 var(--accent);">お問い合わせはこちら</a>
+            </div>
         </div>
     </section>
 
     <footer>
-        <div class="tagline">HIGHER AND FORTH - 高く、前へ。</div>
+        <div class="footer-logo">AIR<span>FORTH</span></div>
+        <div style="margin-bottom: 20px; color: var(--accent); letter-spacing: 3px;">HIGHER AND FORTH</div>
         <p>&copy; 2026 AIRFORTH Volleyball Club. All rights reserved.</p>
     </footer>
 
