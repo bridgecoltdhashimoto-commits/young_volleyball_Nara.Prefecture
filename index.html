@@ -38,6 +38,7 @@
             font-weight: 900;
             color: #fff;
             letter-spacing: 2px;
+            text-decoration: none;
         }
 
         .logo span { color: var(--accent); }
@@ -52,8 +53,8 @@
 
         /* ヒーローセクション */
         .hero {
-            height: 70vh;
-            background: linear-gradient(135deg, rgba(0,29,68,0.9) 0%, rgba(0,29,68,0.4) 100%),
+            height: 75vh;
+            background: linear-gradient(135deg, rgba(0,29,68,0.8) 0%, rgba(0,29,68,0.3) 100%),
                         url('https://images.unsplash.com/photo-1592656094267-764a45160876?auto=format&fit=crop&q=80&w=1470');
             background-size: cover;
             background-position: center;
@@ -66,17 +67,20 @@
             padding: 0 20px;
         }
 
-        .hero h1 {
-            font-size: clamp(2.5rem, 8vw, 4.5rem);
-            margin-bottom: 0;
-            text-transform: uppercase;
-            font-style: italic;
+        /* ★追加：ロゴ画像用のスタイル */
+        .hero-logo {
+            width: 450px; /* PCでの表示サイズ */
+            max-width: 85%; /* スマホでは画面に収まるように */
+            height: auto;
+            margin: 20px 0;
+            filter: drop-shadow(0 10px 20px rgba(0,0,0,0.3)); /* ロゴに少し影をつけて目立たせる */
         }
 
         .hero p {
             font-size: 1.2rem;
-            margin-top: 10px;
+            margin: 10px 0;
             letter-spacing: 1px;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.5);
         }
 
         .btn {
@@ -86,7 +90,7 @@
             text-decoration: none;
             font-weight: 900;
             border-radius: 50px;
-            margin-top: 30px;
+            margin-top: 20px;
             transition: 0.3s;
             display: inline-block;
         }
@@ -158,7 +162,7 @@
 <body>
 
     <header>
-        <div class="logo">AIR<span>FORTH</span></div>
+        <a href="#" class="logo">AIR<span>FORTH</span></a>
         <nav>
             <a href="#concept">CONCEPT</a>
             <a href="#join">JOIN</a>
@@ -167,7 +171,9 @@
 
     <section class="hero">
         <p>高く、前へ。バレーボールで未来を拓く。</p>
-        <h1>AIRFORTH</h1>
+        
+        <img src="logo.png" alt="AIRFORTH Logo" class="hero-logo">
+        
         <p>ヤングバレーボールクラブ（小4〜中3）</p>
         <a href="#join" class="btn">体験入部に応募する</a>
     </section>
