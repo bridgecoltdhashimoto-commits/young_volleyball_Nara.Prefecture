@@ -62,7 +62,7 @@
       position:sticky;
       top:0;
       z-index:1000;
-      background:rgba(255,255,255,.94);
+      background:rgba(255,255,255,.95);
       backdrop-filter:blur(10px);
       border-bottom:1px solid rgba(11,35,84,.08);
     }
@@ -79,26 +79,19 @@
 
     .brand{
       display:flex;
-      flex-direction:column;
-      gap:4px;
+      align-items:center;
     }
 
     .brand-title{
-      font-size:2rem;
+      font-size:2.05rem;
       line-height:1;
       font-weight:900;
-      letter-spacing:.04em;
-      background:linear-gradient(90deg,var(--navy),var(--gold),var(--orange),var(--pink));
+      letter-spacing:.05em;
+      background:linear-gradient(90deg,var(--navy) 0%,var(--gold) 38%,var(--orange) 68%,var(--pink) 100%);
       -webkit-background-clip:text;
       -webkit-text-fill-color:transparent;
       background-clip:text;
       color:transparent;
-    }
-
-    .brand-sub{
-      color:var(--navy-soft);
-      font-size:.88rem;
-      font-weight:700;
     }
 
     nav{
@@ -128,11 +121,39 @@
     }
 
     .club-mark{
-      padding:24px 0 18px;
+      position:relative;
+      overflow:hidden;
+      padding:28px 0 24px;
       background:
-        radial-gradient(circle at 20% 30%, rgba(90,183,255,.18), transparent 30%),
-        radial-gradient(circle at 80% 20%, rgba(245,61,143,.14), transparent 24%),
-        linear-gradient(180deg, #11285f 0%, #0b1e49 100%);
+        radial-gradient(circle at 18% 30%, rgba(90,183,255,.10), transparent 24%),
+        radial-gradient(circle at 82% 20%, rgba(245,61,143,.08), transparent 18%),
+        linear-gradient(180deg, #edf4ff 0%, #f8fbff 100%);
+    }
+
+    .club-mark::before{
+      content:"";
+      position:absolute;
+      inset:0;
+      background:
+        linear-gradient(rgba(29,61,130,.05), rgba(29,61,130,.05)) center 55% / 100% 2px no-repeat,
+        linear-gradient(90deg, transparent calc(50% - 1px), rgba(29,61,130,.05) calc(50% - 1px), rgba(29,61,130,.05) calc(50% + 1px), transparent calc(50% + 1px)) center / 100% 100% no-repeat;
+      pointer-events:none;
+    }
+
+    .club-mark::after{
+      content:"";
+      position:absolute;
+      right:8%;
+      top:18px;
+      width:260px;
+      height:180px;
+      background-image:
+        linear-gradient(rgba(29,61,130,.08) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(29,61,130,.08) 1px, transparent 1px);
+      background-size:24px 24px;
+      opacity:.35;
+      transform:skew(-8deg) rotate(-2deg);
+      pointer-events:none;
     }
 
     .club-mark-inner{
@@ -140,21 +161,23 @@
       margin:0 auto;
       display:flex;
       justify-content:center;
+      position:relative;
+      z-index:1;
     }
 
     .club-mark-box{
-      background:transparent;
-      border:none;
-      border-radius:0;
-      padding:0;
-      box-shadow:none;
+      background:#ffffff;
+      border:1px solid #e6edf8;
+      border-radius:28px;
+      padding:22px 28px;
+      box-shadow:0 18px 40px rgba(11,35,84,.10);
     }
 
     .club-mark-box img{
-      width:min(420px, 82vw);
+      width:min(360px, 78vw);
       height:auto;
       object-fit:contain;
-      filter:drop-shadow(0 14px 28px rgba(0,0,0,.28));
+      filter:drop-shadow(0 12px 24px rgba(0,0,0,.12));
     }
 
     .hero{
@@ -171,7 +194,7 @@
       display:grid;
       grid-template-columns:1.05fr .95fr;
       gap:26px;
-      align-items:center;
+      align-items:start;
     }
 
     .eyebrow{
@@ -325,7 +348,7 @@
     }
 
     .hero-side-note{
-      background:linear-gradient(135deg,rgba(244,180,0,.10),rgba(245,61,143,.08),rgba(90,183,255,.10));
+      background:linear-gradient(135deg,rgba(244,180,0,.08),rgba(245,61,143,.07),rgba(90,183,255,.10));
       border:1px solid rgba(11,35,84,.08);
       border-radius:18px;
       padding:16px;
@@ -581,6 +604,11 @@
       .hero-side-grid{
         grid-template-columns:1fr;
       }
+
+      .club-mark::after{
+        width:180px;
+        height:120px;
+      }
     }
 
     @media (max-width: 760px){
@@ -607,6 +635,14 @@
       .hero{
         padding-top:30px;
       }
+
+      .club-mark{
+        padding:22px 0 18px;
+      }
+
+      .club-mark-box{
+        padding:18px 18px;
+      }
     }
 
     @media (max-width: 560px){
@@ -630,7 +666,6 @@
     <div class="header-inner">
       <div class="brand">
         <div class="brand-title">AIRFORTH</div>
-        <div class="brand-sub">奈良ヤングバレーボールクラブ</div>
       </div>
 
       <nav>
@@ -646,7 +681,7 @@
       <div class="club-mark-inner">
         <div class="club-mark-box">
           <img
-            src="./logo-transparent.png?v=2"
+            src="./logo-transparent.png?v=3"
             alt="AIRFORTH ロゴ"
             onerror="this.closest('.club-mark').style.display='none';"
           >
@@ -710,8 +745,8 @@
             </div>
           </div>
           <div class="hero-side-note">
-            見やすさと安心感を優先し、
-            保護者の方にも伝わりやすい構成にしています。
+            体験や見学は、はじめての方でも安心してご参加いただけます。<br>
+            気になることがあれば、どうぞお気軽にお問い合わせください。
           </div>
         </div>
       </div>
@@ -824,6 +859,7 @@
                     <option value="体験希望">体験希望</option>
                     <option value="見学希望">見学希望</option>
                     <option value="問い合わせ">問い合わせ</option>
+                    <option value="問い合わせ">スポンサー希望</option>
                   </select>
                 </div>
               </div>
@@ -846,12 +882,12 @@
               </div>
 
               <div class="field">
-                <label for="consultation">事前相談事項（任意）</label>
+                <label for="consultation">事前相談事項（任意・管理者直通）</label>
                 <textarea id="consultation" name="consultation" placeholder="月額2,000円について事前に相談したいことがあればご記入ください。"></textarea>
               </div>
 
               <div class="field">
-                <label for="message">その他ご質問・ご相談（任意）</label>
+                <label for="message">その他ご質問・ご相談（任意・管理者直通）</label>
                 <textarea id="message" name="message" placeholder="ご質問や伝えておきたいことがあればご記入ください。"></textarea>
               </div>
 
@@ -868,7 +904,7 @@
 
   <footer>
     <div class="footer-inner">
-      <div class="footer-title">AIRFORTH 奈良ヤングバレーボールクラブ</div>
+      <div class="footer-title">AIRFORTH</div>
       <div class="footer-copy">© 2026 AIRFORTH. All Rights Reserved.</div>
     </div>
   </footer>
