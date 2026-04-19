@@ -127,8 +127,38 @@
       box-shadow:0 10px 22px rgba(245,61,143,.18);
     }
 
+    .club-mark{
+      padding:24px 0 18px;
+      background:
+        radial-gradient(circle at 20% 30%, rgba(90,183,255,.18), transparent 30%),
+        radial-gradient(circle at 80% 20%, rgba(245,61,143,.14), transparent 24%),
+        linear-gradient(180deg, #11285f 0%, #0b1e49 100%);
+    }
+
+    .club-mark-inner{
+      width:min(var(--max), 92%);
+      margin:0 auto;
+      display:flex;
+      justify-content:center;
+    }
+
+    .club-mark-box{
+      background:transparent;
+      border:none;
+      border-radius:0;
+      padding:0;
+      box-shadow:none;
+    }
+
+    .club-mark-box img{
+      width:min(420px, 82vw);
+      height:auto;
+      object-fit:contain;
+      filter:drop-shadow(0 14px 28px rgba(0,0,0,.28));
+    }
+
     .hero{
-      padding:56px 0 36px;
+      padding:42px 0 36px;
       background:
         radial-gradient(circle at 12% 12%, rgba(90,183,255,.18), transparent 26%),
         radial-gradient(circle at 90% 8%, rgba(245,61,143,.10), transparent 20%),
@@ -302,36 +332,6 @@
       color:var(--muted);
       font-size:.95rem;
     }
-
-    .club-mark{
-  padding:18px 0 10px;
-  background:
-    radial-gradient(circle at 20% 30%, rgba(90,183,255,.18), transparent 30%),
-    radial-gradient(circle at 80% 20%, rgba(245,61,143,.14), transparent 24%),
-    linear-gradient(180deg, #11285f 0%, #0b1e49 100%);
-}
-
-.club-mark-inner{
-  width:min(var(--max), 92%);
-  margin:0 auto;
-  display:flex;
-  justify-content:center;
-}
-
-.club-mark-box{
-  background:transparent;
-  border:none;
-  border-radius:0;
-  padding:0;
-  box-shadow:none;
-}
-
-.club-mark-box img{
-  width:min(420px, 82vw);
-  height:auto;
-  object-fit:contain;
-  filter:drop-shadow(0 14px 28px rgba(0,0,0,.28));
-}
 
     section{
       padding:34px 0;
@@ -642,6 +642,18 @@
   </header>
 
   <main>
+    <section class="club-mark">
+      <div class="club-mark-inner">
+        <div class="club-mark-box">
+          <img
+            src="./logo-transparent.png?v=2"
+            alt="AIRFORTH ロゴ"
+            onerror="this.closest('.club-mark').style.display='none';"
+          >
+        </div>
+      </div>
+    </section>
+
     <section class="hero">
       <div class="hero-grid">
         <div>
@@ -698,21 +710,9 @@
             </div>
           </div>
           <div class="hero-side-note">
-            見やすさと安心感を優先し、ロゴを多用せず、
+            見やすさと安心感を優先し、
             保護者の方にも伝わりやすい構成にしています。
           </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="club-mark">
-      <div class="club-mark-inner">
-        <div class="club-mark-box">
-          <img
-            src="./logo-transparent.png?v=1"
-            alt="AIRFORTH ロゴ"
-            onerror="this.closest('.club-mark').style.display='none';"
-          >
         </div>
       </div>
     </section>
@@ -890,11 +890,6 @@
 
       if (!phone.value.trim() && !email.value.trim()) {
         contactError.textContent = "電話番号かメールアドレスのどちらかを入力してください。";
-        return;
-      }
-
-      if (GAS_WEBAPP_URL === "YOUR_GAS_WEBAPP_URL") {
-        contactError.textContent = "GASのURLが未設定です。index.html の GAS_WEBAPP_URL を置き換えてください。";
         return;
       }
 
