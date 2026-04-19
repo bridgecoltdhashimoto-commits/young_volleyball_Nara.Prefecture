@@ -304,29 +304,34 @@
     }
 
     .club-mark{
-      padding:8px 0 24px;
-    }
+  padding:18px 0 10px;
+  background:
+    radial-gradient(circle at 20% 30%, rgba(90,183,255,.18), transparent 30%),
+    radial-gradient(circle at 80% 20%, rgba(245,61,143,.14), transparent 24%),
+    linear-gradient(180deg, #11285f 0%, #0b1e49 100%);
+}
 
-    .club-mark-inner{
-      width:min(var(--max), 92%);
-      margin:0 auto;
-      display:flex;
-      justify-content:center;
-    }
+.club-mark-inner{
+  width:min(var(--max), 92%);
+  margin:0 auto;
+  display:flex;
+  justify-content:center;
+}
 
-    .club-mark-box{
-      background:#fff;
-      border:1px solid var(--line);
-      border-radius:24px;
-      padding:18px 22px;
-      box-shadow:var(--shadow);
-    }
+.club-mark-box{
+  background:transparent;
+  border:none;
+  border-radius:0;
+  padding:0;
+  box-shadow:none;
+}
 
-    .club-mark-box img{
-      width:min(320px, 70vw);
-      height:auto;
-      object-fit:contain;
-    }
+.club-mark-box img{
+  width:min(420px, 82vw);
+  height:auto;
+  object-fit:contain;
+  filter:drop-shadow(0 14px 28px rgba(0,0,0,.28));
+}
 
     section{
       padding:34px 0;
