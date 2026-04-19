@@ -7,96 +7,133 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@800;900&family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet">
     <style>
         :root {
-            /* ロゴから正確に抽出したカラー */
             --navy: #001D44;
             --navy-dark: #000c1d;
-            --gold: #FFB300;     /* ロゴの AIR の色 */
-            --magenta: #FF007A;  /* ロゴの FORTH の色 */
-            --lime: #CCFF00;     /* ロゴのアクセントラインの色 */
+            --gold: #FFB300;
+            --magenta: #FF007A;
+            --lime: #CCFF00;
             --white: #FFFFFF;
         }
 
-        * { box-sizing: border-box; scroll-behavior: smooth; }
+        * {
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
 
         body {
             font-family: 'Noto Sans JP', sans-serif;
-            margin: 0; padding: 0;
+            margin: 0;
+            padding: 0;
             background-color: var(--navy);
             color: var(--white);
             line-height: 1.8;
         }
 
+        img {
+            max-width: 100%;
+            display: block;
+        }
+
         /* --- ヘッダー --- */
         header {
-            background: rgba(0, 15, 35, 0.98);
-            padding: 15px 5%;
+            background: rgba(0, 15, 35, 0.96);
+            padding: 12px 5%;
             display: flex;
             justify-content: space-between;
             align-items: center;
             position: fixed;
-            width: 100%; top: 0; z-index: 1000;
+            width: 100%;
+            top: 0;
+            left: 0;
+            z-index: 1000;
             border-bottom: 2px solid var(--lime);
+            backdrop-filter: blur(8px);
         }
 
         .header-logo {
-            font-family: 'Montserrat', sans-serif;
-            font-weight: 900;
+            display: flex;
+            align-items: center;
             text-decoration: none;
-            font-size: 1.6rem;
-            color: var(--gold); /* AIR */
-            letter-spacing: 1px;
         }
-        .header-logo span { color: var(--magenta); } /* FORTH */
+
+        .header-logo img {
+            height: 58px;
+            width: auto;
+            filter: drop-shadow(0 8px 16px rgba(0,0,0,0.35));
+        }
+
+        nav {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
 
         nav a {
             color: var(--white);
             text-decoration: none;
-            margin-left: 20px;
             font-weight: bold;
-            font-size: 0.85rem;
+            font-size: 0.9rem;
             transition: 0.3s;
         }
-        nav a:hover { color: var(--lime); }
 
-        /* --- ヒーローセクション --- */
+        nav a:hover {
+            color: var(--lime);
+        }
+
+        /* --- ヒーロー --- */
         .hero {
-            height: 100vh;
-            display: flex; flex-direction: column; justify-content: center; align-items: center;
-            text-align: center; padding: 0 5%;
-            background: radial-gradient(circle at center, #002d6b 0%, var(--navy) 100%);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 120px 5% 80px;
+            background:
+                radial-gradient(circle at center, rgba(0, 70, 160, 0.65) 0%, rgba(0, 29, 68, 0.96) 45%, var(--navy) 100%);
         }
 
         .hero-logo-img {
-            width: 500px; max-width: 90%; height: auto;
-            filter: drop-shadow(0 15px 30px rgba(0,0,0,0.5));
-            margin-bottom: 20px;
+            width: 560px;
+            max-width: 92%;
+            height: auto;
+            filter: drop-shadow(0 18px 32px rgba(0, 0, 0, 0.45));
+            margin-bottom: 18px;
         }
 
         .hero-copy {
-            font-size: 1.2rem;
-            font-weight: bold;
-            letter-spacing: 0.4em;
+            font-size: 1.15rem;
+            font-weight: 700;
+            letter-spacing: 0.22em;
             color: var(--lime);
-            margin: 10px 0 40px;
+            margin: 10px 0 34px;
         }
 
         /* --- ボタン --- */
         .btn {
             background: var(--magenta);
             color: white;
-            padding: 18px 50px;
+            padding: 18px 42px;
             text-decoration: none;
             font-weight: 900;
-            border-radius: 4px;
+            border-radius: 6px;
             display: inline-block;
             transition: 0.3s;
             box-shadow: 5px 5px 0 var(--gold);
         }
-        .btn:hover { transform: translate(-2px, -2px); box-shadow: 8px 8px 0 var(--gold); }
 
-        /* --- コンテンツ --- */
-        section { padding: 100px 5%; max-width: 1000px; margin: 0 auto; }
-        
+        .btn:hover {
+            transform: translate(-2px, -2px);
+            box-shadow: 8px 8px 0 var(--gold);
+        }
+
+        /* --- 共通セクション --- */
+        section {
+            padding: 100px 5%;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
         .section-title {
             font-family: 'Montserrat', sans-serif;
             font-size: 2.2rem;
@@ -106,34 +143,57 @@
             color: var(--white);
             letter-spacing: 2px;
         }
+
         .section-title::after {
             content: '';
             display: block;
-            width: 50px; height: 5px;
+            width: 56px;
+            height: 5px;
             background: var(--magenta);
             margin: 15px auto 0;
         }
 
-        .features { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; }
+        /* --- CONCEPT --- */
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+
         .card {
             background: rgba(255, 255, 255, 0.05);
             padding: 40px;
-            border-radius: 8px;
+            border-radius: 10px;
             border-top: 5px solid var(--lime);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.18);
         }
-        .card h3 { color: var(--lime); margin-top: 0; font-size: 1.4rem; }
 
-        /* --- 募集要項（見やすさを改善） --- */
+        .card h3 {
+            color: var(--lime);
+            margin-top: 0;
+            font-size: 1.4rem;
+        }
+
+        /* --- JOIN --- */
         .info-box {
             background: var(--navy-dark);
             border: 2px solid var(--magenta);
-            border-radius: 8px;
+            border-radius: 10px;
             overflow: hidden;
+            box-shadow: 0 10px 24px rgba(0,0,0,0.2);
         }
 
-        .info-table { width: 100%; border-collapse: collapse; }
-        .info-table th, .info-table td { padding: 20px; border-bottom: 1px solid rgba(255,255,255,0.05); }
-        
+        .info-table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .info-table th,
+        .info-table td {
+            padding: 20px;
+            border-bottom: 1px solid rgba(255,255,255,0.06);
+        }
+
         .info-table th {
             background: rgba(255, 0, 122, 0.1);
             color: var(--magenta);
@@ -142,57 +202,129 @@
             font-weight: bold;
         }
 
-        .info-table td { color: #ddd; }
+        .info-table td {
+            color: #e8e8e8;
+        }
 
-        /* --- フッター（プロ仕様の統一感） --- */
+        /* --- フッター --- */
         footer {
             background: #00050d;
-            padding: 80px 5% 40px;
+            padding: 70px 5% 40px;
             text-align: center;
             border-top: 5px solid var(--magenta);
         }
 
         .footer-logo-img {
-            width: 120px; height: auto;
-            margin-bottom: 20px;
-            opacity: 0.8;
+            width: 170px;
+            height: auto;
+            margin: 0 auto 20px;
+            filter: drop-shadow(0 12px 24px rgba(0,0,0,0.35));
         }
 
         .footer-name {
             font-family: 'Montserrat', sans-serif;
             font-size: 1.8rem;
             font-weight: 900;
-            margin-bottom: 5px;
+            margin-bottom: 6px;
             color: var(--gold);
         }
-        .footer-name span { color: var(--magenta); }
+
+        .footer-name span {
+            color: var(--magenta);
+        }
 
         .footer-sub {
             color: var(--lime);
             font-size: 0.9rem;
             letter-spacing: 4px;
             text-transform: uppercase;
-            margin-bottom: 40px;
+            margin-bottom: 34px;
         }
 
         .footer-bottom {
             font-size: 0.8rem;
-            color: rgba(255,255,255,0.3);
-            border-top: 1px solid rgba(255,255,255,0.05);
-            padding-top: 30px;
+            color: rgba(255,255,255,0.35);
+            border-top: 1px solid rgba(255,255,255,0.06);
+            padding-top: 24px;
         }
 
         @media (max-width: 768px) {
-            .section-title { font-size: 1.8rem; }
-            .info-table th, .info-table td { display: block; width: 100%; }
-            .info-table th { border-bottom: none; padding-bottom: 5px; }
+            header {
+                padding: 10px 4%;
+            }
+
+            .header-logo img {
+                height: 46px;
+            }
+
+            nav {
+                gap: 14px;
+            }
+
+            nav a {
+                font-size: 0.8rem;
+            }
+
+            .hero {
+                padding-top: 110px;
+            }
+
+            .hero-logo-img {
+                width: 430px;
+            }
+
+            .hero-copy {
+                font-size: 0.95rem;
+                letter-spacing: 0.12em;
+                line-height: 1.7;
+            }
+
+            .section-title {
+                font-size: 1.8rem;
+            }
+
+            .info-table th,
+            .info-table td {
+                display: block;
+                width: 100%;
+            }
+
+            .info-table th {
+                border-bottom: none;
+                padding-bottom: 6px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            header {
+                flex-direction: column;
+                gap: 10px;
+            }
+
+            nav {
+                gap: 12px;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            .hero {
+                padding-top: 150px;
+            }
+
+            .btn {
+                width: 100%;
+                max-width: 320px;
+                text-align: center;
+            }
         }
     </style>
 </head>
 <body>
 
     <header>
-        <a href="#" class="header-logo">AIR<span>FORTH</span></a>
+        <a href="#" class="header-logo">
+            <img src="./2026年4月19日9.png" alt="AIRFORTH Logo">
+        </a>
         <nav>
             <a href="#concept">CONCEPT</a>
             <a href="#join">JOIN</a>
@@ -200,7 +332,7 @@
     </header>
 
     <section class="hero">
-        <img src="logo-transparent.png" alt="AIRFORTH Logo" class="hero-logo-img">
+        <img src="./2026年4月19日9.png" alt="AIRFORTH Logo" class="hero-logo-img">
         <div class="hero-copy">HIGHER AND FORTH - 高く、前へ。</div>
         <a href="#join" class="btn">体験入部に応募する</a>
     </section>
@@ -240,7 +372,7 @@
     </section>
 
     <footer>
-        <img src="logo-transparent.png" alt="AIRFORTH Logo" class="footer-logo-img">
+        <img src="./2026年4月19日9.png" alt="AIRFORTH Logo" class="footer-logo-img">
         <div class="footer-name">AIR<span>FORTH</span></div>
         <div class="footer-sub">Volleyball Club</div>
         <div class="footer-bottom">
