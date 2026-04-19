@@ -4,22 +4,25 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>AIRFORTH | 奈良ヤングバレーボールクラブ</title>
-  <meta name="description" content="AIRFORTHは、学びと競技を両立しながら、人としても成長する奈良のヤングバレーボールクラブです。" />
+  <meta name="description" content="AIRFORTHは、小学4年生から中学生までを対象に、学びとバレーボールのバランスを大切にしながら、楽しく成長できる奈良のヤングバレーボールクラブです。" />
   <style>
     :root{
-      --navy:#071a45;
-      --navy-deep:#020814;
-      --blue:#50b8ff;
-      --gold:#ffb300;
-      --orange:#ff7a00;
-      --magenta:#ff197c;
-      --lime:#ccff00;
+      --navy:#0b2354;
+      --navy-soft:#183877;
+      --sky:#5db8ff;
+      --gold:#f5b400;
+      --orange:#ff8a00;
+      --pink:#f43b8f;
+      --lime:#c6e93b;
       --white:#ffffff;
-      --line:rgba(255,255,255,.10);
-      --card:rgba(255,255,255,.06);
-      --shadow:0 18px 40px rgba(0,0,0,.35);
-      --radius:24px;
-      --max:1180px;
+      --bg:#f6f9ff;
+      --text:#22304a;
+      --muted:#66748f;
+      --line:#dbe5f3;
+      --card:#ffffff;
+      --shadow:0 14px 34px rgba(12,35,84,.10);
+      --radius:22px;
+      --max:1140px;
     }
 
     *{
@@ -33,24 +36,21 @@
     }
 
     body{
-      font-family: "Yu Gothic", "Hiragino Kaku Gothic ProN", "Meiryo", sans-serif;
-      background:
-        radial-gradient(circle at 20% 20%, rgba(80,184,255,.16), transparent 28%),
-        radial-gradient(circle at 80% 0%, rgba(255,25,124,.12), transparent 25%),
-        linear-gradient(180deg, #081329 0%, #04101f 45%, #020814 100%);
-      color:var(--white);
-      line-height:1.75;
+      font-family:"Yu Gothic","Hiragino Kaku Gothic ProN","Meiryo",sans-serif;
+      background:var(--bg);
+      color:var(--text);
+      line-height:1.8;
       letter-spacing:.02em;
-    }
-
-    a{
-      color:inherit;
-      text-decoration:none;
     }
 
     img{
       max-width:100%;
       display:block;
+    }
+
+    a{
+      color:inherit;
+      text-decoration:none;
     }
 
     .container{
@@ -62,9 +62,9 @@
       position:sticky;
       top:0;
       z-index:1000;
-      background:rgba(2,8,20,.82);
-      backdrop-filter:blur(12px);
-      border-bottom:1px solid rgba(255,255,255,.08);
+      background:rgba(255,255,255,.92);
+      backdrop-filter:blur(10px);
+      border-bottom:1px solid rgba(11,35,84,.08);
     }
 
     .header-inner{
@@ -72,8 +72,8 @@
       margin:0 auto;
       min-height:78px;
       display:flex;
-      align-items:center;
       justify-content:space-between;
+      align-items:center;
       gap:20px;
     }
 
@@ -85,126 +85,95 @@
     }
 
     .brand img{
-      width:64px;
-      height:64px;
-      object-fit:contain;
+      width:58px;
+      height:58px;
+      object-fit:cover;
       border-radius:16px;
-      box-shadow:0 0 0 1px rgba(255,255,255,.08), 0 10px 24px rgba(0,0,0,.35);
+      box-shadow:0 10px 20px rgba(11,35,84,.12);
       background:#000;
-    }
-
-    .brand-text{
-      min-width:0;
     }
 
     .brand-text strong{
       display:block;
-      font-size:1.15rem;
+      color:var(--navy);
+      font-size:1.1rem;
       font-weight:900;
-      letter-spacing:.06em;
-      color:var(--white);
+      letter-spacing:.04em;
     }
 
     .brand-text span{
       display:block;
-      font-size:.78rem;
-      color:var(--blue);
-      letter-spacing:.18em;
-      text-transform:uppercase;
-      white-space:nowrap;
+      color:var(--navy-soft);
+      font-size:.8rem;
     }
 
     nav{
       display:flex;
       align-items:center;
-      gap:22px;
+      gap:18px;
       flex-wrap:wrap;
-      justify-content:flex-end;
     }
 
     nav a{
-      font-size:.92rem;
+      color:var(--navy);
+      font-size:.93rem;
       font-weight:700;
-      color:rgba(255,255,255,.88);
-      transition:.25s;
     }
 
     nav a:hover{
-      color:var(--lime);
+      color:var(--pink);
     }
 
     .cta-mini{
-      display:inline-flex;
-      align-items:center;
-      justify-content:center;
-      padding:12px 18px;
+      padding:11px 18px;
       border-radius:999px;
-      background:linear-gradient(135deg, var(--magenta), var(--orange));
-      color:var(--white);
-      font-weight:900;
-      box-shadow:0 10px 22px rgba(255,25,124,.24);
+      background:linear-gradient(135deg, var(--pink), var(--orange));
+      color:#fff;
+      font-weight:800;
+      box-shadow:0 10px 22px rgba(244,59,143,.18);
     }
 
     .hero{
-      padding:72px 0 56px;
       position:relative;
       overflow:hidden;
-    }
-
-    .hero::before{
-      content:"";
-      position:absolute;
-      inset:auto -10% 0 auto;
-      width:440px;
-      height:440px;
-      background:radial-gradient(circle, rgba(204,255,0,.16), transparent 60%);
-      filter:blur(10px);
-      pointer-events:none;
+      padding:54px 0 42px;
+      background:
+        radial-gradient(circle at 15% 15%, rgba(93,184,255,.18), transparent 28%),
+        radial-gradient(circle at 88% 12%, rgba(244,59,143,.10), transparent 22%),
+        linear-gradient(180deg, #ffffff 0%, #f5f9ff 100%);
     }
 
     .hero-grid{
       width:min(var(--max), 92%);
       margin:0 auto;
       display:grid;
-      grid-template-columns: 1.05fr .95fr;
-      gap:40px;
+      grid-template-columns:1.02fr .98fr;
+      gap:34px;
       align-items:center;
     }
 
     .eyebrow{
-      display:inline-flex;
-      align-items:center;
-      gap:10px;
+      display:inline-block;
       padding:8px 14px;
-      border:1px solid rgba(80,184,255,.22);
       border-radius:999px;
-      background:rgba(80,184,255,.08);
-      color:var(--blue);
-      font-size:.8rem;
+      background:rgba(93,184,255,.12);
+      color:var(--navy-soft);
+      font-size:.78rem;
       font-weight:800;
-      letter-spacing:.18em;
-      text-transform:uppercase;
+      letter-spacing:.12em;
       margin-bottom:18px;
     }
 
     .hero h1{
-      font-size:clamp(2.4rem, 5vw, 4.6rem);
-      line-height:1.06;
+      color:var(--navy);
+      font-size:clamp(2.1rem,4.8vw,4rem);
+      line-height:1.18;
       font-weight:900;
-      letter-spacing:.02em;
-      margin-bottom:18px;
+      margin-bottom:16px;
     }
 
-    .hero h1 .grad-a{
-      background:linear-gradient(90deg, var(--gold), var(--orange));
-      -webkit-background-clip:text;
-      -webkit-text-fill-color:transparent;
-      background-clip:text;
-      color:transparent;
-    }
-
-    .hero h1 .grad-b{
-      background:linear-gradient(90deg, #ff78b6, var(--magenta));
+    .hero h1 .accent{
+      background:linear-gradient(90deg, var(--gold), var(--orange), var(--pink));
       -webkit-background-clip:text;
       -webkit-text-fill-color:transparent;
       background-clip:text;
@@ -213,44 +182,46 @@
 
     .hero-lead{
       max-width:640px;
-      font-size:1.05rem;
-      color:rgba(255,255,255,.88);
-      margin-bottom:28px;
+      color:var(--text);
+      font-size:1.02rem;
+      margin-bottom:24px;
     }
 
     .hero-points{
       display:grid;
-      grid-template-columns:repeat(3, 1fr);
-      gap:14px;
-      margin-bottom:30px;
+      grid-template-columns:repeat(3,1fr);
+      gap:12px;
+      margin-bottom:26px;
     }
 
     .hero-point{
-      padding:16px;
-      border-radius:18px;
-      background:var(--card);
+      background:#fff;
       border:1px solid var(--line);
+      border-radius:18px;
+      padding:16px 14px;
       box-shadow:var(--shadow);
     }
 
     .hero-point small{
       display:block;
+      color:var(--navy-soft);
       font-size:.74rem;
-      color:var(--blue);
       font-weight:800;
-      letter-spacing:.16em;
+      letter-spacing:.12em;
       margin-bottom:6px;
     }
 
     .hero-point strong{
       display:block;
-      font-size:1rem;
-      font-weight:900;
+      color:var(--navy);
+      font-size:.98rem;
+      font-weight:800;
+      line-height:1.5;
     }
 
     .hero-actions{
       display:flex;
-      gap:14px;
+      gap:12px;
       flex-wrap:wrap;
     }
 
@@ -259,16 +230,16 @@
       align-items:center;
       justify-content:center;
       min-width:190px;
-      padding:16px 24px;
+      padding:15px 22px;
       border-radius:16px;
-      font-weight:900;
+      font-weight:800;
       transition:.25s;
     }
 
     .btn-primary{
-      background:linear-gradient(135deg, var(--magenta), var(--orange));
-      color:var(--white);
-      box-shadow:0 14px 30px rgba(255,25,124,.24);
+      background:linear-gradient(135deg, var(--pink), var(--orange));
+      color:#fff;
+      box-shadow:0 12px 24px rgba(244,59,143,.18);
     }
 
     .btn-primary:hover{
@@ -276,314 +247,209 @@
     }
 
     .btn-secondary{
-      border:1px solid rgba(255,255,255,.18);
-      background:rgba(255,255,255,.04);
-      color:var(--white);
+      background:#fff;
+      color:var(--navy);
+      border:1px solid var(--line);
     }
 
     .btn-secondary:hover{
-      border-color:rgba(204,255,0,.5);
-      color:var(--lime);
-    }
-
-    .hero-visual-wrap{
-      position:relative;
-    }
-
-    .hero-visual-wrap::before{
-      content:"";
-      position:absolute;
-      inset:10% 10% auto 10%;
-      height:70%;
-      background:radial-gradient(circle, rgba(80,184,255,.20), transparent 60%);
-      filter:blur(28px);
-      z-index:0;
+      border-color:var(--sky);
     }
 
     .hero-card{
-      position:relative;
-      z-index:1;
+      background:linear-gradient(180deg, #0a1735 0%, #132a5f 100%);
+      border-radius:28px;
       padding:20px;
-      border-radius:30px;
-      background:
-        linear-gradient(180deg, rgba(255,255,255,.08), rgba(255,255,255,.03));
-      border:1px solid rgba(255,255,255,.12);
-      box-shadow:0 24px 60px rgba(0,0,0,.40);
+      box-shadow:0 24px 48px rgba(11,35,84,.18);
     }
 
     .hero-card img{
       width:100%;
-      border-radius:22px;
+      border-radius:20px;
       background:#000;
-      object-fit:contain;
     }
 
-    .hero-badge{
-      margin-top:16px;
-      display:grid;
-      grid-template-columns:repeat(3, 1fr);
-      gap:12px;
-    }
-
-    .hero-badge div{
-      padding:14px 12px;
-      text-align:center;
-      border-radius:16px;
-      background:rgba(255,255,255,.05);
+    .hero-note{
+      margin-top:14px;
+      background:rgba(255,255,255,.10);
       border:1px solid rgba(255,255,255,.10);
-    }
-
-    .hero-badge strong{
-      display:block;
+      border-radius:16px;
+      padding:14px 16px;
+      color:#f3f7ff;
       font-size:.95rem;
-      font-weight:900;
-      color:var(--gold);
-    }
-
-    .hero-badge span{
-      display:block;
-      font-size:.76rem;
-      color:rgba(255,255,255,.76);
-      margin-top:4px;
+      line-height:1.7;
     }
 
     section{
-      padding:40px 0 28px;
+      padding:34px 0;
     }
 
     .section-head{
-      margin-bottom:26px;
+      margin-bottom:22px;
     }
 
     .section-head .label{
       display:inline-block;
-      font-size:.8rem;
-      font-weight:900;
-      letter-spacing:.18em;
-      color:var(--lime);
+      font-size:.78rem;
+      font-weight:800;
+      letter-spacing:.14em;
+      color:var(--navy-soft);
       margin-bottom:10px;
-      text-transform:uppercase;
     }
 
     .section-head h2{
-      font-size:clamp(1.9rem, 3.6vw, 3rem);
-      line-height:1.15;
-      margin-bottom:10px;
+      color:var(--navy);
+      font-size:clamp(1.8rem,3.8vw,2.8rem);
+      line-height:1.25;
       font-weight:900;
+      margin-bottom:10px;
     }
 
     .section-head p{
+      color:var(--muted);
       max-width:760px;
-      color:rgba(255,255,255,.80);
     }
 
-    .duality{
+    .cards3{
       display:grid;
-      grid-template-columns:1fr 120px 1fr;
-      gap:18px;
-      align-items:stretch;
-    }
-
-    .duality-card{
-      padding:28px;
-      border-radius:26px;
-      background:linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.03));
-      border:1px solid rgba(255,255,255,.10);
-      box-shadow:var(--shadow);
-      min-height:100%;
-    }
-
-    .duality-card .mini{
-      display:inline-block;
-      padding:8px 12px;
-      border-radius:999px;
-      font-size:.74rem;
-      font-weight:900;
-      letter-spacing:.16em;
-      margin-bottom:16px;
-      text-transform:uppercase;
-    }
-
-    .duality-card.study .mini{
-      color:var(--blue);
-      background:rgba(80,184,255,.10);
-      border:1px solid rgba(80,184,255,.24);
-    }
-
-    .duality-card.sports .mini{
-      color:var(--magenta);
-      background:rgba(255,25,124,.10);
-      border:1px solid rgba(255,25,124,.24);
-    }
-
-    .duality-card h3{
-      font-size:1.5rem;
-      margin-bottom:12px;
-      font-weight:900;
-    }
-
-    .duality-card ul{
-      list-style:none;
-      display:grid;
-      gap:10px;
-      color:rgba(255,255,255,.88);
-    }
-
-    .duality-card li{
-      padding-left:18px;
-      position:relative;
-    }
-
-    .duality-card li::before{
-      content:"";
-      position:absolute;
-      left:0;
-      top:.72em;
-      width:8px;
-      height:8px;
-      border-radius:50%;
-      background:linear-gradient(135deg, var(--gold), var(--lime));
-      transform:translateY(-50%);
-    }
-
-    .duality-center{
-      display:flex;
-      align-items:center;
-      justify-content:center;
-    }
-
-    .duality-symbol{
-      width:100%;
-      aspect-ratio:1/1;
-      border-radius:50%;
-      display:grid;
-      place-items:center;
-      background:
-        linear-gradient(135deg, rgba(255,179,0,.18), rgba(255,25,124,.18)),
-        rgba(255,255,255,.06);
-      border:1px solid rgba(255,255,255,.12);
-      box-shadow:var(--shadow);
-      text-align:center;
-      padding:16px;
-      font-weight:900;
-      line-height:1.35;
-      color:var(--white);
-    }
-
-    .duality-symbol span{
-      display:block;
-      font-size:.8rem;
-      letter-spacing:.18em;
-      color:var(--lime);
-      margin-bottom:6px;
-    }
-
-    .pillars{
-      display:grid;
-      grid-template-columns:repeat(3, 1fr);
+      grid-template-columns:repeat(3,1fr);
       gap:18px;
     }
 
-    .pillar{
-      padding:26px;
-      border-radius:24px;
+    .card{
       background:var(--card);
       border:1px solid var(--line);
+      border-radius:24px;
+      padding:26px 22px;
       box-shadow:var(--shadow);
-      position:relative;
-      overflow:hidden;
     }
 
-    .pillar::before{
-      content:"";
-      position:absolute;
-      inset:0 auto auto 0;
-      width:100%;
-      height:4px;
-      background:linear-gradient(90deg, var(--gold), var(--magenta), var(--blue), var(--lime));
-    }
-
-    .pillar .num{
-      display:inline-flex;
-      align-items:center;
-      justify-content:center;
-      width:42px;
-      height:42px;
-      border-radius:12px;
-      background:rgba(255,255,255,.08);
-      color:var(--gold);
+    .card .icon{
+      width:46px;
+      height:46px;
+      border-radius:14px;
+      display:grid;
+      place-items:center;
+      font-size:1.1rem;
       font-weight:900;
+      color:#fff;
       margin-bottom:14px;
     }
 
-    .pillar h3{
-      font-size:1.3rem;
+    .icon-blue{ background:linear-gradient(135deg, var(--sky), var(--navy-soft)); }
+    .icon-pink{ background:linear-gradient(135deg, var(--pink), var(--orange)); }
+    .icon-lime{ background:linear-gradient(135deg, var(--lime), var(--gold)); color:var(--navy); }
+
+    .card h3{
+      color:var(--navy);
+      font-size:1.25rem;
       margin-bottom:10px;
       font-weight:900;
     }
 
-    .pillar p{
-      color:rgba(255,255,255,.82);
+    .card p{
+      color:var(--muted);
       font-size:.96rem;
     }
 
-    .banner{
-      margin-top:28px;
-      padding:26px 28px;
-      border-radius:24px;
-      background:
-        linear-gradient(135deg, rgba(255,179,0,.16), rgba(255,25,124,.14) 52%, rgba(80,184,255,.16));
-      border:1px solid rgba(255,255,255,.12);
-      box-shadow:var(--shadow);
-      display:flex;
-      align-items:center;
-      justify-content:space-between;
-      gap:20px;
-      flex-wrap:wrap;
+    .balance{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:18px;
     }
 
-    .banner strong{
+    .balance-box{
+      background:#fff;
+      border:1px solid var(--line);
+      border-radius:24px;
+      padding:26px 22px;
+      box-shadow:var(--shadow);
+    }
+
+    .balance-box h3{
+      color:var(--navy);
+      font-size:1.3rem;
+      font-weight:900;
+      margin-bottom:12px;
+    }
+
+    .balance-box ul{
+      list-style:none;
+      display:grid;
+      gap:10px;
+    }
+
+    .balance-box li{
+      position:relative;
+      padding-left:18px;
+      color:var(--muted);
+    }
+
+    .balance-box li::before{
+      content:"";
+      position:absolute;
+      left:0;
+      top:.82em;
+      width:8px;
+      height:8px;
+      border-radius:50%;
+      transform:translateY(-50%);
+      background:linear-gradient(135deg, var(--gold), var(--pink));
+    }
+
+    .message{
+      margin-top:18px;
+      background:linear-gradient(135deg, rgba(245,180,0,.10), rgba(244,59,143,.08), rgba(93,184,255,.10));
+      border:1px solid rgba(11,35,84,.08);
+      border-radius:24px;
+      padding:24px 22px;
+      box-shadow:var(--shadow);
+    }
+
+    .message strong{
       display:block;
-      font-size:1.4rem;
+      color:var(--navy);
+      font-size:1.2rem;
       font-weight:900;
       margin-bottom:6px;
     }
 
-    .banner p{
-      color:rgba(255,255,255,.88);
+    .message p{
+      color:var(--muted);
     }
 
     .info-grid{
       display:grid;
-      grid-template-columns:1.1fr .9fr;
-      gap:20px;
+      grid-template-columns:1.05fr .95fr;
+      gap:18px;
     }
 
     .panel{
-      border-radius:26px;
-      padding:28px;
-      background:linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.03));
-      border:1px solid rgba(255,255,255,.10);
+      background:#fff;
+      border:1px solid var(--line);
+      border-radius:24px;
+      padding:26px 22px;
       box-shadow:var(--shadow);
     }
 
     .panel h3{
-      font-size:1.35rem;
-      margin-bottom:16px;
+      color:var(--navy);
+      font-size:1.26rem;
+      margin-bottom:14px;
       font-weight:900;
     }
 
     .info-list{
       display:grid;
-      gap:12px;
+      gap:10px;
     }
 
     .info-item{
       display:grid;
-      grid-template-columns:110px 1fr;
+      grid-template-columns:108px 1fr;
       gap:14px;
-      padding:14px 0;
-      border-bottom:1px solid rgba(255,255,255,.08);
+      padding:12px 0;
+      border-bottom:1px solid var(--line);
     }
 
     .info-item:last-child{
@@ -592,53 +458,61 @@
     }
 
     .info-item dt{
-      color:var(--blue);
-      font-weight:900;
+      color:var(--navy-soft);
+      font-weight:800;
     }
 
     .info-item dd{
-      color:rgba(255,255,255,.88);
+      color:var(--muted);
     }
 
     .steps{
       list-style:none;
       display:grid;
-      gap:14px;
+      gap:12px;
     }
 
     .steps li{
       display:flex;
-      gap:14px;
+      gap:12px;
       align-items:flex-start;
-      color:rgba(255,255,255,.88);
+      color:var(--muted);
     }
 
-    .steps .step-no{
+    .step-no{
       flex:0 0 34px;
       height:34px;
-      border-radius:10px;
-      background:linear-gradient(135deg, var(--magenta), var(--orange));
+      border-radius:11px;
       display:grid;
       place-items:center;
-      font-size:.86rem;
+      font-size:.84rem;
       font-weight:900;
       color:#fff;
+      background:linear-gradient(135deg, var(--pink), var(--orange));
       margin-top:2px;
     }
 
+    .contact-box{
+      margin-top:18px;
+      padding:16px;
+      border-radius:18px;
+      background:#f7faff;
+      border:1px solid var(--line);
+    }
+
     footer{
-      margin-top:36px;
-      padding:46px 0 60px;
-      border-top:1px solid rgba(255,255,255,.08);
-      background:rgba(0,0,0,.18);
+      margin-top:30px;
+      background:#0d1d45;
+      color:#eaf1ff;
+      padding:34px 0 42px;
     }
 
     .footer-inner{
       width:min(var(--max), 92%);
       margin:0 auto;
       display:flex;
-      align-items:center;
       justify-content:space-between;
+      align-items:center;
       gap:20px;
       flex-wrap:wrap;
     }
@@ -650,88 +524,67 @@
     }
 
     .footer-brand img{
-      width:68px;
-      height:68px;
-      object-fit:contain;
+      width:58px;
+      height:58px;
+      object-fit:cover;
       border-radius:16px;
       background:#000;
     }
 
     .footer-brand strong{
       display:block;
-      font-size:1.15rem;
+      font-size:1.08rem;
       font-weight:900;
     }
 
     .footer-brand span{
       display:block;
-      color:rgba(255,255,255,.68);
+      color:#bfd0f6;
       font-size:.84rem;
     }
 
     .footer-copy{
-      color:rgba(255,255,255,.55);
+      color:#bfd0f6;
       font-size:.84rem;
     }
 
-    @media (max-width: 1024px){
+    @media (max-width: 980px){
       .hero-grid,
-      .info-grid{
+      .balance,
+      .info-grid,
+      .cards3{
         grid-template-columns:1fr;
       }
 
-      .duality{
-        grid-template-columns:1fr;
-      }
-
-      .duality-center{
-        order:-1;
-      }
-
-      .duality-symbol{
-        max-width:220px;
-        margin:0 auto;
-      }
-
-      .pillars{
+      .hero-points{
         grid-template-columns:1fr;
       }
     }
 
-    @media (max-width: 768px){
+    @media (max-width: 760px){
       .header-inner{
-        padding:12px 0;
-        align-items:flex-start;
         flex-direction:column;
+        align-items:flex-start;
+        padding:12px 0;
       }
 
       nav{
         width:100%;
         justify-content:flex-start;
-        gap:16px;
-      }
-
-      .hero{
-        padding-top:34px;
-      }
-
-      .hero-points,
-      .hero-badge{
-        grid-template-columns:1fr;
       }
 
       .brand img{
-        width:56px;
-        height:56px;
+        width:52px;
+        height:52px;
       }
 
-      .brand-text strong{
-        font-size:1rem;
+      .hero{
+        padding-top:30px;
       }
 
       .info-item{
         grid-template-columns:1fr;
-        gap:6px;
+        gap:4px;
       }
     }
 
@@ -744,16 +597,6 @@
       .hero-actions{
         flex-direction:column;
       }
-
-      .banner{
-        padding:22px 18px;
-      }
-
-      .panel,
-      .pillar,
-      .duality-card{
-        padding:22px 18px;
-      }
     }
   </style>
 </head>
@@ -762,18 +605,18 @@
   <header>
     <div class="header-inner">
       <a href="#" class="brand">
-        <img src="./logo-main.png?v=3" alt="AIRFORTH ロゴ">
+        <img src="./logo-main.png?v=5" alt="AIRFORTH ロゴ">
         <div class="brand-text">
           <strong>AIRFORTH</strong>
-          <span>Volleyball Club</span>
+          <span>奈良ヤングバレーボールクラブ</span>
         </div>
       </a>
 
       <nav>
-        <a href="#concept">コンセプト</a>
-        <a href="#duality">文武両道</a>
+        <a href="#concept">クラブ紹介</a>
+        <a href="#balance">文武両道</a>
         <a href="#join">募集案内</a>
-        <a href="#contact" class="cta-mini">体験応募はこちら</a>
+        <a href="#contact" class="cta-mini">体験・見学はこちら</a>
       </nav>
     </div>
   </header>
@@ -781,55 +624,44 @@
   <main>
     <section class="hero">
       <div class="hero-grid">
-        <div class="hero-copy">
+        <div>
           <div class="eyebrow">NARA YOUNG VOLLEYBALL CLUB</div>
           <h1>
-            <span class="grad-a">高く、前へ。</span><br>
-            <span class="grad-b">学びも、競技も、本気で伸ばす。</span>
+            たのしく学び、<br>
+            <span class="accent">のびのび続ける</span>。
           </h1>
           <p class="hero-lead">
-            AIRFORTHは、バレーボールの技術向上だけでなく、日々の学び・礼儀・継続力まで大切にするクラブです。
-            勝つ力と、生きる力。その両方を育てる「文武両道」の環境を目指します。
+            AIRFORTHは、小学4年生から中学生までを対象に、
+            バレーボールの楽しさと、日々の学びとのバランスを大切にしているクラブです。
+            はじめての方も、経験のある方も、それぞれのペースを大事にしながら参加できます。
           </p>
 
           <div class="hero-points">
             <div class="hero-point">
-              <small>STUDY</small>
-              <strong>学習習慣を崩さない</strong>
+              <small>BALANCE</small>
+              <strong>学校生活との両立を大切にします</strong>
             </div>
             <div class="hero-point">
-              <small>SPORT</small>
-              <strong>競技力を本気で伸ばす</strong>
+              <small>TEAM</small>
+              <strong>あいさつや仲間とのつながりを大切にします</strong>
             </div>
             <div class="hero-point">
-              <small>GROWTH</small>
-              <strong>人としての土台を作る</strong>
+              <small>STEP UP</small>
+              <strong>一人ひとりの成長に合わせて取り組みます</strong>
             </div>
           </div>
 
           <div class="hero-actions">
             <a href="#join" class="btn btn-primary">募集案内を見る</a>
-            <a href="#concept" class="btn btn-secondary">クラブ方針を見る</a>
+            <a href="#concept" class="btn btn-secondary">クラブ紹介を見る</a>
           </div>
         </div>
 
-        <div class="hero-visual-wrap">
-          <div class="hero-card">
-            <img src="./logo-main.png?v=3" alt="AIRFORTH メインロゴ">
-            <div class="hero-badge">
-              <div>
-                <strong>文</strong>
-                <span>学ぶ力</span>
-              </div>
-              <div>
-                <strong>武</strong>
-                <span>戦う力</span>
-              </div>
-              <div>
-                <strong>道</strong>
-                <span>人間力</span>
-              </div>
-            </div>
+        <div class="hero-card">
+          <img src="./logo-main.png?v=5" alt="AIRFORTH メインロゴ">
+          <div class="hero-note">
+            ロゴの持つ明るさと元気さを活かしながら、
+            サイト全体はお子さまにも保護者の方にも見やすい、やわらかな印象に整えています。
           </div>
         </div>
       </div>
@@ -838,97 +670,85 @@
     <section id="concept">
       <div class="container">
         <div class="section-head">
-          <div class="label">Concept</div>
-          <h2>ロゴの熱量を、そのままチームの思想へ。</h2>
+          <div class="label">Club Concept</div>
+          <h2>安心して続けられる、あたたかなクラブづくり。</h2>
           <p>
-            ロゴの持つスピード感、躍動感、色の強さをそのままベースにしながら、
-            サイト全体では「派手なだけではなく、芯がある」印象に調整しています。
-            競技の勢いと、学びの落ち着き。その両立がAIRFORTHの強みです。
+            競技としての楽しさはもちろん、
+            毎日の生活や学びとのバランスも大切にしながら、
+            お子さまが自分らしく成長していける環境を目指しています。
           </p>
         </div>
 
-        <div class="pillars">
-          <article class="pillar">
-            <div class="num">01</div>
-            <h3>技術</h3>
+        <div class="cards3">
+          <article class="card">
+            <div class="icon icon-blue">学</div>
+            <h3>学びとのバランス</h3>
             <p>
-              基礎から実戦まで、段階的に積み上げる指導。
-              フォーム、判断、連携を整え、試合で発揮できる力へつなげます。
+              練習だけに偏らず、学校生活や家庭での時間との両立も大切に考えています。
             </p>
           </article>
 
-          <article class="pillar">
-            <div class="num">02</div>
-            <h3>学習</h3>
+          <article class="card">
+            <div class="icon icon-pink">和</div>
+            <h3>仲間を大切に</h3>
             <p>
-              練習だけに偏らず、学校生活や家庭学習との両立も重視。
-              時間の使い方まで含めて、成長できる習慣を育てます。
+              あいさつや思いやり、チームワークを通して、
+              気持ちよく活動できる雰囲気づくりを大事にしています。
             </p>
           </article>
 
-          <article class="pillar">
-            <div class="num">03</div>
-            <h3>人格</h3>
+          <article class="card">
+            <div class="icon icon-lime">成</div>
+            <h3>一歩ずつ成長</h3>
             <p>
-              挨拶、礼儀、継続、感謝。
-              コートの中だけではなく、日常でも信頼される人になることを目指します。
+              初心者の方も経験者の方も、
+              それぞれの段階に合わせて無理なくステップアップしていけます。
             </p>
           </article>
-        </div>
-
-        <div class="banner">
-          <div>
-            <strong>勉強も、部活も、どちらも妥協しない。</strong>
-            <p>勝利だけで終わらない。将来につながる力を育てるクラブへ。</p>
-          </div>
-          <a href="#contact" class="btn btn-primary">体験申込へ進む</a>
         </div>
       </div>
     </section>
 
-    <section id="duality">
+    <section id="balance">
       <div class="container">
         <div class="section-head">
-          <div class="label">Duality</div>
-          <h2>「文武両道」が、見た瞬間に伝わる構成。</h2>
+          <div class="label">Balance</div>
+          <h2>文武両道を、“がんばらせる言葉”ではなく“整った環境”で支える。</h2>
           <p>
-            左に学び、右に競技、中央に人間力。
-            デザイン上も意味が分かるように、3つの軸で見せています。
+            AIRFORTHが大切にしているのは、
+            どちらかを無理に強めることではなく、
+            学びとスポーツのバランスを気持ちよく続けていけることです。
           </p>
         </div>
 
-        <div class="duality">
-          <article class="duality-card study">
-            <div class="mini">Academic Mind</div>
-            <h3>学びで、自分を整える。</h3>
+        <div class="balance">
+          <div class="balance-box">
+            <h3>学びの時間も大切に</h3>
             <ul>
-              <li>学校生活を大切にする姿勢</li>
-              <li>家庭学習との両立意識</li>
-              <li>時間管理と継続の習慣化</li>
-              <li>集中力と考える力の育成</li>
+              <li>学校生活とのバランスを意識した活動</li>
+              <li>毎日の生活リズムを大切にする考え方</li>
+              <li>落ち着いて続けられる環境づくり</li>
+              <li>保護者の方にも伝わりやすい運営を意識</li>
             </ul>
-          </article>
-
-          <div class="duality-center">
-            <div class="duality-symbol">
-              <div>
-                <span>BALANCE</span>
-                文武両道<br>
-                AIRFORTH
-              </div>
-            </div>
           </div>
 
-          <article class="duality-card sports">
-            <div class="mini">Athletic Drive</div>
-            <h3>競技で、限界を超える。</h3>
+          <div class="balance-box">
+            <h3>バレーボールの楽しさもしっかり</h3>
             <ul>
-              <li>基礎技術の反復と徹底</li>
-              <li>勝負で折れないメンタル</li>
-              <li>仲間と戦う協調性</li>
-              <li>挑戦を楽しむ姿勢</li>
+              <li>基礎から丁寧に取り組める練習</li>
+              <li>仲間と協力する楽しさを感じる時間</li>
+              <li>一人ひとりに合わせた成長の積み重ね</li>
+              <li>経験の有無を問わず参加しやすい雰囲気</li>
             </ul>
-          </article>
+          </div>
+        </div>
+
+        <div class="message">
+          <strong>“強い言葉”より、“続けやすい環境”を。</strong>
+          <p>
+            小学生から中学生までの時期だからこそ、
+            安心感・楽しさ・やりがいのバランスを大切にした発信にしています。
+          </p>
         </div>
       </div>
     </section>
@@ -937,10 +757,10 @@
       <div class="container">
         <div class="section-head">
           <div class="label">Join Us</div>
-          <h2>体験・見学、大歓迎です。</h2>
+          <h2>体験・見学、歓迎しています。</h2>
           <p>
-            初心者から経験者まで、それぞれの成長段階に合わせてサポートします。
-            「やってみたい」という気持ちがあれば大丈夫です。
+            「ちょっと見てみたい」「一度やってみたい」という方も大歓迎です。
+            まずは気軽にお問い合わせください。
           </p>
         </div>
 
@@ -961,8 +781,8 @@
                 <dd>初心者・経験者どちらも歓迎</dd>
               </div>
               <div class="info-item">
-                <dt>方針</dt>
-                <dd>技術・学習・礼儀を大切にするクラブ運営</dd>
+                <dt>雰囲気</dt>
+                <dd>安心して参加しやすい、あたたかなクラブづくりを大切にしています</dd>
               </div>
               <div class="info-item">
                 <dt>活動</dt>
@@ -980,23 +800,23 @@
             <ol class="steps">
               <li>
                 <span class="step-no">01</span>
-                <div>体験・見学のお問い合わせ</div>
+                <div>まずは体験・見学のお問い合わせ</div>
               </li>
               <li>
                 <span class="step-no">02</span>
-                <div>日程調整のうえ、練習へ参加</div>
+                <div>日程をご案内し、練習を見学または体験</div>
               </li>
               <li>
                 <span class="step-no">03</span>
-                <div>クラブの方針や活動内容をご案内</div>
+                <div>活動内容や雰囲気をご確認いただく</div>
               </li>
               <li>
                 <span class="step-no">04</span>
-                <div>継続参加をご希望の場合は正式入部へ</div>
+                <div>ご希望に応じて継続参加へ</div>
               </li>
             </ol>
 
-            <div style="margin-top:22px;">
+            <div class="contact-box">
               <a href="mailto:contact@example.com" class="btn btn-primary" style="width:100%;">お問い合わせはこちら</a>
             </div>
           </div>
@@ -1008,10 +828,10 @@
   <footer>
     <div class="footer-inner">
       <div class="footer-brand">
-        <img src="./logo-main.png?v=3" alt="AIRFORTH ロゴ">
+        <img src="./logo-main.png?v=5" alt="AIRFORTH ロゴ">
         <div>
           <strong>AIRFORTH Volleyball Club</strong>
-          <span>Higher and Forth.</span>
+          <span>奈良ヤングバレーボールクラブ</span>
         </div>
       </div>
       <div class="footer-copy">© 2026 AIRFORTH. All Rights Reserved.</div>
