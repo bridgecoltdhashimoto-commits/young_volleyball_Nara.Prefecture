@@ -305,6 +305,16 @@
       border-color:var(--sky);
     }
 
+    .btn-download{
+      background:linear-gradient(135deg,var(--navy-soft),var(--sky));
+      color:#fff;
+      box-shadow:0 12px 24px rgba(29,61,130,.18);
+    }
+
+    .btn-download:hover{
+      transform:translateY(-2px);
+    }
+
     .hero-side{
       background:linear-gradient(180deg,#ffffff 0%,#f8fbff 100%);
       border:1px solid var(--line);
@@ -358,6 +368,33 @@
       padding:16px;
       color:var(--muted);
       font-size:.95rem;
+    }
+
+    .join-form-box{
+      margin-top:18px;
+      border:1px solid rgba(11,35,84,.08);
+      border-radius:18px;
+      padding:16px;
+      background:linear-gradient(135deg, rgba(90,183,255,.08), rgba(245,61,143,.05));
+    }
+
+    .join-form-box h4{
+      color:var(--navy);
+      font-size:1rem;
+      font-weight:900;
+      margin-bottom:6px;
+    }
+
+    .join-form-box p{
+      color:var(--muted);
+      font-size:.92rem;
+      margin-bottom:12px;
+    }
+
+    .join-form-actions{
+      display:flex;
+      gap:10px;
+      flex-wrap:wrap;
     }
 
     section{
@@ -672,6 +709,10 @@
       .club-mark-box img{
         width:min(320px, 84vw);
       }
+
+      .join-form-actions{
+        flex-direction:column;
+      }
     }
 
     @media (max-width: 560px){
@@ -710,7 +751,7 @@
       <div class="club-mark-inner">
         <div class="club-mark-box">
           <img
-            src="./logo-main.png?v=7"
+            src="./logo-main.png?v=8"
             alt="AIRFORTH ロゴ"
             onerror="this.closest('.club-mark').style.display='none';"
           >
@@ -751,6 +792,13 @@
           <div class="hero-actions">
             <a href="#join" class="btn btn-primary">募集案内を見る</a>
             <a href="#concept" class="btn btn-secondary">クラブ紹介を見る</a>
+            <a
+              href="./AIRFORTH_入会申込書_保護者承認_クラブ規約.pdf?v=1"
+              class="btn btn-download"
+              target="_blank"
+              rel="noopener noreferrer"
+              download="AIRFORTH_入会申込書_保護者承認_クラブ規約.pdf"
+            >入会フォームを取得する</a>
           </div>
         </div>
 
@@ -778,6 +826,23 @@
             体験や見学は、はじめての方でも安心してご参加いただけます。<br>
             ご不明なことや、事前に確認しておきたいことがあれば、
             どうぞお気軽にお問い合わせください。
+          </div>
+
+          <div class="join-form-box">
+            <h4>入会をご希望の方へ</h4>
+            <p>
+              入会申込書は、こちらからPDFで取得できます。<br>
+              ご自宅で内容をご確認のうえ、保存・印刷してご利用いただけます。
+            </p>
+            <div class="join-form-actions">
+              <a
+                href="./AIRFORTH_入会申込書_保護者承認_クラブ規約.pdf?v=1"
+                class="btn btn-download"
+                target="_blank"
+                rel="noopener noreferrer"
+                download="AIRFORTH_入会申込書_保護者承認_クラブ規約.pdf"
+              >入会フォームを取得する</a>
+            </div>
           </div>
         </div>
       </div>
@@ -824,7 +889,8 @@
           <h2>体験・見学、歓迎しています。</h2>
           <p>
             「ちょっと見てみたい」「一度やってみたい」という方も歓迎です。<br>
-            体験・見学のご相談はもちろん、スポンサーに関するお問い合わせも受け付けています。
+            体験・見学のご相談はもちろん、スポンサーに関するお問い合わせも受け付けています。<br>
+            入会をご希望の方は、入会申込書PDFもこちらから取得できます。
           </p>
         </div>
 
@@ -863,7 +929,22 @@
               参加にあたって、費用や通い方など事前に確認しておきたいことがあれば、
               フォームよりお気軽にご相談ください。<br><br>
               また、AIRFORTHの活動を応援してくださる
-              スポンサーに関するお問い合わせも受け付けています。
+              スポンサーに関するお問い合わせも受け付けています。<br><br>
+              入会をご希望の方は、下記のPDFから入会申込書を取得できます。
+            </div>
+
+            <div class="join-form-box" style="margin-top:16px;">
+              <h4>入会申込書PDF</h4>
+              <p>保護者承認欄・クラブ規約を含む入会申込書を取得できます。</p>
+              <div class="join-form-actions">
+                <a
+                  href="./AIRFORTH_入会申込書_保護者承認_クラブ規約.pdf?v=1"
+                  class="btn btn-download"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  download="AIRFORTH_入会申込書_保護者承認_クラブ規約.pdf"
+                >入会フォームを取得する</a>
+              </div>
             </div>
           </div>
 
