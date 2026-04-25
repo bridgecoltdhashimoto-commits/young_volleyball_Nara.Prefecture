@@ -15,11 +15,9 @@
       --pink:#f53d8f;
       --lime:#c7e63b;
       --white:#ffffff;
-      --bg:#f5f8ff;
       --text:#24324c;
       --muted:#66738c;
       --line:#dce5f3;
-      --card:#ffffff;
       --shadow:0 14px 34px rgba(11,35,84,.10);
       --max:1140px;
     }
@@ -283,9 +281,6 @@
       border-radius:16px;
       font-weight:800;
       transition:.25s;
-      border:none;
-      cursor:pointer;
-      font-family:inherit;
       font-size:1rem;
     }
 
@@ -295,7 +290,8 @@
       box-shadow:0 12px 24px rgba(245,61,143,.18);
     }
 
-    .btn-primary:hover{
+    .btn-primary:hover,
+    .btn-download:hover{
       transform:translateY(-2px);
     }
 
@@ -313,10 +309,6 @@
       background:linear-gradient(135deg,var(--navy-soft),var(--sky));
       color:#fff;
       box-shadow:0 12px 24px rgba(29,61,130,.18);
-    }
-
-    .btn-download:hover{
-      transform:translateY(-2px);
     }
 
     .hero-side{
@@ -796,18 +788,7 @@
           <div class="hero-actions">
             <a href="#join" class="btn btn-primary">募集案内を見る</a>
             <a href="#concept" class="btn btn-secondary">クラブ紹介を見る</a>
-            <a
-              href="./AIRFORTH_入会申込書_保護者承認_クラブ規約.pdf"
-              class="btn btn-download"
-              target="_blank"
-              rel="noopener noreferrer"
-            >入会フォームを開く</a>
-            <a
-              href="./AIRFORTH_入会申込書_保護者承認_クラブ規約.pdf"
-              class="btn btn-secondary"
-              download="AIRFORTH_入会申込書_保護者承認_クラブ規約.pdf"
-            >PDFを保存する</a>
-            <button type="button" class="btn btn-secondary" id="sharePdfBtn">スマホで共有・保存</button>
+            <a id="joinFormTopBtn" href="#" class="btn btn-download" target="_blank" rel="noopener noreferrer">入会申込はこちら</a>
           </div>
         </div>
 
@@ -840,22 +821,11 @@
           <div class="join-form-box">
             <h4>入会をご希望の方へ</h4>
             <p>
-              入会申込書は、こちらからPDFで開くことができます。<br>
-              印刷したい場合は「入会フォームを開く」、保存したい場合は「PDFを保存する」、スマホでは「スマホで共有・保存」をご利用ください。
+              入会申込はGoogleフォームから受け付けています。<br>
+              下のボタンから簡単にお申し込みいただけます。
             </p>
             <div class="join-form-actions">
-              <a
-                href="./AIRFORTH_入会申込書_保護者承認_クラブ規約.pdf"
-                class="btn btn-download"
-                target="_blank"
-                rel="noopener noreferrer"
-              >入会フォームを開く</a>
-              <a
-                href="./AIRFORTH_入会申込書_保護者承認_クラブ規約.pdf"
-                class="btn btn-secondary"
-                download="AIRFORTH_入会申込書_保護者承認_クラブ規約.pdf"
-              >PDFを保存する</a>
-              <button type="button" class="btn btn-secondary" id="sharePdfBtn2">スマホで共有・保存</button>
+              <a id="joinFormSideBtn" href="#" class="btn btn-download" target="_blank" rel="noopener noreferrer">入会申込フォームを開く</a>
             </div>
           </div>
         </div>
@@ -904,7 +874,7 @@
           <p>
             「ちょっと見てみたい」「一度やってみたい」という方も歓迎です。<br>
             体験・見学のご相談はもちろん、スポンサーに関するお問い合わせも受け付けています。<br>
-            入会をご希望の方は、入会申込書PDFもこちらから取得できます。
+            入会をご希望の方は、Googleフォームからお申し込みいただけます。
           </p>
         </div>
 
@@ -941,28 +911,15 @@
             <div class="fee-note">
               月額 2,000円です。<br>
               参加にあたって、費用や通い方など事前に確認しておきたいことがあれば、
-              フォームよりお気軽にご相談ください。<br><br>
-              また、AIRFORTHの活動を応援してくださる
-              スポンサーに関するお問い合わせも受け付けています。<br><br>
-              入会をご希望の方は、下記から入会申込書PDFを開く、保存する、またはスマホ共有できます。
+              お問い合わせフォームよりお気軽にご相談ください。<br><br>
+              入会をご希望の方は、下記のボタンよりGoogleフォームへお進みください。
             </div>
 
             <div class="join-form-box" style="margin-top:16px;">
-              <h4>入会申込書PDF</h4>
-              <p>保護者承認欄・クラブ規約を含む入会申込書を取得できます。</p>
+              <h4>入会申込フォーム</h4>
+              <p>必要事項をご入力いただくと、内容確認後にAIRFORTHよりご連絡いたします。</p>
               <div class="join-form-actions">
-                <a
-                  href="./AIRFORTH_入会申込書_保護者承認_クラブ規約.pdf"
-                  class="btn btn-download"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >入会フォームを開く</a>
-                <a
-                  href="./AIRFORTH_入会申込書_保護者承認_クラブ規約.pdf"
-                  class="btn btn-secondary"
-                  download="AIRFORTH_入会申込書_保護者承認_クラブ規約.pdf"
-                >PDFを保存する</a>
-                <button type="button" class="btn btn-secondary" id="sharePdfBtn3">スマホで共有・保存</button>
+                <a id="joinFormBottomBtn" href="#" class="btn btn-download" target="_blank" rel="noopener noreferrer">入会申込フォームを開く</a>
               </div>
             </div>
           </div>
@@ -1044,8 +1001,12 @@
   </footer>
 
   <script>
+    const JOIN_FORM_URL =  "https://docs.google.com/forms/d/e/1FAIpQLSeYPheau8bSLQtwVv5kDRGCWHSZRP3xhyA7OUUwCsXvJoRig/viewform";
     const GAS_WEBAPP_URL = "https://script.google.com/macros/s/AKfycbxeAtYULIsp6dmjUzFQNr7hZZXOkA7MIJeKHYTbZ2tPS9LJdAfT3gZxDB_zrLXGc4a-/exec";
-    const PDF_URL = "./AIRFORTH_入会申込書_保護者承認_クラブ規約.pdf";
+
+    document.getElementById("joinFormTopBtn").href = JOIN_FORM_URL;
+    document.getElementById("joinFormSideBtn").href = JOIN_FORM_URL;
+    document.getElementById("joinFormBottomBtn").href = JOIN_FORM_URL;
 
     const form = document.getElementById("contactForm");
     const phone = document.getElementById("phone");
@@ -1053,47 +1014,6 @@
     const contactError = document.getElementById("contactError");
     const formStatus = document.getElementById("formStatus");
     const submitBtn = document.getElementById("submitBtn");
-
-    async function sharePdfFile() {
-      const absoluteUrl = new URL(PDF_URL, window.location.href).href;
-
-      try {
-        const response = await fetch(PDF_URL, { cache: "no-store" });
-        if (!response.ok) throw new Error("PDF取得失敗");
-
-        const blob = await response.blob();
-        const pdfFile = new File([blob], "airforth_join_form.pdf", { type: "application/pdf" });
-
-        if (navigator.canShare && navigator.canShare({ files: [pdfFile] })) {
-          await navigator.share({
-            title: "AIRFORTH 入会申込書",
-            text: "AIRFORTH 入会申込書です。",
-            files: [pdfFile]
-          });
-          return;
-        }
-
-        if (navigator.share) {
-          await navigator.share({
-            title: "AIRFORTH 入会申込書",
-            text: "AIRFORTH 入会申込書です。",
-            url: absoluteUrl
-          });
-          return;
-        }
-
-        window.open(absoluteUrl, "_blank");
-      } catch (error) {
-        window.open(absoluteUrl, "_blank");
-      }
-    }
-
-    ["sharePdfBtn", "sharePdfBtn2", "sharePdfBtn3"].forEach((id) => {
-      const el = document.getElementById(id);
-      if (el) {
-        el.addEventListener("click", sharePdfFile);
-      }
-    });
 
     form.addEventListener("submit", async function(e) {
       e.preventDefault();
