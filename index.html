@@ -53,6 +53,10 @@
       display:block;
     }
 
+    button{
+      font-family:inherit;
+    }
+
     .container{
       width:min(var(--max), 92%);
       margin:0 auto;
@@ -282,6 +286,8 @@
       font-weight:800;
       transition:.25s;
       font-size:1rem;
+      border:none;
+      cursor:pointer;
     }
 
     .btn-primary{
@@ -812,6 +818,7 @@
               <strong>奈良県内体育館を中心に活動</strong>
             </div>
           </div>
+
           <div class="hero-side-note">
             体験や見学は、はじめての方でも安心してご参加いただけます。<br>
             ご不明なことや、事前に確認しておきたいことがあれば、
@@ -826,6 +833,19 @@
             </p>
             <div class="join-form-actions">
               <a id="joinFormSideBtn" href="#" class="btn btn-download" target="_blank" rel="noopener noreferrer">入会申込フォームを開く</a>
+            </div>
+          </div>
+
+          <div class="join-form-box">
+            <h4>クラブ規約</h4>
+            <p>
+              クラブ規約は、こちらからご確認いただけます。<br>
+              保存やスマホ共有もできますので、保護者の方との確認にもご利用ください。
+            </p>
+            <div class="join-form-actions">
+              <a id="rulesOpenBtn" href="#" class="btn btn-secondary" target="_blank" rel="noopener noreferrer">規約を見る</a>
+              <a id="rulesSaveBtn" href="#" class="btn btn-secondary" download="airforth_club_rules.pdf">規約を保存する</a>
+              <button type="button" id="rulesShareBtn" class="btn btn-secondary">スマホで共有</button>
             </div>
           </div>
         </div>
@@ -912,7 +932,8 @@
               月額 2,000円です。<br>
               参加にあたって、費用や通い方など事前に確認しておきたいことがあれば、
               お問い合わせフォームよりお気軽にご相談ください。<br><br>
-              入会をご希望の方は、下記のボタンよりGoogleフォームへお進みください。
+              入会をご希望の方は、下記のボタンよりGoogleフォームへお進みください。<br>
+              クラブ規約も事前にご確認いただけます。
             </div>
 
             <div class="join-form-box" style="margin-top:16px;">
@@ -920,6 +941,16 @@
               <p>必要事項をご入力いただくと、内容確認後にAIRFORTHよりご連絡いたします。</p>
               <div class="join-form-actions">
                 <a id="joinFormBottomBtn" href="#" class="btn btn-download" target="_blank" rel="noopener noreferrer">入会申込フォームを開く</a>
+              </div>
+            </div>
+
+            <div class="join-form-box" style="margin-top:16px;">
+              <h4>クラブ規約</h4>
+              <p>規約の確認、保存、スマホ共有はこちらから行えます。</p>
+              <div class="join-form-actions">
+                <a id="rulesOpenBtnBottom" href="#" class="btn btn-secondary" target="_blank" rel="noopener noreferrer">規約を見る</a>
+                <a id="rulesSaveBtnBottom" href="#" class="btn btn-secondary" download="airforth_club_rules.pdf">規約を保存する</a>
+                <button type="button" id="rulesShareBtnBottom" class="btn btn-secondary">スマホで共有</button>
               </div>
             </div>
           </div>
@@ -1001,12 +1032,55 @@
   </footer>
 
   <script>
-    const JOIN_FORM_URL =  "https://docs.google.com/forms/d/e/1FAIpQLSeYPheau8bSLQtwWv5kDRGCWHSZRP3xhyA7OUJwCsXvJoRigw/viewform?usp=header";
+    const JOIN_FORM_URL = "https://docs.google.com/forms/d/e/1FAIpQLSeYPheau8bSLQtwWv5kDRGCWHSZRP3xhyA7OUUwCsXvJoRigw/viewform?usp=header";
+    const RULES_PDF_URL = "./airforth_club_rules.pdf";
     const GAS_WEBAPP_URL = "https://script.google.com/macros/s/AKfycbxeAtYULIsp6dmjUzFQNr7hZZXOkA7MIJeKHYTbZ2tPS9LJdAfT3gZxDB_zrLXGc4a-/exec";
 
     document.getElementById("joinFormTopBtn").href = JOIN_FORM_URL;
     document.getElementById("joinFormSideBtn").href = JOIN_FORM_URL;
     document.getElementById("joinFormBottomBtn").href = JOIN_FORM_URL;
+
+    document.getElementById("rulesOpenBtn").href = RULES_PDF_URL;
+    document.getElementById("rulesSaveBtn").href = RULES_PDF_URL;
+    document.getElementById("rulesOpenBtnBottom").href = RULES_PDF_URL;
+    document.getElementById("rulesSaveBtnBottom").href = RULES_PDF_URL;
+
+    async function shareRulesPdf() {
+      const absoluteUrl = new URL(RULES_PDF_URL, window.location.href).href;
+
+      try {
+        const response = await fetch(RULES_PDF_URL, { cache: "no-store" });
+        if (!response.ok) throw new Error("PDF取得失敗");
+
+        const blob = await response.blob();
+        const pdfFile = new File([blob], "airforth_club_rules.pdf", { type: "application/pdf" });
+
+        if (navigator.canShare && navigator.canShare({ files: [pdfFile] })) {
+          await navigator.share({
+            title: "AIRFORTH クラブ規約",
+            text: "AIRFORTHのクラブ規約です。",
+            files: [pdfFile]
+          });
+          return;
+        }
+
+        if (navigator.share) {
+          await navigator.share({
+            title: "AIRFORTH クラブ規約",
+            text: "AIRFORTHのクラブ規約です。",
+            url: absoluteUrl
+          });
+          return;
+        }
+
+        window.open(absoluteUrl, "_blank");
+      } catch (error) {
+        window.open(absoluteUrl, "_blank");
+      }
+    }
+
+    document.getElementById("rulesShareBtn").addEventListener("click", shareRulesPdf);
+    document.getElementById("rulesShareBtnBottom").addEventListener("click", shareRulesPdf);
 
     const form = document.getElementById("contactForm");
     const phone = document.getElementById("phone");
@@ -1046,6 +1120,5 @@
       }
     });
   </script>
-
 </body>
 </html>
