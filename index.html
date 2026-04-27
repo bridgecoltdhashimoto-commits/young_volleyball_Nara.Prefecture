@@ -1120,5 +1120,144 @@
       }
     });
   </script>
+  <!-- AIRFORTH 公式LINE導線 追加 -->
+<style>
+  .airforth-line-float{
+    position:fixed;
+    right:18px;
+    bottom:18px;
+    z-index:2000;
+    display:flex;
+    align-items:center;
+    gap:10px;
+    padding:14px 18px;
+    border-radius:999px;
+    background:#06c755;
+    color:#fff;
+    font-weight:900;
+    box-shadow:0 14px 30px rgba(6,199,85,.28);
+    transition:.25s;
+  }
+
+  .airforth-line-float:hover{
+    transform:translateY(-2px);
+    box-shadow:0 18px 36px rgba(6,199,85,.34);
+  }
+
+  .airforth-line-badge{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    min-width:44px;
+    height:28px;
+    padding:0 8px;
+    border-radius:999px;
+    background:#fff;
+    color:#06c755;
+    font-size:.78rem;
+    font-weight:1000;
+    line-height:1;
+  }
+
+  .airforth-line-box{
+    margin-top:18px;
+    border:1px solid rgba(6,199,85,.18);
+    border-radius:18px;
+    padding:16px;
+    background:linear-gradient(135deg, rgba(6,199,85,.10), rgba(90,183,255,.08));
+  }
+
+  .airforth-line-box h4{
+    color:#0b2354;
+    font-size:1rem;
+    font-weight:900;
+    margin-bottom:6px;
+  }
+
+  .airforth-line-box p{
+    color:#66738c;
+    font-size:.92rem;
+    margin-bottom:12px;
+  }
+
+  .btn-line{
+    background:#06c755;
+    color:#fff;
+    box-shadow:0 12px 24px rgba(6,199,85,.22);
+  }
+
+  .btn-line:hover{
+    transform:translateY(-2px);
+  }
+
+  @media (max-width:560px){
+    .airforth-line-float{
+      left:14px;
+      right:14px;
+      bottom:14px;
+      justify-content:center;
+      width:auto;
+    }
+
+    body{
+      padding-bottom:82px;
+    }
+  }
+</style>
+
+<a
+  class="airforth-line-float"
+  href="https://lin.ee/ze1BxQ7p"
+  target="_blank"
+  rel="noopener noreferrer"
+  aria-label="AIRFORTH公式LINEで相談する"
+>
+  <span class="airforth-line-badge">LINE</span>
+  <span>公式LINEで相談する</span>
+</a>
+
+<script>
+  (function(){
+    const AIRFORTH_LINE_URL = "https://lin.ee/ze1BxQ7p";
+
+    const heroActions = document.querySelector(".hero-actions");
+    if(heroActions && !document.getElementById("airforthLineTopBtn")){
+      heroActions.insertAdjacentHTML("beforeend", `
+        <a
+          id="airforthLineTopBtn"
+          href="${AIRFORTH_LINE_URL}"
+          class="btn btn-line"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          公式LINEで相談する
+        </a>
+      `);
+    }
+
+    const heroSideNote = document.querySelector(".hero-side-note");
+    if(heroSideNote && !document.getElementById("airforthLineSideBox")){
+      heroSideNote.insertAdjacentHTML("afterend", `
+        <div id="airforthLineSideBox" class="airforth-line-box">
+          <h4>公式LINEでもご相談できます</h4>
+          <p>
+            体験・見学のご相談、入会前のご質問、スポンサー・協賛のご相談も、公式LINEから気軽にお問い合わせいただけます。
+          </p>
+          <div class="join-form-actions">
+            <a
+              href="${AIRFORTH_LINE_URL}"
+              class="btn btn-line"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              公式LINEを開く
+            </a>
+          </div>
+        </div>
+      `);
+    }
+  })();
+</script>
+<!-- /AIRFORTH 公式LINE導線 追加 -->
 </body>
 </html>
