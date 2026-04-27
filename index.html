@@ -3,8 +3,10 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
   <title>AIRFORTH | 奈良ヤングバレーボールクラブ</title>
   <meta name="description" content="AIRFORTHは、小学4年生から中学生までを対象に、学びとバレーボールのバランスを大切にしながら、安心して楽しく活動できる奈良ヤングバレーボールクラブです。" />
+
   <style>
     :root{
       --navy:#0b2354;
@@ -13,12 +15,15 @@
       --gold:#f4b400;
       --orange:#ff8a00;
       --pink:#f53d8f;
+      --green:#06c755;
       --lime:#c7e63b;
       --white:#ffffff;
+      --bg:#f5f8ff;
       --text:#24324c;
       --muted:#66738c;
       --line:#dce5f3;
       --shadow:0 14px 34px rgba(11,35,84,.10);
+      --shadow-soft:0 10px 26px rgba(11,35,84,.08);
       --max:1140px;
     }
 
@@ -34,13 +39,13 @@
 
     body{
       font-family:"Yu Gothic","Hiragino Kaku Gothic ProN","Meiryo",sans-serif;
-      background:
-        radial-gradient(circle at 10% 20%, rgba(90,183,255,.12), transparent 28%),
-        radial-gradient(circle at 90% 18%, rgba(245,61,143,.08), transparent 24%),
-        linear-gradient(180deg, #f7faff 0%, #f5f8ff 100%);
       color:var(--text);
       line-height:1.8;
       letter-spacing:.02em;
+      background:
+        radial-gradient(circle at 10% 20%, rgba(90,183,255,.12), transparent 28%),
+        radial-gradient(circle at 90% 18%, rgba(245,61,143,.08), transparent 24%),
+        linear-gradient(180deg,#f7faff 0%,#f5f8ff 100%);
     }
 
     a{
@@ -49,19 +54,23 @@
     }
 
     img{
-      max-width:100%;
       display:block;
+      max-width:100%;
     }
 
-    button{
+    button,
+    input,
+    textarea,
+    select{
       font-family:inherit;
     }
 
     .container{
-      width:min(var(--max), 92%);
+      width:min(var(--max),92%);
       margin:0 auto;
     }
 
+    /* Header */
     header{
       position:sticky;
       top:0;
@@ -72,36 +81,31 @@
     }
 
     .header-inner{
-      width:min(var(--max), 92%);
+      width:min(var(--max),92%);
       margin:0 auto;
-      min-height:78px;
+      min-height:76px;
       display:flex;
-      justify-content:space-between;
       align-items:center;
+      justify-content:space-between;
       gap:20px;
     }
 
-    .brand{
-      display:flex;
-      align-items:center;
-    }
-
     .brand-title{
-      font-size:2.15rem;
+      font-size:2rem;
       line-height:1;
       font-weight:1000;
-      letter-spacing:.04em;
-      background:linear-gradient(90deg, #24324c 0%, #f4b400 34%, #ff8a00 67%, #f53d8f 100%);
+      letter-spacing:.08em;
+      background:linear-gradient(90deg,#24324c 0%,#f4b400 34%,#ff8a00 67%,#f53d8f 100%);
       -webkit-background-clip:text;
       -webkit-text-fill-color:transparent;
       background-clip:text;
       color:transparent;
-      text-shadow:0 1px 0 rgba(255,255,255,.35);
     }
 
     nav{
       display:flex;
       align-items:center;
+      justify-content:flex-end;
       gap:18px;
       flex-wrap:wrap;
     }
@@ -109,7 +113,8 @@
     nav a{
       color:var(--navy);
       font-size:.93rem;
-      font-weight:700;
+      font-weight:800;
+      transition:.2s;
     }
 
     nav a:hover{
@@ -121,18 +126,18 @@
       border-radius:999px;
       background:linear-gradient(135deg,var(--pink),var(--orange));
       color:#fff;
-      font-weight:800;
       box-shadow:0 10px 22px rgba(245,61,143,.18);
     }
 
+    /* Logo */
     .club-mark{
       position:relative;
       overflow:hidden;
-      padding:20px 0 10px;
+      padding:20px 0 8px;
       background:
         radial-gradient(circle at 14% 18%, rgba(90,183,255,.10), transparent 26%),
         radial-gradient(circle at 88% 16%, rgba(245,61,143,.07), transparent 22%),
-        linear-gradient(180deg, rgba(243,248,255,.95) 0%, rgba(245,248,255,.90) 100%);
+        linear-gradient(180deg,rgba(243,248,255,.95) 0%,rgba(245,248,255,.90) 100%);
     }
 
     .club-mark::before{
@@ -140,10 +145,9 @@
       position:absolute;
       inset:0;
       background:
-        linear-gradient(rgba(29,61,130,.07), rgba(29,61,130,.07)) center 63% / 100% 2px no-repeat,
-        linear-gradient(90deg, transparent calc(50% - 1px), rgba(29,61,130,.06) calc(50% - 1px), rgba(29,61,130,.06) calc(50% + 1px), transparent calc(50% + 1px)) center / 100% 100% no-repeat;
+        linear-gradient(rgba(29,61,130,.07),rgba(29,61,130,.07)) center 63% / 100% 2px no-repeat,
+        linear-gradient(90deg,transparent calc(50% - 1px),rgba(29,61,130,.06) calc(50% - 1px),rgba(29,61,130,.06) calc(50% + 1px),transparent calc(50% + 1px)) center / 100% 100% no-repeat;
       pointer-events:none;
-      opacity:.9;
     }
 
     .club-mark::after{
@@ -157,13 +161,13 @@
         linear-gradient(rgba(29,61,130,.11) 1.2px, transparent 1.2px),
         linear-gradient(90deg, rgba(29,61,130,.11) 1.2px, transparent 1.2px);
       background-size:22px 22px;
-      opacity:.62;
+      opacity:.58;
       transform:skew(-10deg) rotate(-2deg);
       pointer-events:none;
     }
 
     .club-mark-inner{
-      width:min(var(--max), 92%);
+      width:min(var(--max),92%);
       margin:0 auto;
       display:flex;
       justify-content:center;
@@ -172,7 +176,7 @@
     }
 
     .club-mark-box{
-      background:#ffffff;
+      background:#fff;
       border:1px solid rgba(11,35,84,.07);
       border-radius:28px;
       padding:18px 24px;
@@ -180,14 +184,91 @@
     }
 
     .club-mark-box img{
-      width:min(360px, 78vw);
+      width:min(350px,78vw);
       height:auto;
       object-fit:contain;
       filter:drop-shadow(0 10px 20px rgba(0,0,0,.10));
     }
 
+    /* Common */
+    section{
+      padding:42px 0;
+    }
+
+    .section-head{
+      margin-bottom:24px;
+    }
+
+    .section-head .label{
+      display:inline-block;
+      font-size:.78rem;
+      font-weight:900;
+      letter-spacing:.14em;
+      color:var(--navy-soft);
+      margin-bottom:10px;
+    }
+
+    .section-head h2{
+      color:var(--navy);
+      font-size:clamp(1.8rem,3.8vw,2.8rem);
+      line-height:1.28;
+      font-weight:1000;
+      margin-bottom:10px;
+    }
+
+    .section-head p{
+      max-width:780px;
+      color:var(--muted);
+      font-size:1rem;
+    }
+
+    .btn{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      min-width:180px;
+      padding:14px 20px;
+      border-radius:16px;
+      border:none;
+      cursor:pointer;
+      font-size:.98rem;
+      font-weight:900;
+      line-height:1.35;
+      transition:.25s;
+      text-align:center;
+    }
+
+    .btn:hover{
+      transform:translateY(-2px);
+    }
+
+    .btn-primary{
+      background:linear-gradient(135deg,var(--pink),var(--orange));
+      color:#fff;
+      box-shadow:0 12px 24px rgba(245,61,143,.18);
+    }
+
+    .btn-secondary{
+      background:#fff;
+      color:var(--navy);
+      border:1px solid var(--line);
+    }
+
+    .btn-download{
+      background:linear-gradient(135deg,var(--navy-soft),var(--sky));
+      color:#fff;
+      box-shadow:0 12px 24px rgba(29,61,130,.18);
+    }
+
+    .btn-line{
+      background:var(--green);
+      color:#fff;
+      box-shadow:0 12px 24px rgba(6,199,85,.22);
+    }
+
+    /* Hero */
     .hero{
-      padding:34px 0 36px;
+      padding:36px 0 46px;
       background:
         radial-gradient(circle at 12% 12%, rgba(90,183,255,.16), transparent 26%),
         radial-gradient(circle at 90% 8%, rgba(245,61,143,.08), transparent 20%),
@@ -195,11 +276,11 @@
     }
 
     .hero-grid{
-      width:min(var(--max), 92%);
+      width:min(var(--max),92%);
       margin:0 auto;
       display:grid;
-      grid-template-columns:1.05fr .95fr;
-      gap:26px;
+      grid-template-columns:1.06fr .94fr;
+      gap:30px;
       align-items:start;
     }
 
@@ -210,16 +291,16 @@
       background:rgba(90,183,255,.12);
       color:var(--navy-soft);
       font-size:.78rem;
-      font-weight:800;
+      font-weight:900;
       letter-spacing:.12em;
       margin-bottom:18px;
     }
 
     .hero h1{
       color:var(--navy);
-      font-size:clamp(2.1rem,4.8vw,4.1rem);
-      line-height:1.2;
-      font-weight:900;
+      font-size:clamp(2.1rem,4.8vw,4.05rem);
+      line-height:1.22;
+      font-weight:1000;
       margin-bottom:16px;
     }
 
@@ -242,7 +323,7 @@
       display:grid;
       grid-template-columns:repeat(3,1fr);
       gap:12px;
-      margin-bottom:24px;
+      margin-bottom:22px;
     }
 
     .hero-point{
@@ -250,14 +331,14 @@
       border:1px solid var(--line);
       border-radius:18px;
       padding:16px 14px;
-      box-shadow:var(--shadow);
+      box-shadow:var(--shadow-soft);
     }
 
     .hero-point small{
       display:block;
       color:var(--navy-soft);
       font-size:.74rem;
-      font-weight:800;
+      font-weight:900;
       letter-spacing:.12em;
       margin-bottom:6px;
     }
@@ -265,56 +346,16 @@
     .hero-point strong{
       display:block;
       color:var(--navy);
-      font-size:.97rem;
-      font-weight:800;
-      line-height:1.5;
+      font-size:.95rem;
+      font-weight:900;
+      line-height:1.55;
     }
 
     .hero-actions{
-      display:flex;
+      display:grid;
+      grid-template-columns:repeat(2,minmax(180px,1fr));
       gap:12px;
-      flex-wrap:wrap;
-    }
-
-    .btn{
-      display:inline-flex;
-      align-items:center;
-      justify-content:center;
-      min-width:190px;
-      padding:15px 22px;
-      border-radius:16px;
-      font-weight:800;
-      transition:.25s;
-      font-size:1rem;
-      border:none;
-      cursor:pointer;
-    }
-
-    .btn-primary{
-      background:linear-gradient(135deg,var(--pink),var(--orange));
-      color:#fff;
-      box-shadow:0 12px 24px rgba(245,61,143,.18);
-    }
-
-    .btn-primary:hover,
-    .btn-download:hover{
-      transform:translateY(-2px);
-    }
-
-    .btn-secondary{
-      background:#fff;
-      color:var(--navy);
-      border:1px solid var(--line);
-    }
-
-    .btn-secondary:hover{
-      border-color:var(--sky);
-    }
-
-    .btn-download{
-      background:linear-gradient(135deg,var(--navy-soft),var(--sky));
-      color:#fff;
-      box-shadow:0 12px 24px rgba(29,61,130,.18);
+      max-width:520px;
     }
 
     .hero-side{
@@ -328,7 +369,7 @@
     .hero-side h3{
       color:var(--navy);
       font-size:1.35rem;
-      font-weight:900;
+      font-weight:1000;
       margin-bottom:14px;
     }
 
@@ -350,7 +391,7 @@
       display:block;
       color:var(--navy-soft);
       font-size:.75rem;
-      font-weight:800;
+      font-weight:900;
       letter-spacing:.08em;
       margin-bottom:6px;
     }
@@ -358,9 +399,9 @@
     .hero-side-card strong{
       display:block;
       color:var(--navy);
-      font-size:1rem;
-      font-weight:900;
-      line-height:1.5;
+      font-size:.98rem;
+      font-weight:1000;
+      line-height:1.55;
     }
 
     .hero-side-note{
@@ -369,24 +410,33 @@
       border-radius:18px;
       padding:16px;
       color:var(--muted);
-      font-size:.95rem;
+      font-size:.94rem;
+      margin-bottom:14px;
     }
 
+    .line-box,
     .join-form-box{
-      margin-top:18px;
-      border:1px solid rgba(11,35,84,.08);
+      margin-top:14px;
       border-radius:18px;
       padding:16px;
-      background:linear-gradient(135deg, rgba(90,183,255,.08), rgba(245,61,143,.05));
+      border:1px solid rgba(11,35,84,.08);
+      background:linear-gradient(135deg,rgba(90,183,255,.08),rgba(245,61,143,.05));
     }
 
+    .line-box{
+      border-color:rgba(6,199,85,.20);
+      background:linear-gradient(135deg,rgba(6,199,85,.10),rgba(90,183,255,.08));
+    }
+
+    .line-box h4,
     .join-form-box h4{
       color:var(--navy);
       font-size:1rem;
-      font-weight:900;
+      font-weight:1000;
       margin-bottom:6px;
     }
 
+    .line-box p,
     .join-form-box p{
       color:var(--muted);
       font-size:.92rem;
@@ -399,36 +449,7 @@
       flex-wrap:wrap;
     }
 
-    section{
-      padding:34px 0;
-    }
-
-    .section-head{
-      margin-bottom:22px;
-    }
-
-    .section-head .label{
-      display:inline-block;
-      font-size:.78rem;
-      font-weight:800;
-      letter-spacing:.14em;
-      color:var(--navy-soft);
-      margin-bottom:10px;
-    }
-
-    .section-head h2{
-      color:var(--navy);
-      font-size:clamp(1.8rem,3.8vw,2.8rem);
-      line-height:1.25;
-      font-weight:900;
-      margin-bottom:10px;
-    }
-
-    .section-head p{
-      color:var(--muted);
-      max-width:760px;
-    }
-
+    /* Concept */
     .cards3{
       display:grid;
       grid-template-columns:repeat(3,1fr);
@@ -450,7 +471,7 @@
       display:grid;
       place-items:center;
       font-size:1.1rem;
-      font-weight:900;
+      font-weight:1000;
       color:#fff;
       margin-bottom:14px;
     }
@@ -461,9 +482,9 @@
 
     .card h3{
       color:var(--navy);
-      font-size:1.25rem;
+      font-size:1.22rem;
       margin-bottom:10px;
-      font-weight:900;
+      font-weight:1000;
     }
 
     .card p{
@@ -471,30 +492,32 @@
       font-size:.96rem;
     }
 
+    /* Join / Contact */
     .join-grid{
       display:grid;
       grid-template-columns:.9fr 1.1fr;
-      gap:18px;
+      gap:20px;
+      align-items:start;
     }
 
     .panel{
       background:#fff;
       border:1px solid var(--line);
       border-radius:24px;
-      padding:26px 22px;
+      padding:24px 22px;
       box-shadow:var(--shadow);
     }
 
     .panel h3{
       color:var(--navy);
-      font-size:1.26rem;
+      font-size:1.24rem;
       margin-bottom:14px;
-      font-weight:900;
+      font-weight:1000;
     }
 
     .info-list{
       display:grid;
-      gap:10px;
+      gap:0;
     }
 
     .info-item{
@@ -512,7 +535,7 @@
 
     .info-item dt{
       color:var(--navy-soft);
-      font-weight:800;
+      font-weight:900;
     }
 
     .info-item dd{
@@ -548,7 +571,7 @@
     .field label{
       color:var(--navy);
       font-size:.92rem;
-      font-weight:800;
+      font-weight:900;
     }
 
     .required{
@@ -578,7 +601,7 @@
     }
 
     .field textarea{
-      min-height:110px;
+      min-height:100px;
       resize:vertical;
     }
 
@@ -590,13 +613,13 @@
     .error{
       color:#d92c5a;
       font-size:.86rem;
-      font-weight:700;
+      font-weight:800;
     }
 
     .success{
       color:#167a45;
       font-size:.9rem;
-      font-weight:700;
+      font-weight:800;
     }
 
     .submit-wrap{
@@ -607,27 +630,61 @@
       margin-top:4px;
     }
 
-    .submit-btn{
-      border:none;
-      cursor:pointer;
+    /* LINE fixed button */
+    .line-float{
+      position:fixed;
+      right:18px;
+      bottom:18px;
+      z-index:2000;
+      display:flex;
+      align-items:center;
+      gap:10px;
+      padding:14px 18px;
+      border-radius:999px;
+      background:var(--green);
+      color:#fff;
+      font-weight:1000;
+      box-shadow:0 14px 30px rgba(6,199,85,.30);
+      transition:.25s;
     }
 
+    .line-float:hover{
+      transform:translateY(-2px);
+      box-shadow:0 18px 36px rgba(6,199,85,.36);
+    }
+
+    .line-badge{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      min-width:44px;
+      height:28px;
+      padding:0 8px;
+      border-radius:999px;
+      background:#fff;
+      color:var(--green);
+      font-size:.78rem;
+      font-weight:1000;
+      line-height:1;
+    }
+
+    /* Footer */
     footer{
-      margin-top:30px;
+      margin-top:34px;
       background:#0d1d45;
       color:#eaf1ff;
-      padding:26px 0 32px;
+      padding:28px 0 34px;
     }
 
     .footer-inner{
-      width:min(var(--max), 92%);
+      width:min(var(--max),92%);
       margin:0 auto;
       text-align:center;
     }
 
     .footer-title{
       font-size:1rem;
-      font-weight:900;
+      font-weight:1000;
       margin-bottom:6px;
     }
 
@@ -636,11 +693,16 @@
       font-size:.84rem;
     }
 
-    @media (max-width: 980px){
+    /* Responsive */
+    @media (max-width:980px){
       .hero-grid,
       .join-grid,
       .cards3{
         grid-template-columns:1fr;
+      }
+
+      .hero-side{
+        max-width:720px;
       }
 
       .hero-points,
@@ -655,20 +717,27 @@
       }
     }
 
-    @media (max-width: 760px){
+    @media (max-width:760px){
       .header-inner{
+        min-height:auto;
         flex-direction:column;
         align-items:flex-start;
-        padding:12px 0;
+        padding:13px 0;
       }
 
       nav{
         width:100%;
         justify-content:flex-start;
+        gap:12px;
       }
 
       .brand-title{
-        font-size:1.92rem;
+        font-size:1.85rem;
+      }
+
+      .hero-actions{
+        grid-template-columns:1fr;
+        max-width:none;
       }
 
       .info-item,
@@ -676,19 +745,15 @@
         grid-template-columns:1fr;
       }
 
-      .hero{
-        padding-top:30px;
-      }
-
       .club-mark{
-        padding:18px 0 10px;
+        padding:18px 0 8px;
       }
 
       .club-mark::before{
         opacity:1;
         background:
-          linear-gradient(rgba(29,61,130,.10), rgba(29,61,130,.10)) center 63% / 100% 2px no-repeat,
-          linear-gradient(90deg, transparent calc(50% - 1px), rgba(29,61,130,.09) calc(50% - 1px), rgba(29,61,130,.09) calc(50% + 1px), transparent calc(50% + 1px)) center / 100% 100% no-repeat;
+          linear-gradient(rgba(29,61,130,.10),rgba(29,61,130,.10)) center 63% / 100% 2px no-repeat,
+          linear-gradient(90deg,transparent calc(50% - 1px),rgba(29,61,130,.09) calc(50% - 1px),rgba(29,61,130,.09) calc(50% + 1px),transparent calc(50% + 1px)) center / 100% 100% no-repeat;
       }
 
       .club-mark::after{
@@ -696,7 +761,7 @@
         height:180px;
         right:-10px;
         top:18px;
-        opacity:.82;
+        opacity:.78;
         background-image:
           linear-gradient(rgba(29,61,130,.16) 1.3px, transparent 1.3px),
           linear-gradient(90deg, rgba(29,61,130,.16) 1.3px, transparent 1.3px);
@@ -709,7 +774,7 @@
       }
 
       .club-mark-box img{
-        width:min(320px, 84vw);
+        width:min(320px,84vw);
       }
 
       .join-form-actions{
@@ -717,30 +782,37 @@
       }
     }
 
-    @media (max-width: 560px){
+    @media (max-width:560px){
+      body{
+        padding-bottom:82px;
+      }
+
       .btn,
-      .cta-mini,
-      .submit-btn{
+      .cta-mini{
         width:100%;
       }
 
-      .hero-actions,
       .submit-wrap{
         flex-direction:column;
         align-items:stretch;
       }
+
+      .line-float{
+        left:14px;
+        right:14px;
+        bottom:14px;
+        justify-content:center;
+      }
     }
   </style>
 </head>
-<body>
 
+<body>
   <header>
     <div class="header-inner">
-      <div class="brand">
-        <div class="brand-title">AIRFORTH</div>
-      </div>
+      <a href="#" class="brand-title" aria-label="AIRFORTH トップへ">AIRFORTH</a>
 
-      <nav>
+      <nav aria-label="メインメニュー">
         <a href="#concept">クラブ紹介</a>
         <a href="#join">募集案内</a>
         <a href="#contact" class="cta-mini">体験・見学はこちら</a>
@@ -749,14 +821,14 @@
   </header>
 
   <main>
-    <section class="club-mark">
+    <section class="club-mark" aria-label="AIRFORTH ロゴ">
       <div class="club-mark-inner">
         <div class="club-mark-box">
           <img
             src="./logo-main.png?v=8"
             alt="AIRFORTH ロゴ"
             onerror="this.closest('.club-mark').style.display='none';"
-          >
+          />
         </div>
       </div>
     </section>
@@ -765,10 +837,12 @@
       <div class="hero-grid">
         <div>
           <div class="eyebrow">NARA YOUNG VOLLEYBALL CLUB</div>
+
           <h1>
-            たのしく学び、<br>
+            たのしく学び、<br />
             <span class="accent">のびのび続ける。</span>
           </h1>
+
           <p class="hero-lead">
             AIRFORTHは、小学4年生から中学生までを対象に、
             バレーボールの楽しさと、毎日の学びとのバランスを大切にしているクラブです。
@@ -781,10 +855,12 @@
               <small>BALANCE</small>
               <strong>学校生活との両立を大切にします</strong>
             </div>
+
             <div class="hero-point">
               <small>TEAM</small>
               <strong>あいさつや仲間とのつながりを大切にします</strong>
             </div>
+
             <div class="hero-point">
               <small>STEP UP</small>
               <strong>一人ひとりの成長に合わせて取り組みます</strong>
@@ -795,24 +871,29 @@
             <a href="#join" class="btn btn-primary">募集案内を見る</a>
             <a href="#concept" class="btn btn-secondary">クラブ紹介を見る</a>
             <a id="joinFormTopBtn" href="#" class="btn btn-download" target="_blank" rel="noopener noreferrer">入会申込はこちら</a>
+            <a id="lineTopBtn" href="#" class="btn btn-line" target="_blank" rel="noopener noreferrer">公式LINEで相談する</a>
           </div>
         </div>
 
-        <div class="hero-side">
+        <aside class="hero-side">
           <h3>体験・見学受付中</h3>
+
           <div class="hero-side-grid">
             <div class="hero-side-card">
               <small>対象</small>
               <strong>小学4年生〜中学3年生</strong>
             </div>
+
             <div class="hero-side-card">
               <small>経験</small>
               <strong>初心者・経験者ともに歓迎</strong>
             </div>
+
             <div class="hero-side-card">
               <small>会費</small>
               <strong>月額 2,000円</strong>
             </div>
+
             <div class="hero-side-card">
               <small>地域</small>
               <strong>奈良県内体育館を中心に活動</strong>
@@ -820,15 +901,26 @@
           </div>
 
           <div class="hero-side-note">
-            体験や見学は、はじめての方でも安心してご参加いただけます。<br>
+            体験や見学は、はじめての方でも安心してご参加いただけます。<br />
             ご不明なことや、事前に確認しておきたいことがあれば、
             どうぞお気軽にお問い合わせください。
+          </div>
+
+          <div class="line-box">
+            <h4>公式LINEでもご相談できます</h4>
+            <p>
+              体験・見学のご相談、入会前のご質問、スポンサー・協賛のご相談も、
+              公式LINEから気軽にお問い合わせいただけます。
+            </p>
+            <div class="join-form-actions">
+              <a id="lineSideBtn" href="#" class="btn btn-line" target="_blank" rel="noopener noreferrer">公式LINEを開く</a>
+            </div>
           </div>
 
           <div class="join-form-box">
             <h4>入会をご希望の方へ</h4>
             <p>
-              入会申込はGoogleフォームから受け付けています。<br>
+              入会申込はGoogleフォームから受け付けています。<br />
               下のボタンから簡単にお申し込みいただけます。
             </p>
             <div class="join-form-actions">
@@ -839,7 +931,7 @@
           <div class="join-form-box">
             <h4>クラブ規約</h4>
             <p>
-              クラブ規約は、こちらからご確認いただけます。<br>
+              クラブ規約は、こちらからご確認いただけます。<br />
               保存やスマホ共有もできますので、保護者の方との確認にもご利用ください。
             </p>
             <div class="join-form-actions">
@@ -848,7 +940,7 @@
               <button type="button" id="rulesShareBtn" class="btn btn-secondary">スマホで共有</button>
             </div>
           </div>
-        </div>
+        </aside>
       </div>
     </section>
 
@@ -868,19 +960,27 @@
           <article class="card">
             <div class="icon icon-blue">学</div>
             <h3>学びとのバランス</h3>
-            <p>練習だけに偏らず、学校生活や家庭での時間との両立も大切に考えています。</p>
+            <p>
+              練習だけに偏らず、学校生活や家庭での時間との両立も大切に考えています。
+            </p>
           </article>
 
           <article class="card">
             <div class="icon icon-pink">和</div>
             <h3>仲間を大切に</h3>
-            <p>あいさつや思いやり、チームワークを通して、気持ちよく活動できる雰囲気づくりを大事にしています。</p>
+            <p>
+              あいさつや思いやり、チームワークを通して、
+              気持ちよく活動できる雰囲気づくりを大事にしています。
+            </p>
           </article>
 
           <article class="card">
             <div class="icon icon-lime">成</div>
             <h3>一歩ずつ成長</h3>
-            <p>初心者の方も経験者の方も、それぞれの段階に合わせて無理なくステップアップしていけます。</p>
+            <p>
+              初心者の方も経験者の方も、
+              それぞれの段階に合わせて無理なくステップアップしていけます。
+            </p>
           </article>
         </div>
       </div>
@@ -892,36 +992,41 @@
           <div class="label">Join Us</div>
           <h2>体験・見学、歓迎しています。</h2>
           <p>
-            「ちょっと見てみたい」「一度やってみたい」という方も歓迎です。<br>
-            体験・見学のご相談はもちろん、スポンサーに関するお問い合わせも受け付けています。<br>
-            入会をご希望の方は、Googleフォームからお申し込みいただけます。
+            「ちょっと見てみたい」「一度やってみたい」という方も歓迎です。<br />
+            体験・見学のご相談はもちろん、スポンサーに関するお問い合わせも受け付けています。
           </p>
         </div>
 
         <div class="join-grid">
           <div class="panel">
             <h3>募集案内</h3>
+
             <dl class="info-list">
               <div class="info-item">
                 <dt>対象</dt>
                 <dd>小学4年生〜中学3年生</dd>
               </div>
+
               <div class="info-item">
                 <dt>区分</dt>
                 <dd>男子・女子ともに歓迎</dd>
               </div>
+
               <div class="info-item">
                 <dt>経験</dt>
                 <dd>初心者・経験者どちらも歓迎</dd>
               </div>
+
               <div class="info-item">
                 <dt>雰囲気</dt>
                 <dd>一人ひとりのペースを大切にしながら、安心して参加しやすい環境づくりを心がけています</dd>
               </div>
+
               <div class="info-item">
                 <dt>活動</dt>
                 <dd>平日練習 / 土日練習・練習試合 など</dd>
               </div>
+
               <div class="info-item">
                 <dt>地域</dt>
                 <dd>奈良県内体育館を中心に活動</dd>
@@ -929,59 +1034,55 @@
             </dl>
 
             <div class="fee-note">
-              月額 2,000円です。<br>
+              月額 2,000円です。<br />
               参加にあたって、費用や通い方など事前に確認しておきたいことがあれば、
-              お問い合わせフォームよりお気軽にご相談ください。<br><br>
-              入会をご希望の方は、下記のボタンよりGoogleフォームへお進みください。<br>
+              お問い合わせフォームまたは公式LINEよりお気軽にご相談ください。
+              <br /><br />
+              入会をご希望の方は、下記ボタンよりGoogleフォームへお進みください。<br />
               クラブ規約も事前にご確認いただけます。
             </div>
 
-            <div class="join-form-box" style="margin-top:16px;">
+            <div class="join-form-box">
               <h4>入会申込フォーム</h4>
-              <p>必要事項をご入力いただくと、内容確認後にAIRFORTHよりご連絡いたします。</p>
+              <p>
+                必要事項をご入力いただくと、内容確認後にAIRFORTHよりご連絡いたします。
+              </p>
               <div class="join-form-actions">
                 <a id="joinFormBottomBtn" href="#" class="btn btn-download" target="_blank" rel="noopener noreferrer">入会申込フォームを開く</a>
               </div>
             </div>
 
-            <div class="join-form-box" style="margin-top:16px;">
+            <div class="join-form-box">
               <h4>クラブ規約</h4>
-              <p>規約の確認、保存、スマホ共有はこちらから行えます。</p>
+              <p>
+                規約の確認、保存、スマホ共有はこちらから行えます。
+              </p>
               <div class="join-form-actions">
-                <a id="rulesOpenBtnBottom" href="#" class="btn btn-secondary" target="_blank" rel="noopener noreferrer">規約を見る</a>
-                <a id="rulesSaveBtnBottom" href="#" class="btn btn-secondary" download="airforth_club_rules.pdf">規約を保存する</a>
-                <button type="button" id="rulesShareBtnBottom" class="btn btn-secondary">スマホで共有</button>
+                <a id="rulesOpenBtn2" href="#" class="btn btn-secondary" target="_blank" rel="noopener noreferrer">規約を見る</a>
+                <a id="rulesSaveBtn2" href="#" class="btn btn-secondary" download="airforth_club_rules.pdf">規約を保存する</a>
+                <button type="button" id="rulesShareBtn2" class="btn btn-secondary">スマホで共有</button>
               </div>
             </div>
           </div>
 
-          <div class="panel" id="contact">
+          <div id="contact" class="panel">
             <h3>お問い合わせフォーム</h3>
 
             <form id="contactForm">
               <div class="form-row">
                 <div class="field">
-                  <label for="participantName">参加者本人のお名前 / ご担当者名<span class="required">必須</span></label>
-                  <input type="text" id="participantName" name="participantName" placeholder="例：山田 太郎 / 株式会社○○ 山田太郎" required>
+                  <label for="name">お名前 <span class="required">必須</span></label>
+                  <input id="name" name="name" type="text" autocomplete="name" required />
                 </div>
-                <div class="field">
-                  <label for="guardianName">保護者のお名前 / 会社名・団体名<span class="required">必須</span></label>
-                  <input type="text" id="guardianName" name="guardianName" placeholder="例：山田 花子 / 株式会社○○" required>
-                </div>
-              </div>
 
-              <div class="form-row">
                 <div class="field">
-                  <label for="grade">参加者の年齢・学年 / ご所属・ご役職<span class="required">必須</span></label>
-                  <input type="text" id="grade" name="grade" placeholder="例：小学6年生 / 中学1年生 / 営業部 部長 / 代表取締役" required>
-                </div>
-                <div class="field">
-                  <label for="inquiryType">お問い合わせ内容</label>
-                  <select id="inquiryType" name="inquiryType">
-                    <option value="体験希望">体験希望</option>
-                    <option value="見学希望">見学希望</option>
-                    <option value="スポンサーについて">スポンサーについて</option>
-                    <option value="問い合わせ">その他お問い合わせ</option>
+                  <label for="category">お問い合わせ内容 <span class="required">必須</span></label>
+                  <select id="category" name="category" required>
+                    <option value="">選択してください</option>
+                    <option value="体験・見学">体験・見学について</option>
+                    <option value="入会">入会について</option>
+                    <option value="スポンサー・協賛">スポンサー・協賛について</option>
+                    <option value="その他">その他</option>
                   </select>
                 </div>
               </div>
@@ -989,33 +1090,43 @@
               <div class="form-row">
                 <div class="field">
                   <label for="phone">電話番号</label>
-                  <input type="text" id="phone" name="phone" placeholder="例：090-1234-5678">
+                  <input id="phone" name="phone" type="tel" autocomplete="tel" />
                 </div>
+
                 <div class="field">
                   <label for="email">メールアドレス</label>
-                  <input type="email" id="email" name="email" placeholder="例：example@gmail.com">
+                  <input id="email" name="email" type="email" autocomplete="email" />
                 </div>
               </div>
 
+              <p class="help">
+                電話番号またはメールアドレスのどちらかをご入力ください。
+              </p>
+              <div id="contactError" class="error" aria-live="polite"></div>
+
               <div class="field">
-                <label>連絡先<span class="required">必須</span></label>
-                <div class="help">電話番号かメールアドレスの、どちらか1つは必ず入力してください。</div>
-                <div id="contactError" class="error"></div>
+                <label for="childInfo">お子さまの学年・経験など</label>
+                <textarea
+                  id="childInfo"
+                  name="childInfo"
+                  placeholder="例：小学5年生、バレーボール経験あり / 体験希望日など"
+                ></textarea>
               </div>
 
               <div class="field">
-                <label for="consultation">ご相談事項（任意）</label>
-                <textarea id="consultation" name="consultation" placeholder="参加にあたって確認しておきたいことや、スポンサーについてのご相談があればご記入ください。"></textarea>
-              </div>
-
-              <div class="field">
-                <label for="message">その他ご質問・ご相談（任意）</label>
-                <textarea id="message" name="message" placeholder="体験・見学・スポンサーについてなど、ご質問があればご記入ください。"></textarea>
+                <label for="message">その他ご質問・ご相談</label>
+                <textarea
+                  id="message"
+                  name="message"
+                  placeholder="体験・見学・スポンサーについてなど、ご質問があればご記入ください。"
+                ></textarea>
               </div>
 
               <div class="submit-wrap">
-                <button type="submit" class="btn btn-primary submit-btn" id="submitBtn">送信する</button>
-                <div id="formStatus" class="success"></div>
+                <button id="submitBtn" type="submit" class="btn btn-primary">
+                  送信する
+                </button>
+                <div id="formStatus" class="success" aria-live="polite"></div>
               </div>
             </form>
           </div>
@@ -1031,56 +1142,71 @@
     </div>
   </footer>
 
+  <a
+    id="lineFloatBtn"
+    class="line-float"
+    href="#"
+    target="_blank"
+    rel="noopener noreferrer"
+    aria-label="AIRFORTH公式LINEで相談する"
+  >
+    <span class="line-badge">LINE</span>
+    <span>公式LINEで相談する</span>
+  </a>
+
   <script>
     const JOIN_FORM_URL = "https://docs.google.com/forms/d/e/1FAIpQLSeYPheau8bSLQtwWv5kDRGCWHSZRP3xhyA7OUJwCsXvJoRigw/viewform?usp=header";
     const RULES_PDF_URL = "./airforth_club_rules.pdf";
     const GAS_WEBAPP_URL = "https://script.google.com/macros/s/AKfycbxeAtYULIsp6dmjUzFQNr7hZZXOkA7MIJeKHYTbZ2tPS9LJdAfT3gZxDB_zrLXGc4a-/exec";
+    const LINE_URL = "https://lin.ee/ze1BxQ7p";
 
-    document.getElementById("joinFormTopBtn").href = JOIN_FORM_URL;
-    document.getElementById("joinFormSideBtn").href = JOIN_FORM_URL;
-    document.getElementById("joinFormBottomBtn").href = JOIN_FORM_URL;
+    const setHref = (id, url) => {
+      const el = document.getElementById(id);
+      if(el) el.href = url;
+    };
 
-    document.getElementById("rulesOpenBtn").href = RULES_PDF_URL;
-    document.getElementById("rulesSaveBtn").href = RULES_PDF_URL;
-    document.getElementById("rulesOpenBtnBottom").href = RULES_PDF_URL;
-    document.getElementById("rulesSaveBtnBottom").href = RULES_PDF_URL;
+    [
+      "joinFormTopBtn",
+      "joinFormSideBtn",
+      "joinFormBottomBtn"
+    ].forEach(id => setHref(id, JOIN_FORM_URL));
 
-    async function shareRulesPdf() {
-      const absoluteUrl = new URL(RULES_PDF_URL, window.location.href).href;
+    [
+      "rulesOpenBtn",
+      "rulesOpenBtn2",
+      "rulesSaveBtn",
+      "rulesSaveBtn2"
+    ].forEach(id => setHref(id, RULES_PDF_URL));
 
-      try {
-        const response = await fetch(RULES_PDF_URL, { cache: "no-store" });
-        if (!response.ok) throw new Error("PDF取得失敗");
+    [
+      "lineTopBtn",
+      "lineSideBtn",
+      "lineFloatBtn"
+    ].forEach(id => setHref(id, LINE_URL));
 
-        const blob = await response.blob();
-        const pdfFile = new File([blob], "airforth_club_rules.pdf", { type: "application/pdf" });
+    const shareRules = async () => {
+      const shareData = {
+        title: "AIRFORTH クラブ規約",
+        text: "AIRFORTHのクラブ規約はこちらから確認できます。",
+        url: new URL(RULES_PDF_URL, window.location.href).href
+      };
 
-        if (navigator.canShare && navigator.canShare({ files: [pdfFile] })) {
-          await navigator.share({
-            title: "AIRFORTH クラブ規約",
-            text: "AIRFORTHのクラブ規約です。",
-            files: [pdfFile]
-          });
-          return;
+      if(navigator.share){
+        try{
+          await navigator.share(shareData);
+        }catch(error){
+          console.log("share canceled", error);
         }
-
-        if (navigator.share) {
-          await navigator.share({
-            title: "AIRFORTH クラブ規約",
-            text: "AIRFORTHのクラブ規約です。",
-            url: absoluteUrl
-          });
-          return;
-        }
-
-        window.open(absoluteUrl, "_blank");
-      } catch (error) {
-        window.open(absoluteUrl, "_blank");
+      }else{
+        window.open(RULES_PDF_URL, "_blank", "noopener,noreferrer");
       }
-    }
+    };
 
-    document.getElementById("rulesShareBtn").addEventListener("click", shareRulesPdf);
-    document.getElementById("rulesShareBtnBottom").addEventListener("click", shareRulesPdf);
+    const shareBtn1 = document.getElementById("rulesShareBtn");
+    const shareBtn2 = document.getElementById("rulesShareBtn2");
+
+    if(shareBtn1) shareBtn1.addEventListener("click", shareRules);
+    if(shareBtn2) shareBtn2.addEventListener("click", shareRules);
 
     const form = document.getElementById("contactForm");
     const phone = document.getElementById("phone");
@@ -1089,175 +1215,40 @@
     const formStatus = document.getElementById("formStatus");
     const submitBtn = document.getElementById("submitBtn");
 
-    form.addEventListener("submit", async function(e) {
-      e.preventDefault();
-      contactError.textContent = "";
-      formStatus.textContent = "";
+    if(form){
+      form.addEventListener("submit", async (e) => {
+        e.preventDefault();
 
-      if (!phone.value.trim() && !email.value.trim()) {
-        contactError.textContent = "電話番号かメールアドレスのどちらかを入力してください。";
-        return;
-      }
+        contactError.textContent = "";
+        formStatus.textContent = "";
 
-      submitBtn.disabled = true;
-      submitBtn.textContent = "送信中...";
+        if(!phone.value.trim() && !email.value.trim()){
+          contactError.textContent = "電話番号かメールアドレスのどちらかを入力してください。";
+          return;
+        }
 
-      try {
-        const formData = new FormData(form);
-        await fetch(GAS_WEBAPP_URL, {
-          method: "POST",
-          mode: "no-cors",
-          body: new URLSearchParams(formData)
-        });
+        submitBtn.disabled = true;
+        submitBtn.textContent = "送信中...";
 
-        form.reset();
-        formStatus.textContent = "送信を受け付けました。内容を確認のうえご連絡いたします。";
-      } catch (error) {
-        contactError.textContent = "送信に失敗しました。時間をおいて再度お試しください。";
-      } finally {
-        submitBtn.disabled = false;
-        submitBtn.textContent = "送信する";
-      }
-    });
+        try{
+          const formData = new FormData(form);
+
+          await fetch(GAS_WEBAPP_URL, {
+            method:"POST",
+            mode:"no-cors",
+            body:new URLSearchParams(formData)
+          });
+
+          form.reset();
+          formStatus.textContent = "送信を受け付けました。内容を確認のうえご連絡いたします。";
+        }catch(error){
+          contactError.textContent = "送信に失敗しました。時間をおいて再度お試しください。";
+        }finally{
+          submitBtn.disabled = false;
+          submitBtn.textContent = "送信する";
+        }
+      });
+    }
   </script>
-  <!-- AIRFORTH 公式LINE導線 追加 -->
-<style>
-  .airforth-line-float{
-    position:fixed;
-    right:18px;
-    bottom:18px;
-    z-index:2000;
-    display:flex;
-    align-items:center;
-    gap:10px;
-    padding:14px 18px;
-    border-radius:999px;
-    background:#06c755;
-    color:#fff;
-    font-weight:900;
-    box-shadow:0 14px 30px rgba(6,199,85,.28);
-    transition:.25s;
-  }
-
-  .airforth-line-float:hover{
-    transform:translateY(-2px);
-    box-shadow:0 18px 36px rgba(6,199,85,.34);
-  }
-
-  .airforth-line-badge{
-    display:inline-flex;
-    align-items:center;
-    justify-content:center;
-    min-width:44px;
-    height:28px;
-    padding:0 8px;
-    border-radius:999px;
-    background:#fff;
-    color:#06c755;
-    font-size:.78rem;
-    font-weight:1000;
-    line-height:1;
-  }
-
-  .airforth-line-box{
-    margin-top:18px;
-    border:1px solid rgba(6,199,85,.18);
-    border-radius:18px;
-    padding:16px;
-    background:linear-gradient(135deg, rgba(6,199,85,.10), rgba(90,183,255,.08));
-  }
-
-  .airforth-line-box h4{
-    color:#0b2354;
-    font-size:1rem;
-    font-weight:900;
-    margin-bottom:6px;
-  }
-
-  .airforth-line-box p{
-    color:#66738c;
-    font-size:.92rem;
-    margin-bottom:12px;
-  }
-
-  .btn-line{
-    background:#06c755;
-    color:#fff;
-    box-shadow:0 12px 24px rgba(6,199,85,.22);
-  }
-
-  .btn-line:hover{
-    transform:translateY(-2px);
-  }
-
-  @media (max-width:560px){
-    .airforth-line-float{
-      left:14px;
-      right:14px;
-      bottom:14px;
-      justify-content:center;
-      width:auto;
-    }
-
-    body{
-      padding-bottom:82px;
-    }
-  }
-</style>
-
-<a
-  class="airforth-line-float"
-  href="https://lin.ee/ze1BxQ7p"
-  target="_blank"
-  rel="noopener noreferrer"
-  aria-label="AIRFORTH公式LINEで相談する"
->
-  <span class="airforth-line-badge">LINE</span>
-  <span>公式LINEで相談する</span>
-</a>
-
-<script>
-  (function(){
-    const AIRFORTH_LINE_URL = "https://lin.ee/ze1BxQ7p";
-
-    const heroActions = document.querySelector(".hero-actions");
-    if(heroActions && !document.getElementById("airforthLineTopBtn")){
-      heroActions.insertAdjacentHTML("beforeend", `
-        <a
-          id="airforthLineTopBtn"
-          href="${AIRFORTH_LINE_URL}"
-          class="btn btn-line"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          公式LINEで相談する
-        </a>
-      `);
-    }
-
-    const heroSideNote = document.querySelector(".hero-side-note");
-    if(heroSideNote && !document.getElementById("airforthLineSideBox")){
-      heroSideNote.insertAdjacentHTML("afterend", `
-        <div id="airforthLineSideBox" class="airforth-line-box">
-          <h4>公式LINEでもご相談できます</h4>
-          <p>
-            体験・見学のご相談、入会前のご質問、スポンサー・協賛のご相談も、公式LINEから気軽にお問い合わせいただけます。
-          </p>
-          <div class="join-form-actions">
-            <a
-              href="${AIRFORTH_LINE_URL}"
-              class="btn btn-line"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              公式LINEを開く
-            </a>
-          </div>
-        </div>
-      `);
-    }
-  })();
-</script>
-<!-- /AIRFORTH 公式LINE導線 追加 -->
 </body>
 </html>
