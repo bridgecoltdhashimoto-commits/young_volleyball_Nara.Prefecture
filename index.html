@@ -804,6 +804,122 @@
         justify-content:center;
       }
     }
+    /* AIRFORTH あたたかい動き追加 */
+@keyframes airforthFadeUp{
+  from{
+    opacity:0;
+    transform:translateY(18px);
+  }
+  to{
+    opacity:1;
+    transform:translateY(0);
+  }
+}
+
+@keyframes airforthSoftFloat{
+  0%{
+    transform:translateY(0);
+  }
+  50%{
+    transform:translateY(-6px);
+  }
+  100%{
+    transform:translateY(0);
+  }
+}
+
+@keyframes airforthGlowMove{
+  0%{
+    background-position:0% 50%;
+  }
+  50%{
+    background-position:100% 50%;
+  }
+  100%{
+    background-position:0% 50%;
+  }
+}
+
+.hero,
+.club-mark,
+#concept,
+#join{
+  animation:airforthFadeUp .85s ease both;
+}
+
+.hero{
+  background-size:160% 160%;
+  animation:
+    airforthFadeUp .85s ease both,
+    airforthGlowMove 14s ease-in-out infinite;
+}
+
+.club-mark-box{
+  animation:airforthSoftFloat 5.5s ease-in-out infinite;
+}
+
+.card,
+.panel,
+.hero-side,
+.hero-point,
+.hero-side-card,
+.join-form-box,
+.line-box{
+  transition:
+    transform .28s ease,
+    box-shadow .28s ease,
+    border-color .28s ease;
+}
+
+.card:hover,
+.panel:hover,
+.hero-side-card:hover,
+.join-form-box:hover,
+.line-box:hover{
+  transform:translateY(-4px);
+  box-shadow:0 18px 38px rgba(11,35,84,.12);
+  border-color:rgba(90,183,255,.45);
+}
+
+.btn{
+  position:relative;
+  overflow:hidden;
+}
+
+.btn::after{
+  content:"";
+  position:absolute;
+  top:0;
+  left:-120%;
+  width:80%;
+  height:100%;
+  background:linear-gradient(
+    90deg,
+    transparent,
+    rgba(255,255,255,.35),
+    transparent
+  );
+  transform:skewX(-18deg);
+  transition:.6s;
+}
+
+.btn:hover::after{
+  left:130%;
+}
+
+.line-float{
+  animation:airforthSoftFloat 4.8s ease-in-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce){
+  *,
+  *::before,
+  *::after{
+    animation:none !important;
+    transition:none !important;
+    scroll-behavior:auto !important;
+  }
+}
   </style>
 </head>
 
