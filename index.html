@@ -920,6 +920,92 @@
     scroll-behavior:auto !important;
   }
 }
+    /* AIRFORTH あたたかい動き 強め版 */
+@keyframes airforthMobileFloatStrong{
+  0%{
+    transform:translateY(0) scale(1);
+  }
+  50%{
+    transform:translateY(-10px) scale(1.015);
+  }
+  100%{
+    transform:translateY(0) scale(1);
+  }
+}
+
+@keyframes airforthLinePulseStrong{
+  0%{
+    box-shadow:0 12px 28px rgba(6,199,85,.25);
+  }
+  50%{
+    box-shadow:0 18px 44px rgba(6,199,85,.48);
+  }
+  100%{
+    box-shadow:0 12px 28px rgba(6,199,85,.25);
+  }
+}
+
+@keyframes airforthSoftGlow{
+  0%{
+    box-shadow:0 12px 28px rgba(11,35,84,.08);
+  }
+  50%{
+    box-shadow:0 18px 42px rgba(90,183,255,.18);
+  }
+  100%{
+    box-shadow:0 12px 28px rgba(11,35,84,.08);
+  }
+}
+
+@keyframes airforthAccentMove{
+  0%{
+    background-position:0% 50%;
+  }
+  50%{
+    background-position:100% 50%;
+  }
+  100%{
+    background-position:0% 50%;
+  }
+}
+
+.club-mark-box{
+  animation:airforthMobileFloatStrong 4.5s ease-in-out infinite !important;
+}
+
+.hero-side,
+.line-box{
+  animation:airforthSoftGlow 4.2s ease-in-out infinite !important;
+}
+
+.line-float{
+  animation:
+    airforthMobileFloatStrong 3.6s ease-in-out infinite,
+    airforthLinePulseStrong 2.8s ease-in-out infinite !important;
+}
+
+.hero h1 .accent{
+  background-size:220% 220% !important;
+  animation:airforthAccentMove 5s ease-in-out infinite !important;
+}
+
+@media (max-width:760px){
+  .club-mark-box{
+    animation:airforthMobileFloatStrong 3.8s ease-in-out infinite !important;
+  }
+
+  .line-float{
+    animation:
+      airforthMobileFloatStrong 3s ease-in-out infinite,
+      airforthLinePulseStrong 2.4s ease-in-out infinite !important;
+  }
+
+  .line-box,
+  .join-form-box,
+  .hero-side{
+    animation:airforthSoftGlow 3.8s ease-in-out infinite !important;
+  }
+}
   </style>
 </head>
 
