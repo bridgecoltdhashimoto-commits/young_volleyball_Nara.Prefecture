@@ -7,13 +7,13 @@
   "theme_color": "#062b55",
   "icons": [
     {
-      "src": "./logo-main.png",
-      "sizes": "192x192",
+      "src": "./app-icon.png",
+      "sizes": "180x180",
       "type": "image/png"
     },
     {
-      "src": "./logo-main.png",
-      "sizes": "512x512",
+      "src": "./apple-touch-icon.png",
+      "sizes": "180x180",
       "type": "image/png"
     }
   ]
