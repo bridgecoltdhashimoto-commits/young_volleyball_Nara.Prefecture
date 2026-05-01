@@ -1,6 +1,7 @@
 name: Patch AIRFORTH icon tags
 
 on:
+  workflow_dispatch:
   push:
     branches:
       - main
