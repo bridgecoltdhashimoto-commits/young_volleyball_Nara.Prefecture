@@ -7,11 +7,6 @@
   <title>AIRFORTH | 奈良ヤングバレーボールクラブ</title>
   <meta name="description" content="AIRFORTHは、小学4年生から中学生までを対象に、学びとバレーボールのバランスを大切にしながら、安心して楽しく活動できる奈良ヤングバレーボールクラブです。" />
 
-  <link rel="icon" href="./app-icon.png?v=2" type="image/png" />
-  <link rel="apple-touch-icon" href="./apple-touch-icon.png?v=2" />
-  <link rel="manifest" href="./manifest.json?v=2" />
-  <meta name="theme-color" content="#062b55" />
-
   <style>
     :root{
       --navy:#0b2354;
@@ -1021,6 +1016,7 @@
 
       <nav aria-label="メインメニュー">
         <a href="#concept">クラブ紹介</a>
+        <a href="#support">ご協賛・ご支援</a>
         <a href="#join">募集案内</a>
         <a href="#contact" class="cta-mini">体験・見学はこちら</a>
       </nav>
@@ -1077,6 +1073,7 @@
           <div class="hero-actions">
             <a href="#join" class="btn btn-primary">募集案内を見る</a>
             <a href="#concept" class="btn btn-secondary">クラブ紹介を見る</a>
+            <a id="supportFormTopBtn" href="#" class="btn btn-secondary" target="_blank" rel="noopener noreferrer">ご協賛・ご支援フォーム</a>
             <a id="joinFormTopBtn" href="#" class="btn btn-download" target="_blank" rel="noopener noreferrer">入会申込はこちら</a>
             <a id="lineTopBtn" href="#" class="btn btn-line" target="_blank" rel="noopener noreferrer">公式LINEで相談する</a>
           </div>
@@ -1121,6 +1118,17 @@
             </p>
             <div class="join-form-actions">
               <a id="lineSideBtn" href="#" class="btn btn-line" target="_blank" rel="noopener noreferrer">公式LINEを開く</a>
+            </div>
+          </div>
+
+          <div class="join-form-box">
+            <h4>ご協賛・ご支援をお考えの方へ</h4>
+            <p>
+              AIRFORTHの活動にご協賛・ご支援いただける方へ、
+              感謝掲載のご案内と申込フォームをご用意しています。
+            </p>
+            <div class="join-form-actions">
+              <a id="supportFormSideBtn" href="#" class="btn btn-secondary" target="_blank" rel="noopener noreferrer">ご協賛・ご支援フォームを開く</a>
             </div>
           </div>
 
@@ -1189,6 +1197,61 @@
               それぞれの段階に合わせて無理なくステップアップしていけます。
             </p>
           </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="support">
+      <div class="container">
+        <div class="section-head">
+          <div class="label">Support AIRFORTH</div>
+          <h2>ご協賛・ご支援のお願い</h2>
+          <p>
+            AIRFORTHの活動をあたたかく支えてくださる企業・団体・個人の皆さまを募集しています。
+            いただいたご協賛・ご支援は、子どもたちが安心して活動を続けられる環境づくりに活用いたします。
+          </p>
+        </div>
+
+        <div class="join-grid">
+          <div class="panel">
+            <h3>ご支援いただける内容</h3>
+            <dl class="info-list">
+              <div class="info-item">
+                <dt>対象</dt>
+                <dd>企業・団体・個人の皆さま</dd>
+              </div>
+              <div class="info-item">
+                <dt>目的</dt>
+                <dd>練習環境の整備、備品の充実、子どもたちの継続的な活動支援</dd>
+              </div>
+              <div class="info-item">
+                <dt>掲載</dt>
+                <dd>ご希望に応じて、AIRFORTHからの感謝掲載としてご紹介いたします</dd>
+              </div>
+            </dl>
+            <div class="fee-note">
+              感謝掲載は、ご協賛・ご支援へのお礼として行うものです。
+              広告効果、集客効果、売上向上などを保証するものではありません。
+            </div>
+          </div>
+
+          <div class="panel">
+            <h3>ご協賛・ご支援申込フォーム</h3>
+            <p>
+              ご協賛・ご支援をご検討いただける方は、下記フォームよりお申し込みください。
+              内容を確認後、AIRFORTHよりご連絡いたします。
+            </p>
+            <div class="join-form-box">
+              <h4>フォームからお申し込み</h4>
+              <p>
+                ご支援内容や感謝掲載のご希望について、フォーム内でお知らせください。
+              </p>
+              <div class="join-form-actions">
+                <a id="supportFormBottomBtn" href="#" class="btn btn-primary" target="_blank" rel="noopener noreferrer">ご協賛・ご支援フォームを開く</a>
+                <a href="#contact" class="btn btn-secondary">先に相談する</a>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </section>
@@ -1363,6 +1426,7 @@
 
   <script>
     const JOIN_FORM_URL = "https://docs.google.com/forms/d/e/1FAIpQLSeYPheau8bSLQtwWv5kDRGCWHSZRP3xhyA7OUJwCsXvJoRigw/viewform?usp=header";
+    const SUPPORT_FORM_URL = "https://forms.gle/RPLDX1J5Qfj9712z5";
     const RULES_PDF_URL = "./airforth_club_rules.pdf";
     const GAS_WEBAPP_URL = "https://script.google.com/macros/s/AKfycbxeAtYULIsp6dmjUzFQNr7hZZXOkA7MIJeKHYTbZ2tPS9LJdAfT3gZxDB_zrLXGc4a-/exec";
     const LINE_URL = "https://lin.ee/ze1BxQ7p";
@@ -1377,6 +1441,12 @@
       "joinFormSideBtn",
       "joinFormBottomBtn"
     ].forEach(id => setHref(id, JOIN_FORM_URL));
+
+    [
+      "supportFormTopBtn",
+      "supportFormSideBtn",
+      "supportFormBottomBtn"
+    ].forEach(id => setHref(id, SUPPORT_FORM_URL));
 
     [
       "rulesOpenBtn",
