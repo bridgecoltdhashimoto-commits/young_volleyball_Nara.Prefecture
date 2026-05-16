@@ -1078,6 +1078,173 @@
     animation:airforthSoftGlow 3.8s ease-in-out infinite !important;
   }
 }
+
+    /* AIRFORTH tap visibility fix */
+    nav a{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      gap:6px;
+      min-height:40px;
+      padding:9px 15px;
+      border-radius:999px;
+      border:1px solid rgba(90,183,255,.34);
+      background:linear-gradient(135deg,rgba(90,183,255,.14),rgba(245,61,143,.08));
+      box-shadow:0 7px 16px rgba(11,35,84,.08);
+      line-height:1.2;
+      white-space:nowrap;
+      touch-action:manipulation;
+    }
+
+    nav a:hover,
+    nav a:active,
+    nav a:focus-visible{
+      color:var(--navy);
+      transform:translateY(-2px);
+      border-color:rgba(245,61,143,.32);
+      box-shadow:0 11px 22px rgba(11,35,84,.12);
+    }
+
+    nav a:focus-visible,
+    .btn:focus-visible{
+      outline:3px solid rgba(90,183,255,.35);
+      outline-offset:3px;
+    }
+
+    nav a.cta-mini{
+      color:#fff;
+      border-color:rgba(255,255,255,.55);
+      background:linear-gradient(135deg,var(--pink),var(--orange));
+      box-shadow:0 10px 22px rgba(245,61,143,.22);
+    }
+
+    nav a.cta-mini:hover,
+    nav a.cta-mini:active,
+    nav a.cta-mini:focus-visible{
+      color:#fff;
+      box-shadow:0 14px 28px rgba(245,61,143,.28);
+    }
+
+    .btn{
+      border-radius:18px;
+    }
+
+    .btn-primary,
+    .btn-download,
+    .btn-line{
+      border:1px solid rgba(255,255,255,.42);
+      box-shadow:0 12px 26px rgba(11,35,84,.13);
+    }
+
+    .btn-secondary{
+      gap:8px;
+      padding-right:42px;
+      border:1px solid rgba(90,183,255,.44);
+      background:linear-gradient(135deg,#f1f8ff 0%,#fff5fb 100%);
+      color:var(--navy);
+      box-shadow:0 11px 24px rgba(11,35,84,.11), inset 0 1px 0 rgba(255,255,255,.86);
+    }
+
+    .btn-secondary::after{
+      content:"›";
+      position:absolute;
+      top:50%;
+      right:17px;
+      left:auto;
+      width:auto;
+      height:auto;
+      background:none;
+      transform:translateY(-50%);
+      color:var(--navy-soft);
+      font-size:1.35rem;
+      line-height:1;
+      opacity:.9;
+      transition:transform .25s ease, opacity .25s ease;
+    }
+
+    .btn-secondary:hover,
+    .btn-secondary:active,
+    .btn-secondary:focus-visible{
+      border-color:rgba(245,61,143,.36);
+      background:linear-gradient(135deg,#e8f5ff 0%,#ffeef7 100%);
+      box-shadow:0 15px 30px rgba(11,35,84,.14), inset 0 1px 0 rgba(255,255,255,.9);
+    }
+
+    .btn-secondary:hover::after,
+    .btn-secondary:active::after,
+    .btn-secondary:focus-visible::after{
+      left:auto;
+      transform:translate(3px,-50%);
+      opacity:1;
+    }
+
+    @media (max-width:760px){
+      nav{
+        gap:8px;
+        row-gap:9px;
+      }
+
+      nav a{
+        flex:0 1 auto;
+        min-height:38px;
+        padding:8px 12px;
+        font-size:.86rem;
+        box-shadow:0 6px 14px rgba(11,35,84,.09);
+      }
+
+      .join-form-actions,
+      .hero-compact-actions{
+        gap:9px;
+        margin-bottom:4px;
+      }
+
+      .join-form-actions .btn,
+      .hero-compact-actions .btn{
+        min-height:44px;
+        padding:11px 16px;
+        border-radius:16px;
+        box-shadow:0 10px 22px rgba(11,35,84,.12);
+      }
+
+      .join-form-actions .btn-secondary,
+      .hero-compact-actions .btn-secondary{
+        padding-right:40px;
+        border-color:rgba(90,183,255,.48);
+        background:linear-gradient(135deg,#eaf6ff 0%,#fff0f8 100%);
+      }
+
+      .join-form-actions .btn:not(.btn-primary):not(.btn-download):not(.btn-line):not(.btn-secondary),
+      .hero-compact-actions .btn:not(.btn-primary):not(.btn-download):not(.btn-line):not(.btn-secondary){
+        border:1px solid rgba(90,183,255,.44);
+        background:linear-gradient(135deg,#f1f8ff 0%,#fff5fb 100%);
+        color:var(--navy);
+      }
+    }
+
+    @media (max-width:560px){
+      nav a,
+      nav a.cta-mini{
+        width:auto;
+      }
+
+      nav a{
+        flex:1 1 calc(50% - 8px);
+      }
+
+      .join-form-actions,
+      .hero-compact-actions{
+        padding-bottom:6px;
+      }
+
+      .join-form-actions .btn,
+      .hero-compact-actions .btn{
+        width:100%;
+        min-height:43px;
+        padding-top:10px;
+        padding-bottom:10px;
+      }
+    }
+
   </style>
 </head>
 
