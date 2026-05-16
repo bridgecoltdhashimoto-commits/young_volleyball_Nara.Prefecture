@@ -24,7 +24,9 @@
       --line:#dce5f3;
       --shadow:0 14px 34px rgba(11,35,84,.10);
       --shadow-soft:0 10px 26px rgba(11,35,84,.08);
-      --max:1140px;
+      --max:1180px;
+      --wide:1180px;
+      --section-gap:36px;
     }
 
     *{
@@ -192,7 +194,7 @@
 
     /* Common */
     section{
-      padding:42px 0;
+      padding:var(--section-gap) 0;
     }
 
     .section-head{
@@ -268,7 +270,7 @@
 
     /* Hero */
     .hero{
-      padding:36px 0 46px;
+      padding:34px 0 42px;
       background:
         radial-gradient(circle at 12% 12%, rgba(90,183,255,.16), transparent 26%),
         radial-gradient(circle at 90% 8%, rgba(245,61,143,.08), transparent 20%),
@@ -276,11 +278,11 @@
     }
 
     .hero-grid{
-      width:min(var(--max),92%);
+      width:min(var(--wide),92%);
       margin:0 auto;
       display:grid;
-      grid-template-columns:1.06fr .94fr;
-      gap:30px;
+      grid-template-columns:minmax(0,1.1fr) minmax(360px,.9fr);
+      gap:28px;
       align-items:start;
     }
 
@@ -313,17 +315,17 @@
     }
 
     .hero-lead{
-      max-width:650px;
+      max-width:680px;
       color:var(--text);
       font-size:1.02rem;
-      margin-bottom:22px;
+      margin-bottom:20px;
     }
 
     .hero-points{
       display:grid;
       grid-template-columns:repeat(3,1fr);
       gap:12px;
-      margin-bottom:22px;
+      margin-bottom:20px;
     }
 
     .hero-point{
@@ -353,22 +355,26 @@
 
     .hero-actions{
       display:grid;
-      grid-template-columns:repeat(2,minmax(180px,1fr));
+      grid-template-columns:repeat(2,minmax(210px,1fr));
       gap:12px;
-      max-width:520px;
+      max-width:620px;
+    }
+
+    .hero-actions .btn-line{
+      grid-column:1 / -1;
     }
 
     .hero-side{
       background:linear-gradient(180deg,#ffffff 0%,#f8fbff 100%);
       border:1px solid var(--line);
       border-radius:28px;
-      padding:24px;
+      padding:22px;
       box-shadow:var(--shadow);
     }
 
     .hero-side h3{
       color:var(--navy);
-      font-size:1.35rem;
+      font-size:1.32rem;
       font-weight:1000;
       margin-bottom:14px;
     }
@@ -384,7 +390,8 @@
       border-radius:18px;
       background:#fff;
       border:1px solid var(--line);
-      padding:16px 14px;
+      padding:15px 14px;
+      min-height:96px;
     }
 
     .hero-side-card small{
@@ -408,7 +415,7 @@
       background:linear-gradient(135deg,rgba(244,180,0,.08),rgba(245,61,143,.07),rgba(90,183,255,.10));
       border:1px solid rgba(11,35,84,.08);
       border-radius:18px;
-      padding:16px;
+      padding:15px 16px;
       color:var(--muted);
       font-size:.94rem;
       margin-bottom:14px;
@@ -417,8 +424,8 @@
     .line-box,
     .join-form-box{
       margin-top:14px;
-      border-radius:18px;
-      padding:16px;
+      border-radius:20px;
+      padding:17px;
       border:1px solid rgba(11,35,84,.08);
       background:linear-gradient(135deg,rgba(90,183,255,.08),rgba(245,61,143,.05));
     }
@@ -447,6 +454,40 @@
       display:flex;
       gap:10px;
       flex-wrap:wrap;
+    }
+
+    .hero-side .join-form-actions .btn{
+      flex:1 1 160px;
+      min-width:0;
+    }
+
+
+    .hero-compact-actions{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:12px;
+    }
+
+    .hero-compact-actions .btn{
+      width:100%;
+      min-width:0;
+      padding-inline:14px;
+    }
+
+    .hero-side .line-box{
+      margin-top:0;
+    }
+
+    .hero-side .join-form-box{
+      min-height:0;
+    }
+
+    .hero-side .join-form-box.support-teaser{
+      background:linear-gradient(135deg,rgba(244,180,0,.09),rgba(90,183,255,.07));
+    }
+
+    .hero-side .join-form-box.support-teaser p{
+      margin-bottom:12px;
     }
 
     /* Concept */
@@ -495,16 +536,39 @@
     /* Join / Contact */
     .join-grid{
       display:grid;
-      grid-template-columns:.9fr 1.1fr;
-      gap:20px;
+      grid-template-columns:minmax(0,1.05fr) minmax(0,.95fr);
+      gap:24px;
       align-items:start;
+    }
+
+    .support-grid{
+      grid-template-columns:minmax(0,1.08fr) minmax(360px,.92fr);
+      align-items:stretch;
+    }
+
+    .support-grid .panel{
+      display:flex;
+      flex-direction:column;
+    }
+
+    .support-grid .join-form-box{
+      margin-top:auto;
+    }
+
+    .contact-grid{
+      grid-template-columns:minmax(390px,.92fr) minmax(0,1.08fr);
+      align-items:start;
+    }
+
+    .contact-grid .panel{
+      height:100%;
     }
 
     .panel{
       background:#fff;
       border:1px solid var(--line);
       border-radius:24px;
-      padding:24px 22px;
+      padding:24px;
       box-shadow:var(--shadow);
     }
 
@@ -601,7 +665,7 @@
     }
 
     .field textarea{
-      min-height:100px;
+      min-height:112px;
       resize:vertical;
     }
 
@@ -697,12 +761,19 @@
     @media (max-width:980px){
       .hero-grid,
       .join-grid,
+      .support-grid,
+      .contact-grid,
       .cards3{
         grid-template-columns:1fr;
       }
 
       .hero-side{
         max-width:720px;
+      }
+
+      .contact-grid .panel,
+      .support-grid .panel{
+        height:auto;
       }
 
       .hero-points,
@@ -735,7 +806,8 @@
         font-size:1.85rem;
       }
 
-      .hero-actions{
+      .hero-actions,
+      .hero-compact-actions{
         grid-template-columns:1fr;
         max-width:none;
       }
@@ -1121,38 +1193,38 @@
             </div>
           </div>
 
-          <div class="join-form-box">
+          <div class="join-form-box support-teaser">
             <h4>ご協賛・ご支援をお考えの方へ</h4>
             <p>
-              AIRFORTHの活動にご協賛・ご支援いただける方へ、
-              感謝掲載のご案内と申込フォームをご用意しています。
+              詳細なご案内は、下のご協賛・ご支援セクションに整理しています。
             </p>
             <div class="join-form-actions">
-              <a id="supportFormSideBtn" href="#" class="btn btn-secondary" target="_blank" rel="noopener noreferrer">ご協賛・ご支援フォームを開く</a>
+              <a href="#support" class="btn btn-secondary">ご支援案内を見る</a>
+              <a id="supportFormSideBtn" href="#" class="btn btn-secondary" target="_blank" rel="noopener noreferrer">フォームを開く</a>
             </div>
           </div>
 
-          <div class="join-form-box">
-            <h4>入会をご希望の方へ</h4>
-            <p>
-              入会申込はGoogleフォームから受け付けています。<br />
-              下のボタンから簡単にお申し込みいただけます。
-            </p>
-            <div class="join-form-actions">
-              <a id="joinFormSideBtn" href="#" class="btn btn-download" target="_blank" rel="noopener noreferrer">入会申込フォームを開く</a>
+          <div class="hero-compact-actions" aria-label="入会申込とクラブ規約への導線">
+            <div class="join-form-box">
+              <h4>入会をご希望の方へ</h4>
+              <p>
+                入会申込はGoogleフォームから受け付けています。
+              </p>
+              <div class="join-form-actions">
+                <a id="joinFormSideBtn" href="#" class="btn btn-download" target="_blank" rel="noopener noreferrer">入会申込フォームを開く</a>
+              </div>
             </div>
-          </div>
 
-          <div class="join-form-box">
-            <h4>クラブ規約</h4>
-            <p>
-              クラブ規約は、こちらからご確認いただけます。<br />
-              保存やスマホ共有もできますので、保護者の方との確認にもご利用ください。
-            </p>
-            <div class="join-form-actions">
-              <a id="rulesOpenBtn" href="#" class="btn btn-secondary" target="_blank" rel="noopener noreferrer">規約を見る</a>
-              <a id="rulesSaveBtn" href="#" class="btn btn-secondary" download="airforth_club_rules.pdf">規約を保存する</a>
-              <button type="button" id="rulesShareBtn" class="btn btn-secondary">スマホで共有</button>
+            <div class="join-form-box">
+              <h4>クラブ規約</h4>
+              <p>
+                規約の確認、保存、スマホ共有はこちらから行えます。
+              </p>
+              <div class="join-form-actions">
+                <a id="rulesOpenBtn" href="#" class="btn btn-secondary" target="_blank" rel="noopener noreferrer">規約を見る</a>
+                <a id="rulesSaveBtn" href="#" class="btn btn-secondary" download="airforth_club_rules.pdf">規約を保存する</a>
+                <button type="button" id="rulesShareBtn" class="btn btn-secondary">スマホで共有</button>
+              </div>
             </div>
           </div>
         </aside>
@@ -1212,7 +1284,7 @@
           </p>
         </div>
 
-        <div class="join-grid">
+        <div class="join-grid support-grid">
           <div class="panel">
             <h3>ご支援いただける内容</h3>
             <dl class="info-list">
@@ -1267,7 +1339,7 @@
           </p>
         </div>
 
-        <div class="join-grid">
+        <div class="join-grid contact-grid">
           <div class="panel">
             <h3>募集案内</h3>
 
