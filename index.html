@@ -1245,6 +1245,160 @@
       }
     }
 
+
+    /* AIRFORTH support preparation section */
+    .support-section-head p + p{
+      margin-top:12px;
+    }
+
+    .support-prep-grid{
+      display:grid;
+      grid-template-columns:minmax(0,1.1fr) minmax(320px,.9fr);
+      gap:20px;
+      margin-bottom:24px;
+    }
+
+    .support-prep-panel{
+      background:linear-gradient(180deg,#ffffff 0%,#f8fbff 100%);
+      border:1px solid var(--line);
+      border-radius:24px;
+      padding:24px;
+      box-shadow:var(--shadow-soft);
+    }
+
+    .support-prep-panel h3{
+      color:var(--navy);
+      font-size:1.22rem;
+      font-weight:1000;
+      margin-bottom:14px;
+    }
+
+    .support-card-grid{
+      display:grid;
+      grid-template-columns:repeat(2,minmax(0,1fr));
+      gap:14px;
+    }
+
+    .support-card{
+      min-height:116px;
+      display:flex;
+      flex-direction:column;
+      justify-content:center;
+      gap:10px;
+      border:1px solid rgba(90,183,255,.28);
+      border-radius:20px;
+      padding:18px 16px;
+      background:linear-gradient(135deg,rgba(90,183,255,.10),rgba(245,61,143,.06));
+      box-shadow:0 10px 22px rgba(11,35,84,.07);
+    }
+
+    .support-card-icon{
+      width:42px;
+      height:42px;
+      display:grid;
+      place-items:center;
+      border-radius:14px;
+      background:#fff;
+      box-shadow:0 8px 18px rgba(11,35,84,.08);
+      font-size:1.25rem;
+    }
+
+    .support-card h4{
+      color:var(--navy);
+      font-size:1rem;
+      font-weight:1000;
+      line-height:1.5;
+    }
+
+    .support-method-list{
+      display:grid;
+      gap:10px;
+      list-style:none;
+    }
+
+    .support-method-list li{
+      position:relative;
+      padding:12px 14px 12px 42px;
+      border:1px solid rgba(90,183,255,.30);
+      border-radius:16px;
+      background:#fff;
+      color:var(--navy);
+      font-weight:900;
+      box-shadow:0 8px 18px rgba(11,35,84,.06);
+    }
+
+    .support-method-list li::before{
+      content:"";
+      position:absolute;
+      left:16px;
+      top:50%;
+      width:12px;
+      height:12px;
+      border-radius:999px;
+      background:linear-gradient(135deg,var(--gold),var(--pink));
+      transform:translateY(-50%);
+      box-shadow:0 0 0 5px rgba(244,180,0,.12);
+    }
+
+    .support-caution-box{
+      margin-top:18px;
+      display:grid;
+      gap:12px;
+      border:1px solid rgba(244,180,0,.24);
+      border-radius:20px;
+      padding:18px;
+      background:linear-gradient(135deg,rgba(244,180,0,.10),rgba(90,183,255,.08),rgba(245,61,143,.05));
+      color:var(--muted);
+      font-size:.92rem;
+    }
+
+    .support-form-box{
+      background:linear-gradient(135deg,rgba(244,180,0,.12),rgba(245,61,143,.07),rgba(90,183,255,.08));
+    }
+
+    .support-form-btn{
+      min-width:240px;
+      box-shadow:0 16px 30px rgba(245,61,143,.24);
+    }
+
+    @media (max-width:980px){
+      .support-prep-grid{
+        grid-template-columns:1fr;
+      }
+    }
+
+    @media (max-width:760px){
+      .support-prep-panel,
+      .support-grid .panel{
+        padding:20px;
+      }
+
+      .support-card-grid{
+        grid-template-columns:1fr 1fr;
+        gap:12px;
+      }
+
+      .support-card{
+        min-height:104px;
+        padding:15px 14px;
+      }
+    }
+
+    @media (max-width:560px){
+      #support{
+        padding-bottom:46px;
+      }
+
+      .support-card-grid{
+        grid-template-columns:1fr;
+      }
+
+      .support-caution-box{
+        font-size:.88rem;
+        padding:16px;
+      }
+    }
+
   </style>
 </head>
 
@@ -1312,7 +1466,7 @@
           <div class="hero-actions">
             <a href="#join" class="btn btn-primary">募集案内を見る</a>
             <a href="#concept" class="btn btn-secondary">クラブ紹介を見る</a>
-            <a id="supportFormTopBtn" href="#" class="btn btn-secondary" target="_blank" rel="noopener noreferrer">ご協賛・ご支援フォーム</a>
+            <a href="#support" class="btn btn-secondary">設立準備を応援する</a>
             <a id="joinFormTopBtn" href="#" class="btn btn-download" target="_blank" rel="noopener noreferrer">入会申込はこちら</a>
             <a id="lineTopBtn" href="#" class="btn btn-line" target="_blank" rel="noopener noreferrer">公式LINEで相談する</a>
           </div>
@@ -1442,13 +1596,51 @@
 
     <section id="support">
       <div class="container">
-        <div class="section-head">
+        <div class="section-head support-section-head">
           <div class="label">Support AIRFORTH</div>
-          <h2>ご協賛・ご支援のお願い</h2>
+          <h2>AIRFORTH設立準備・活動環境づくりへのご支援のお願い</h2>
           <p>
-            AIRFORTHの活動をあたたかく支えてくださる企業・団体・個人の皆さまを募集しています。
-            いただいたご協賛・ご支援は、子どもたちが安心して活動を続けられる環境づくりに活用いたします。
+            AIRFORTHでは、子どもたちが安心してバレーボールに取り組める環境づくりに向けて、設立準備・備品整備・運営準備を進めています。<br />
+            活動に共感いただける企業・団体・個人の皆さまからの、あたたかいご協賛・ご支援を受け付けています。
           </p>
+          <p>
+            いただいたご支援は、子どもたちの練習環境づくり、備品の準備、活動運営のために大切に活用させていただきます。
+          </p>
+        </div>
+
+        <div class="support-prep-grid" aria-label="ご支援の使い道">
+          <div class="support-prep-panel">
+            <h3>ご支援の使い道</h3>
+            <div class="support-card-grid">
+              <article class="support-card">
+                <span class="support-card-icon">🏐</span>
+                <h4>ボール・練習備品の準備</h4>
+              </article>
+              <article class="support-card">
+                <span class="support-card-icon">🏟️</span>
+                <h4>会場利用・活動環境づくり</h4>
+              </article>
+              <article class="support-card">
+                <span class="support-card-icon">🩹</span>
+                <h4>救急用品・安全面の備え</h4>
+              </article>
+              <article class="support-card">
+                <span class="support-card-icon">📣</span>
+                <h4>広報・運営準備</h4>
+              </article>
+            </div>
+          </div>
+
+          <div class="support-prep-panel">
+            <h3>ご支援方法</h3>
+            <ul class="support-method-list">
+              <li>ご寄付・ご支援金</li>
+              <li>ご協賛・スポンサー支援</li>
+              <li>物品支援</li>
+              <li>その他のご支援</li>
+              <li>まずは相談したい</li>
+            </ul>
+          </div>
         </div>
 
         <div class="join-grid support-grid">
@@ -1461,16 +1653,21 @@
               </div>
               <div class="info-item">
                 <dt>目的</dt>
-                <dd>練習環境の整備、備品の充実、子どもたちの継続的な活動支援</dd>
+                <dd>設立準備、練習環境の整備、備品の準備、子どもたちの継続的な活動運営</dd>
               </div>
               <div class="info-item">
                 <dt>掲載</dt>
                 <dd>ご希望に応じて、AIRFORTHからの感謝掲載としてご紹介いたします</dd>
               </div>
             </dl>
-            <div class="fee-note">
-              感謝掲載は、ご協賛・ご支援へのお礼として行うものです。
-              広告効果、集客効果、売上向上などを保証するものではありません。
+            <div class="support-caution-box">
+              <p>
+                ご協賛・ご支援金、物品支援等の税務上・会計上の処理につきましては、支援者様ご自身、または顧問税理士・会計担当者様等へご確認ください。<br />
+                AIRFORTHでは、広告宣伝費・寄附金・販売促進費・経費処理・寄附金控除等に該当するかどうかについて、個別の判断や保証は行っておりません。
+              </p>
+              <p>
+                また、会社名・個人名・ロゴ等の掲載は、ご協賛・ご支援への感謝をお伝えする目的で行うものであり、広告効果、集客効果、売上向上、その他の成果を保証するものではありません。
+              </p>
             </div>
           </div>
 
@@ -1480,13 +1677,13 @@
               ご協賛・ご支援をご検討いただける方は、下記フォームよりお申し込みください。
               内容を確認後、AIRFORTHよりご連絡いたします。
             </p>
-            <div class="join-form-box">
+            <div class="join-form-box support-form-box">
               <h4>フォームからお申し込み</h4>
               <p>
                 ご支援内容や感謝掲載のご希望について、フォーム内でお知らせください。
               </p>
               <div class="join-form-actions">
-                <a id="supportFormBottomBtn" href="#" class="btn btn-primary" target="_blank" rel="noopener noreferrer">ご協賛・ご支援フォームを開く</a>
+                <a id="supportFormBottomBtn" href="#" class="btn btn-primary support-form-btn" target="_blank" rel="noopener noreferrer">設立準備へのご支援フォームを開く</a>
                 <a href="#contact" class="btn btn-secondary">先に相談する</a>
               </div>
             </div>
@@ -1682,7 +1879,6 @@
     ].forEach(id => setHref(id, JOIN_FORM_URL));
 
     [
-      "supportFormTopBtn",
       "supportFormSideBtn",
       "supportFormBottomBtn"
     ].forEach(id => setHref(id, SUPPORT_FORM_URL));
