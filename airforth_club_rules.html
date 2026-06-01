@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AIRFORTH | クラブ規約</title>
+  <meta name="description" content="AIRFORTHのクラブ規約です。入会、活動参加、会費、安全管理、個人情報、写真・動画、禁止事項、退会等について定めています。" />
+  <style>
+    :root{
+      --navy:#071e4a;
+      --navy-soft:#17366f;
+      --sky:#55b5ff;
+      --gold:#f4b400;
+      --orange:#ff8200;
+      --pink:#f53d80;
+      --green:#06c755;
+      --bg:#f4f8ff;
+      --text:#1f2d49;
+      --muted:#52627d;
+      --line:#d7e2f3;
+      --shadow:0 16px 36px rgba(7,30,74,.11);
+      --max:980px;
+    }
+    *{ box-sizing:border-box; margin:0; padding:0; }
+    html{ scroll-behavior:smooth; }
+    body{
+      font-family:"Yu Gothic","Hiragino Kaku Gothic ProN","Meiryo",sans-serif;
+      color:var(--text);
+      line-height:1.85;
+      letter-spacing:.018em;
+      font-weight:500;
+      background:
+        radial-gradient(circle at 10% 18%,rgba(85,181,255,.12),transparent 28%),
+        radial-gradient(circle at 88% 10%,rgba(245,61,128,.08),transparent 24%),
+        linear-gradient(180deg,#ffffff 0%,var(--bg) 100%);
+    }
+    a{ color:inherit; text-decoration:none; }
+    header{
+      position:sticky;
+      top:0;
+      z-index:10;
+      background:rgba(255,255,255,.97);
+      backdrop-filter:blur(10px);
+      border-bottom:1px solid rgba(7,30,74,.08);
+    }
+    .header-inner{
+      width:min(var(--max),92%);
+      margin:0 auto;
+      min-height:70px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:16px;
+    }
+    .brand{
+      font-size:1.65rem;
+      font-weight:1000;
+      letter-spacing:.08em;
+      color:var(--navy);
+      white-space:nowrap;
+    }
+    nav{ display:flex; gap:9px; flex-wrap:wrap; }
+    nav a,.btn{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      min-height:40px;
+      padding:9px 15px;
+      border-radius:999px;
+      border:1px solid rgba(85,181,255,.34);
+      background:#fff;
+      color:var(--navy);
+      font-size:.9rem;
+      font-weight:900;
+      line-height:1.2;
+      box-shadow:0 7px 15px rgba(7,30,74,.07);
+    }
+    .btn-primary{
+      color:#fff;
+      border:none;
+      background:linear-gradient(135deg,var(--pink),var(--orange));
+    }
+    .btn-line{
+      color:#fff;
+      border:none;
+      background:var(--green);
+    }
+    main{ width:min(var(--max),92%); margin:0 auto; }
+    .hero{ padding:42px 0 22px; }
+    .eyebrow{
+      display:inline-block;
+      margin-bottom:12px;
+      padding:7px 14px;
+      border-radius:999px;
+      background:rgba(85,181,255,.12);
+      color:var(--navy-soft);
+      font-size:.78rem;
+      font-weight:1000;
+      letter-spacing:.13em;
+    }
+    h1{
+      color:var(--navy);
+      font-size:clamp(2rem,4.2vw,3.2rem);
+      line-height:1.25;
+      font-weight:1000;
+      margin-bottom:12px;
+    }
+    .lead{ max-width:760px; color:var(--muted); font-size:1.02rem; font-weight:600; }
+    .actions{ display:flex; gap:10px; flex-wrap:wrap; margin-top:18px; }
+    .notice{
+      margin:22px 0;
+      border:1px solid rgba(244,180,0,.26);
+      border-radius:20px;
+      padding:18px 20px;
+      background:linear-gradient(135deg,rgba(244,180,0,.10),rgba(85,181,255,.08),rgba(245,61,128,.05));
+      color:var(--muted);
+      font-weight:600;
+    }
+    .rules{
+      display:grid;
+      gap:16px;
+      padding:18px 0 44px;
+    }
+    article{
+      background:#fff;
+      border:1px solid var(--line);
+      border-radius:22px;
+      padding:22px;
+      box-shadow:var(--shadow);
+    }
+    h2{
+      color:var(--navy);
+      font-size:1.3rem;
+      font-weight:1000;
+      margin-bottom:10px;
+    }
+    p,li{ color:var(--muted); font-size:.98rem; font-weight:600; }
+    ol,ul{ padding-left:1.35em; display:grid; gap:6px; }
+    .meta{
+      display:grid;
+      gap:6px;
+      color:var(--muted);
+      font-size:.95rem;
+      font-weight:600;
+    }
+    footer{
+      margin-top:20px;
+      background:#0d1d45;
+      color:#eaf1ff;
+      padding:26px 0;
+    }
+    .footer-inner{ width:min(var(--max),92%); margin:0 auto; text-align:center; }
+    .footer-copy{ color:#bfd0f6; font-size:.84rem; margin-top:6px; }
+    @media print{
+      header,.actions,footer{ display:none; }
+      body{ background:#fff; }
+      main{ width:100%; }
+      article{ box-shadow:none; break-inside:avoid; }
+    }
+    @media (max-width:760px){
+      .header-inner{ flex-direction:column; align-items:flex-start; padding:13px 0; }
+      nav{ width:100%; }
+      nav a{ flex:1 1 calc(50% - 8px); }
+      .actions{ flex-direction:column; }
+      .btn{ width:100%; }
+      article{ padding:19px; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="header-inner">
+      <a class="brand" href="./index.html">AIRFORTH</a>
+      <nav aria-label="メニュー">
+        <a href="./index.html#join">体験・入会</a>
+        <a href="./operation-policy.html">運営方針</a>
+        <a href="./index.html#contact">お問い合わせ</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="eyebrow">AIRFORTH CLUB RULES</div>
+      <h1>AIRFORTH クラブ規約</h1>
+      <p class="lead">
+        本規約は、AIRFORTHの活動に安心して参加していただくために、入会、活動参加、費用、安全管理、個人情報、写真・動画、禁止事項等の基本ルールを定めるものです。
+      </p>
+      <div class="actions">
+        <a class="btn btn-primary" href="./index.html#join">募集案内へ戻る</a>
+        <a class="btn btn-line" href="https://lin.ee/ze1BxQ7p" target="_blank" rel="noopener noreferrer">公式LINEで相談する</a>
+      </div>
+    </section>
+
+    <div class="notice">
+      <p>
+        AIRFORTHが一般社団法人として成立する前の期間は、本規約をAIRFORTH設立準備会の活動に準用します。制定日、施行日、代表者名等は、法人設立又は運用開始に合わせて確定します。
+      </p>
+    </div>
+
+    <section class="rules">
+      <article>
+        <h2>第1条（目的）</h2>
+        <p>
+          本規約は、一般社団法人AIRFORTH（設立前はAIRFORTH設立準備会を含みます。以下「当団体」といいます。）が運営するバレーボールクラブ、体験会、練習会、試合、遠征その他関連活動について、会員、参加者及び保護者が守るべき事項を定め、円滑で安全な活動を行うことを目的とします。
+        </p>
+      </article>
+
+      <article>
+        <h2>第2条（対象）</h2>
+        <ol>
+          <li>当団体の主な活動対象は、小学4年生から中学3年生までの児童及び生徒とします。</li>
+          <li>参加には、原則として保護者の同意を必要とします。</li>
+          <li>活動内容、定員、安全管理上の理由により、参加をお待ちいただく場合があります。</li>
+        </ol>
+      </article>
+
+      <article>
+        <h2>第3条（会員区分）</h2>
+        <ol>
+          <li>正会員は、当団体の目的に賛同し、団体運営に関わる個人又は団体とします。</li>
+          <li>利用会員は、当団体の活動に参加する児童、生徒及びその保護者とします。</li>
+          <li>賛助会員は、当団体の目的に賛同し、協賛、寄付、物品支援その他の方法により支援する個人又は団体とします。</li>
+          <li>社員総会における議決権は、定款で定める正会員のみが有します。</li>
+        </ol>
+      </article>
+
+      <article>
+        <h2>第4条（入会及び体験・見学）</h2>
+        <ol>
+          <li>入会、体験又は見学を希望する場合は、当団体所定のフォーム、公式LINE、お問い合わせフォーム又は当団体が認める方法により申し込むものとします。</li>
+          <li>当団体は、申込内容を確認したうえで、活動日、持ち物、費用、注意事項等を案内します。</li>
+          <li>申込内容に虚偽がある場合、活動の安全又は円滑な運営に支障があると判断した場合、その他当団体が不適切と判断した場合、入会又は参加を承認しないことがあります。</li>
+        </ol>
+      </article>
+
+      <article>
+        <h2>第5条（会費及び費用）</h2>
+        <ol>
+          <li>月額会費は、現時点で2,000円とします。</li>
+          <li>保険料、登録費、大会参加費、遠征費、合宿費、備品費、交通費その他活動に必要な費用が別途発生する場合があります。</li>
+          <li>費用の金額、支払方法、支払期限は、当団体が別途案内します。</li>
+          <li>既に納入された費用は、原則として返還しません。ただし、当団体の都合により活動を中止した場合、法令上返還が必要な場合、又は当団体が返還を相当と判断した場合は、この限りではありません。</li>
+        </ol>
+      </article>
+
+      <article>
+        <h2>第6条（活動参加時の遵守事項）</h2>
+        <ol>
+          <li>参加者及び保護者は、指導者、スタッフ、他の参加者、保護者、施設関係者及び地域の方に対し、礼節をもって接するものとします。</li>
+          <li>参加者は、活動場所、学校、体育館、公共施設等の利用ルールを守るものとします。</li>
+          <li>参加者は、安全管理上の指示に従い、無断欠席、無断早退、無断退出をしないものとします。</li>
+          <li>保護者は、参加者の体調、けが、既往歴、アレルギー、服薬状況その他安全管理上必要な情報を、必要に応じて当団体へ伝えるものとします。</li>
+        </ol>
+      </article>
+
+      <article>
+        <h2>第7条（安全管理及び緊急時対応）</h2>
+        <ol>
+          <li>当団体は、活動中の安全管理に努めます。</li>
+          <li>参加者に体調不良、けが、発熱、感染症の疑いその他安全上の懸念がある場合、当団体は参加を中止又は制限することがあります。</li>
+          <li>事故、けが又は体調不良が発生した場合、当団体は応急対応、保護者への連絡、必要に応じた医療機関又は救急機関への連絡を行います。</li>
+          <li>緊急時には、保護者への事前確認よりも参加者の生命及び身体の安全確保を優先する場合があります。</li>
+        </ol>
+      </article>
+
+      <article>
+        <h2>第8条（送迎及び移動）</h2>
+        <ol>
+          <li>活動場所への送迎は、原則として保護者の責任で行うものとします。</li>
+          <li>遠征、試合、合宿その他移動を伴う活動については、集合場所、解散場所、移動方法、費用、安全管理等を別途案内します。</li>
+          <li>当団体又は関係者が送迎を行う場合は、事前に保護者の承諾を得るものとします。</li>
+        </ol>
+      </article>
+
+      <article>
+        <h2>第9条（写真及び動画の取扱い）</h2>
+        <ol>
+          <li>当団体は、活動記録、広報、活動報告、支援者への報告、行政又は助成団体への提出資料作成等の目的で、写真又は動画を撮影することがあります。</li>
+          <li>参加者が特定される写真又は動画を外部に掲載する場合は、事前説明又は同意取得に努めます。</li>
+          <li>掲載を希望しない場合は、事前に当団体へ申し出るものとします。</li>
+          <li>参加者又は保護者は、他の参加者が写る写真又は動画を、本人又は保護者の同意なくSNS、動画サイト、ウェブサイト等へ公開してはなりません。</li>
+        </ol>
+      </article>
+
+      <article>
+        <h2>第10条（個人情報の取扱い）</h2>
+        <ol>
+          <li>当団体は、入会、体験、見学、活動連絡、安全管理、緊急時対応、保険、競技団体登録、大会参加、会計処理、活動報告その他運営に必要な範囲で個人情報を利用します。</li>
+          <li>当団体は、個人情報を必要な範囲で取得し、共有権限及び保管方法に注意して管理します。</li>
+          <li>個人情報の詳細な取扱いは、当団体が別に定める運営方針及び個人情報管理方針に従います。</li>
+        </ol>
+      </article>
+
+      <article>
+        <h2>第11条（禁止事項）</h2>
+        <ol>
+          <li>暴力、暴言、いじめ、嫌がらせ、差別、威圧、過度な叱責、人格を否定する言動</li>
+          <li>性的な言動、不適切な接触、無断撮影、無断録音、私的な連絡の強要</li>
+          <li>他者の個人情報、写真、動画、連絡先等の無断公開又は無断共有</li>
+          <li>当団体、他の参加者、保護者、指導者、スタッフ、支援者又は施設の信用を損なう行為</li>
+          <li>法令、公序良俗、本規約、当団体の案内又は施設利用ルールに反する行為</li>
+          <li>その他、当団体が活動の安全又は円滑な運営を妨げると判断する行為</li>
+        </ol>
+      </article>
+
+      <article>
+        <h2>第12条（活動参加の制限）</h2>
+        <ol>
+          <li>当団体は、参加者又は保護者が本規約に違反した場合、活動参加の一時停止、注意、改善依頼、会員資格の停止又は退会を求めることがあります。</li>
+          <li>重大な違反、危険行為、迷惑行為、ハラスメント、暴力、虚偽申告、費用の長期未納等がある場合、当団体は参加をお断りすることがあります。</li>
+          <li>判断にあたっては、必要に応じて本人又は保護者から事情を確認します。</li>
+        </ol>
+      </article>
+
+      <article>
+        <h2>第13条（退会）</h2>
+        <ol>
+          <li>退会を希望する場合は、当団体所定の方法により申し出るものとします。</li>
+          <li>退会日、費用、貸与品、未精算金等の取扱いは、当団体の案内に従うものとします。</li>
+        </ol>
+      </article>
+
+      <article>
+        <h2>第14条（免責）</h2>
+        <ol>
+          <li>当団体は、活動において安全管理に努めますが、参加者又は保護者の故意又は過失、体調不良又は既往歴等の未申告、施設内外での個人的行動、不可抗力、災害、感染症、交通事情その他当団体の責めに帰すことができない事由により生じた損害について、法令上責任を負う場合を除き責任を負いません。</li>
+          <li>当団体は、活動内容、会場、日程、指導体制、費用等について、運営上必要がある場合は変更することがあります。</li>
+        </ol>
+      </article>
+
+      <article>
+        <h2>第15条（相談及び苦情対応）</h2>
+        <ol>
+          <li>活動、安全管理、指導、ハラスメント、個人情報、費用その他に関する相談は、公式LINE、お問い合わせフォーム又は当団体が指定する窓口で受け付けます。</li>
+          <li>当団体は、相談内容を確認し、必要に応じて関係者への確認、対応方針の検討、再発防止策の実施を行います。</li>
+        </ol>
+      </article>
+
+      <article>
+        <h2>第16条（規約の変更）</h2>
+        <ol>
+          <li>当団体は、運営上必要がある場合、本規約を変更することがあります。</li>
+          <li>変更後の規約は、ウェブサイト、公式LINE、電子メール、書面その他適切な方法で周知します。</li>
+        </ol>
+      </article>
+
+      <article>
+        <h2>附則</h2>
+        <div class="meta">
+          <p>制定予定日：令和8年6月　　日</p>
+          <p>施行予定日：一般社団法人AIRFORTH成立日又は当団体が別途定める日</p>
+          <p>第1版：令和8年6月　　日作成</p>
+        </div>
+      </article>
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+      <strong>AIRFORTH</strong>
+      <div class="footer-copy">© 2026 AIRFORTH. All Rights Reserved.</div>
+    </div>
+  </footer>
+</body>
+</html>
