@@ -528,7 +528,7 @@
   <script>
     const JOIN_FORM_URL = "https://docs.google.com/forms/d/e/1FAIpQLSeYPheau8bSLQtwWv5kDRGCWHSZRP3xhyA7OUUwCsXvJoRigw/viewform?usp=header";
     const SUPPORT_FORM_URL = "https://forms.gle/RPLDX1J5Qfj9712z5";
-    const RULES_PDF_URL = "./airforth_club_rules.pdf";
+    const RULES_URL = "./airforth_club_rules.html";
     const GAS_WEBAPP_URL = "https://script.google.com/macros/s/AKfycbxeAtYULIsp6dmjUzFQNr7hZZXOkA7MIJeKHYTbZ2tPS9LJdAfT3gZxDB_zrLXGc4a-/exec";
     const LINE_URL = "https://lin.ee/ze1BxQ7p";
 
@@ -539,7 +539,7 @@
 
     ["joinFormTopBtn","joinFormSideBtn","joinFormBottomBtn"].forEach(id => setHref(id, JOIN_FORM_URL));
     ["supportFormBottomBtn"].forEach(id => setHref(id, SUPPORT_FORM_URL));
-    ["rulesOpenBtn","rulesOpenBtn2"].forEach(id => setHref(id, RULES_PDF_URL));
+    ["rulesOpenBtn","rulesOpenBtn2"].forEach(id => setHref(id, RULES_URL));
     ["lineTopBtn","lineSideBtn","lineFloatBtn"].forEach(id => setHref(id, LINE_URL));
 
     const form = document.getElementById("contactForm");
