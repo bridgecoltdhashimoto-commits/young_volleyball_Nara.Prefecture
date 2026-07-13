@@ -80,132 +80,96 @@
       background:linear-gradient(90deg,var(--gold),var(--orange),var(--pink));
       -webkit-background-clip:text;background-clip:text;color:transparent
     }
-    .hero-lead{max-width:690px;color:#35435e;font-size:1.05rem;font-weight:650;margin-bottom:20px}
-    .hero-actions{display:flex;gap:11px;flex-wrap:wrap}
+    .hero-lead{max-width:680px;color:#35435f;font-size:1.05rem;font-weight:650;margin-bottom:22px}
+    .hero-actions,.join-actions{display:flex;gap:10px;flex-wrap:wrap}
     .btn{
-      display:inline-flex;align-items:center;justify-content:center;min-height:50px;padding:13px 19px;
-      border:0;border-radius:16px;cursor:pointer;text-align:center;font-size:.95rem;font-weight:1000;
-      transition:.2s;box-shadow:var(--soft)
+      display:inline-flex;align-items:center;justify-content:center;min-width:180px;min-height:50px;
+      padding:13px 18px;border-radius:17px;border:1px solid transparent;text-align:center;
+      font-size:.94rem;font-weight:1000;line-height:1.35;transition:.22s;cursor:pointer
     }
     .btn:hover,.btn:focus-visible{transform:translateY(-2px)}
-    .btn-primary{color:#fff;background:linear-gradient(135deg,var(--pink),var(--orange))}
-    .btn-blue{color:#fff;background:linear-gradient(135deg,var(--navy2),var(--sky))}
-    .btn-line{color:#fff;background:var(--green)}
-    .btn-light{color:var(--navy);background:#fff;border:1px solid var(--line)}
-    .hero-card,.panel,.card{
-      background:#fff;border:1px solid var(--line);border-radius:26px;box-shadow:var(--shadow)
-    }
-    .hero-card{padding:22px}
-    .logo-stage{
-      display:grid;place-items:center;min-height:168px;margin-bottom:16px;padding:16px;
-      border-radius:20px;background:
-        radial-gradient(circle at 25% 20%,rgba(85,181,255,.13),transparent 40%),
-        linear-gradient(145deg,#fff,#f5f9ff)
-    }
-    .logo-stage img{width:min(320px,78vw);filter:drop-shadow(0 10px 18px rgba(0,0,0,.09))}
+    .btn-primary{color:#fff;background:linear-gradient(135deg,var(--pink),var(--orange));box-shadow:0 13px 26px rgba(245,61,128,.20)}
+    .btn-blue{color:#fff;background:linear-gradient(135deg,var(--navy2),var(--sky));box-shadow:0 13px 26px rgba(23,54,111,.18)}
+    .btn-line{color:#fff;background:var(--green);box-shadow:0 13px 26px rgba(6,199,85,.20)}
+    .btn-light{color:var(--navy);background:#fff;border-color:rgba(85,181,255,.42);box-shadow:var(--soft)}
+    .hero-card,.card,.panel,.form-wrap{background:#fff;border:1px solid var(--line);box-shadow:var(--shadow)}
+    .hero-card{border-radius:28px;padding:22px}
+    .logo-stage{padding:17px;border-radius:22px;background:linear-gradient(135deg,#f5fbff,#fff7fb);border:1px solid rgba(85,181,255,.22);margin-bottom:14px}
+    .logo-stage img{width:min(300px,78vw);margin:auto;filter:drop-shadow(0 10px 20px rgba(7,30,74,.10))}
     .quick-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}
-    .quick{
-      padding:13px;border:1px solid var(--line);border-radius:17px;background:#fff;box-shadow:var(--soft)
+    .quick{min-height:90px;padding:14px;border:1px solid var(--line);border-radius:17px;background:#fff;box-shadow:var(--soft)}
+    .quick small{display:block;color:var(--navy2);font-size:.72rem;font-weight:1000;letter-spacing:.08em;margin-bottom:4px}
+    .quick strong{display:block;color:var(--navy);font-size:.94rem;font-weight:1000;line-height:1.45}
+    .status-note,.notice{
+      margin-top:13px;padding:14px 15px;border-radius:17px;border:1px solid rgba(244,180,0,.24);
+      background:linear-gradient(135deg,rgba(244,180,0,.10),rgba(85,181,255,.08),rgba(245,61,128,.05));
+      color:var(--muted);font-size:.91rem;font-weight:650
     }
-    .quick small{display:block;color:var(--navy2);font-size:.72rem;font-weight:1000;letter-spacing:.08em}
-    .quick strong{display:block;color:var(--navy);font-size:.95rem;line-height:1.45;margin-top:4px}
-    .status-note{
-      margin-top:12px;padding:13px 14px;border-radius:17px;color:var(--muted);font-size:.91rem;font-weight:700;
-      border:1px solid rgba(244,180,0,.25);
-      background:linear-gradient(135deg,rgba(244,180,0,.10),rgba(85,181,255,.08),rgba(245,61,128,.04))
-    }
-    .section-head{margin-bottom:23px}
-    .section-head .label{display:block;color:var(--navy2);font-size:.76rem;font-weight:1000;letter-spacing:.14em;margin-bottom:8px}
-    .section-head h2{color:var(--navy);font-size:clamp(1.85rem,3.6vw,2.75rem);line-height:1.28;font-weight:1000;margin-bottom:10px}
-    .section-head p{max-width:790px;color:var(--muted);font-size:1rem;font-weight:650}
-    .cards3{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
-    .card{padding:23px 21px}
-    .icon{
-      width:48px;height:48px;display:grid;place-items:center;margin-bottom:14px;border-radius:15px;
-      color:#fff;font-size:1.05rem;font-weight:1000
-    }
+    .section-head{margin-bottom:22px}
+    .label{display:block;color:var(--navy2);font-size:.76rem;font-weight:1000;letter-spacing:.14em;margin-bottom:8px}
+    .section-head h2{color:var(--navy);font-size:clamp(1.85rem,3.4vw,2.7rem);line-height:1.25;font-weight:1000;margin-bottom:9px}
+    .section-head p{max-width:800px;color:var(--muted);font-size:1rem;font-weight:600}
+    .cards3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+    .card,.panel{border-radius:23px;padding:22px}
+    .card h3,.panel h3{color:var(--navy);font-size:1.18rem;font-weight:1000;margin-bottom:10px}
+    .card p,.panel p,.panel li,.info dd{color:var(--muted);font-size:.95rem;font-weight:600}
+    .icon{width:46px;height:46px;border-radius:14px;display:grid;place-items:center;color:#fff;font-weight:1000;margin-bottom:14px}
     .icon.blue{background:linear-gradient(135deg,var(--sky),var(--navy2))}
     .icon.pink{background:linear-gradient(135deg,var(--pink),var(--orange))}
-    .icon.gold{background:linear-gradient(135deg,#c9e73d,var(--gold));color:var(--navy)}
-    .card h3,.panel h3{color:var(--navy);font-size:1.2rem;line-height:1.42;font-weight:1000;margin-bottom:10px}
-    .card p,.panel p,.panel li,.info dd{color:var(--muted);font-size:.95rem;font-weight:600}
-    .split{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:20px;align-items:start}
-    .panel{padding:24px}
-    .check-list{display:grid;gap:10px;list-style:none}
-    .check-list li{position:relative;padding:12px 14px 12px 42px;border:1px solid var(--line);border-radius:16px;background:#fff}
-    .check-list li:before{
-      content:"✓";position:absolute;left:14px;top:11px;width:20px;height:20px;display:grid;place-items:center;
-      border-radius:50%;background:linear-gradient(135deg,var(--gold),var(--pink));color:#fff;font-size:.75rem;font-weight:1000
-    }
+    .icon.gold{background:linear-gradient(135deg,#c7e63b,var(--gold));color:var(--navy)}
+    .split{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px;align-items:start}
+    .check-list{display:grid;gap:9px;list-style:none}
+    .check-list li{position:relative;padding:11px 13px 11px 39px;border:1px solid rgba(85,181,255,.27);border-radius:15px;background:#fff;box-shadow:0 7px 16px rgba(7,30,74,.05)}
+    .check-list li::before{content:"";position:absolute;left:14px;top:50%;width:10px;height:10px;border-radius:50%;transform:translateY(-50%);background:linear-gradient(135deg,var(--gold),var(--pink));box-shadow:0 0 0 5px rgba(244,180,0,.10)}
     .info{display:grid}
-    .info-row{display:grid;grid-template-columns:122px 1fr;gap:14px;padding:11px 0;border-bottom:1px solid var(--line)}
-    .info-row:last-child{border-bottom:0}
+    .info-row{display:grid;grid-template-columns:120px 1fr;gap:14px;padding:11px 0;border-bottom:1px solid var(--line)}
+    .info-row:last-child{border-bottom:none}
     .info dt{color:var(--navy2);font-weight:1000}
-    .notice{
-      margin-top:16px;padding:15px 16px;border:1px solid rgba(85,181,255,.27);border-radius:18px;
-      background:linear-gradient(135deg,rgba(85,181,255,.09),rgba(245,61,128,.04));
-      color:var(--muted);font-size:.92rem;font-weight:650
-    }
-    .join-actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:16px}
-    .support-use{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin-top:14px}
-    .support-use div{padding:14px;border:1px solid var(--line);border-radius:17px;background:#fff;font-weight:800;color:var(--navy)}
-    .form-wrap{display:grid;grid-template-columns:minmax(280px,.72fr) minmax(0,1.28fr);gap:22px;align-items:start}
-    form{display:grid;gap:14px}
+    .join-actions{margin-top:16px}
+    .support-use{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+    .support-use div{padding:14px;border-radius:16px;border:1px solid rgba(85,181,255,.28);background:linear-gradient(135deg,rgba(85,181,255,.10),rgba(245,61,128,.05));color:var(--navy);font-weight:900}
+    .form-wrap{display:grid;grid-template-columns:minmax(260px,.72fr) minmax(0,1.28fr);gap:18px;border-radius:27px;padding:18px}
+    form{display:grid;gap:13px}
     .form-row{display:grid;grid-template-columns:1fr 1fr;gap:13px}
     .field{display:grid;gap:6px}
-    .field label{color:var(--navy);font-size:.91rem;font-weight:1000}
-    .required{color:var(--pink);font-size:.8rem;margin-left:6px}
-    .field input,.field textarea,.field select{
-      width:100%;padding:13px 14px;border:1px solid var(--line);border-radius:14px;
-      background:#fff;color:var(--text);font-size:.95rem;font-weight:600;outline:none
-    }
-    .field input:focus,.field textarea:focus,.field select:focus{border-color:var(--sky);box-shadow:0 0 0 4px rgba(85,181,255,.13)}
-    .field textarea{min-height:104px;resize:vertical}
+    .field label{color:var(--navy);font-size:.9rem;font-weight:1000}
+    .field input,.field textarea,.field select{width:100%;padding:13px 14px;border:1px solid var(--line);border-radius:14px;background:#fff;color:var(--text);font-size:.95rem;font-weight:600;outline:none}
+    .field input:focus,.field textarea:focus,.field select:focus{border-color:var(--sky);box-shadow:0 0 0 4px rgba(85,181,255,.12)}
+    .field textarea{min-height:105px;resize:vertical}
+    .required{color:var(--pink);font-size:.82rem;font-weight:1000}
     .help{color:var(--muted);font-size:.82rem;font-weight:600}
-    .consent{
-      display:flex;gap:10px;align-items:flex-start;padding:13px 14px;border:1px solid var(--line);
-      border-radius:14px;background:#f9fbff;color:var(--muted);font-size:.87rem;font-weight:650
-    }
+    .consent{display:flex;gap:10px;align-items:flex-start;padding:13px;border:1px solid var(--line);border-radius:14px;background:#f9fbff;color:var(--muted);font-size:.88rem;font-weight:650}
     .consent input{margin-top:5px;flex:0 0 auto}
-    .consent a{text-decoration:underline;color:var(--navy2)}
-    .error{color:#d92c5a;font-size:.87rem;font-weight:900}
-    .success{
-      display:none;padding:13px 14px;border-radius:14px;background:#ebfff3;border:1px solid #bfe8ce;
-      color:#167a45;font-size:.9rem;font-weight:900
-    }
-    .success.show{display:block}
+    .consent a{color:var(--navy2);text-decoration:underline;font-weight:900}
     .submit-wrap{display:flex;align-items:center;gap:12px;flex-wrap:wrap}
+    .error{color:#cf2755;font-size:.88rem;font-weight:900}
+    .success{display:none;padding:13px;border-radius:14px;background:#ecfff4;color:#116c3f;font-size:.9rem;font-weight:900}
+    .success.show{display:block}
     .hp{position:absolute!important;left:-9999px!important;width:1px!important;height:1px!important;overflow:hidden!important}
-    footer{margin-top:34px;padding:31px 0;background:#0d1d45;color:#eaf1ff}
+    .line-float{position:fixed;right:17px;bottom:17px;z-index:2000;display:inline-flex;align-items:center;justify-content:center;min-height:50px;padding:12px 18px;border-radius:999px;background:var(--green);color:#fff;font-weight:1000;box-shadow:0 15px 30px rgba(6,199,85,.28)}
+    footer{margin-top:30px;background:#0d1d45;color:#eef4ff;padding:28px 0 34px}
     .footer-inner{width:min(var(--max),92%);margin:auto;text-align:center}
-    .footer-links{display:flex;justify-content:center;gap:14px;flex-wrap:wrap;margin-bottom:10px}
-    .footer-links a{color:#dce8ff;text-decoration:underline;font-size:.88rem}
-    .footer-copy{color:#bfd0f6;font-size:.83rem}
-    .line-float{
-      position:fixed;right:18px;bottom:18px;z-index:1200;display:flex;align-items:center;gap:8px;
-      padding:13px 17px;border-radius:999px;background:var(--green);color:#fff;font-size:.9rem;font-weight:1000;
-      box-shadow:0 14px 30px rgba(6,199,85,.30)
-    }
-    @media(max-width:980px){
-      .hero-grid,.split,.form-wrap{grid-template-columns:1fr}
-      .cards3{grid-template-columns:1fr}
+    .footer-links{display:flex;justify-content:center;gap:16px;flex-wrap:wrap;margin-bottom:12px;color:#c9d8f7;font-size:.88rem;font-weight:800}
+    .footer-copy{margin-top:4px;color:#bfd0f6;font-size:.82rem}
+    @media(max-width:960px){
+      .hero-grid,.cards3,.split,.form-wrap{grid-template-columns:1fr}
       .hero-card{max-width:760px}
     }
     @media(max-width:760px){
       html{scroll-padding-top:150px}
-      .header-inner{align-items:flex-start;flex-direction:column;padding:11px 0}
+      .header-inner{flex-direction:column;align-items:flex-start;padding:12px 0}
       nav{width:100%;justify-content:flex-start}
-      nav a{flex:1 1 calc(50% - 8px)}
-      .hero{padding-top:25px}
-      .hero h1{font-size:clamp(2.2rem,11vw,3.35rem)}
-      .hero-actions,.join-actions{display:grid;grid-template-columns:1fr}
-      .btn{width:100%}
-      .form-row,.info-row{grid-template-columns:1fr}
-      .support-use{grid-template-columns:1fr}
-      body{padding-bottom:82px}
-      .line-float{left:14px;right:14px;bottom:14px;justify-content:center}
+      nav a{flex:1 1 calc(50% - 8px);font-size:.82rem;padding:8px 10px}
+      .brand-name{font-size:1.4rem}
+      .brand-sub{font-size:.61rem}
+      section{padding:36px 0}
+      .hero h1{font-size:clamp(2.25rem,11vw,3.25rem)}
+      .quick-grid,.support-use,.form-row,.info-row{grid-template-columns:1fr}
+      .hero-actions,.join-actions{flex-direction:column}
+      .btn{width:100%;min-width:0}
+      .line-float{left:14px;right:14px;bottom:13px}
+      body{padding-bottom:76px}
     }
-    @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.btn,nav a{transition:none}}
   </style>
 </head>
 <body>
@@ -225,7 +189,7 @@
         <a href="#support">ご支援</a>
         <a href="./airforth_club_rules.html">クラブ規約</a>
         <a href="./operation-policy.html">運営方針</a>
-        <a href="#contact" class="nav-cta" data-inquiry="体験希望">体験・入会相談</a>
+        <a href="https://docs.google.com/forms/d/e/1FAIpQLSeYPheau8bSLQtwWv5kDRGCWHSZRP3xhyA7OUJwCsXvJoRigw/viewform?usp=header" class="nav-cta" target="_blank" rel="noopener noreferrer">体験・入会申込</a>
       </nav>
     </div>
   </header>
@@ -242,8 +206,8 @@
             ペースで安心して参加できる環境づくりを目指しています。
           </p>
           <div class="hero-actions">
-            <a class="btn btn-primary" href="#contact" data-inquiry="体験希望">体験・見学を申し込む</a>
-            <a class="btn btn-blue" href="#contact" data-inquiry="入会希望">入会を申し込む</a>
+            <a class="btn btn-primary" href="https://docs.google.com/forms/d/e/1FAIpQLSeYPheau8bSLQtwWv5kDRGCWHSZRP3xhyA7OUJwCsXvJoRigw/viewform?usp=header" target="_blank" rel="noopener noreferrer">体験・見学を申し込む</a>
+            <a class="btn btn-blue" href="https://docs.google.com/forms/d/e/1FAIpQLSeYPheau8bSLQtwWv5kDRGCWHSZRP3xhyA7OUJwCsXvJoRigw/viewform?usp=header" target="_blank" rel="noopener noreferrer">入会を申し込む</a>
             <a class="btn btn-line" href="https://lin.ee/ze1BxQ7p" target="_blank" rel="noopener noreferrer">公式LINEで相談する</a>
             <a class="btn btn-light" href="./airforth_club_rules.html">クラブ規約を見る</a>
           </div>
@@ -260,8 +224,8 @@
             <div class="quick"><small>活動地域</small><strong>奈良県内体育館を中心</strong></div>
           </div>
           <div class="status-note">
-            入会・体験の申込は、このページ内のフォームから送信できます。
-            外部の申込ファイルを開く必要はありません。
+            体験・見学・入会のお申し込みは、AIRFORTH入会申込Googleフォームで受け付けています。
+            送信内容は「AIRFORTH_入会申込管理」に自動反映されます。
           </div>
         </aside>
       </div>
@@ -336,14 +300,14 @@
           <div class="panel">
             <h3>申込の流れ</h3>
             <ul class="check-list">
-              <li>下の申込フォームまたは公式LINEからご連絡ください。</li>
+              <li>AIRFORTH入会申込Googleフォームまたは公式LINEからご連絡ください。</li>
               <li>AIRFORTHから活動日、会場、持ち物等をご案内します。</li>
               <li>体験・見学後、入会希望を確認します。</li>
               <li>入会時に規約、費用、写真・動画掲載等を確認します。</li>
             </ul>
             <div class="join-actions">
-              <a class="btn btn-primary" href="#contact" data-inquiry="体験希望">体験・見学を申し込む</a>
-              <a class="btn btn-blue" href="#contact" data-inquiry="入会希望">入会を申し込む</a>
+              <a class="btn btn-primary" href="https://docs.google.com/forms/d/e/1FAIpQLSeYPheau8bSLQtwWv5kDRGCWHSZRP3xhyA7OUJwCsXvJoRigw/viewform?usp=header" target="_blank" rel="noopener noreferrer">体験・見学を申し込む</a>
+              <a class="btn btn-blue" href="https://docs.google.com/forms/d/e/1FAIpQLSeYPheau8bSLQtwWv5kDRGCWHSZRP3xhyA7OUJwCsXvJoRigw/viewform?usp=header" target="_blank" rel="noopener noreferrer">入会を申し込む</a>
             </div>
           </div>
         </div>
@@ -385,112 +349,34 @@
     <section id="contact">
       <div class="container">
         <div class="section-head">
-          <span class="label">APPLICATION & CONTACT</span>
-          <h2>体験・見学・入会申込フォーム</h2>
-          <p>必要事項をご入力ください。内容を確認後、AIRFORTHからご連絡します。</p>
+          <span class="label">APPLICATION</span>
+          <h2>体験・見学・入会申込</h2>
+          <p>公開用のAIRFORTH入会申込Googleフォームから必要事項をご送信ください。</p>
         </div>
-        <div class="form-wrap">
-          <aside class="panel">
-            <h3>このフォームで受付できる内容</h3>
-            <ul class="check-list">
-              <li>体験希望</li>
-              <li>見学希望</li>
-              <li>入会希望</li>
-              <li>その他のお問い合わせ</li>
-            </ul>
+        <div class="split">
+          <div class="panel">
+            <h3>入会申込Googleフォーム</h3>
+            <p>参加者情報、保護者情報、学校名、住所、バレーボール経験、健康面・配慮事項、写真・動画掲載の希望等をご入力いただけます。</p>
             <div class="notice">
-              電話番号またはメールアドレスのどちらか一方は必ずご入力ください。
-              公式LINEからのご相談も可能です。
+              送信された回答は、運営用スプレッドシート「AIRFORTH_入会申込管理」に自動反映されます。
             </div>
             <div class="join-actions">
-              <a class="btn btn-line" href="https://lin.ee/ze1BxQ7p" target="_blank" rel="noopener noreferrer">公式LINEを開く</a>
+              <a class="btn btn-primary" href="https://docs.google.com/forms/d/e/1FAIpQLSeYPheau8bSLQtwWv5kDRGCWHSZRP3xhyA7OUJwCsXvJoRigw/viewform?usp=header" target="_blank" rel="noopener noreferrer">入会申込フォームを開く</a>
             </div>
-          </aside>
-
+          </div>
           <div class="panel">
-            <form id="contactForm" novalidate>
-              <div class="hp" aria-hidden="true">
-                <label for="website">この項目は入力しないでください</label>
-                <input id="website" name="website" type="text" tabindex="-1" autocomplete="off" />
-              </div>
-
-              <div class="form-row">
-                <div class="field">
-                  <label for="participantName">参加者本人のお名前 <span class="required">必須</span></label>
-                  <input id="participantName" name="participantName" type="text" autocomplete="name" required />
-                </div>
-                <div class="field">
-                  <label for="guardianName">保護者のお名前 <span class="required">必須</span></label>
-                  <input id="guardianName" name="guardianName" type="text" autocomplete="name" required />
-                </div>
-              </div>
-
-              <div class="form-row">
-                <div class="field">
-                  <label for="grade">学年 <span class="required">必須</span></label>
-                  <select id="grade" name="grade" required>
-                    <option value="">選択してください</option>
-                    <option>小学4年生</option><option>小学5年生</option><option>小学6年生</option>
-                    <option>中学1年生</option><option>中学2年生</option><option>中学3年生</option>
-                    <option>その他・相談</option>
-                  </select>
-                </div>
-                <div class="field">
-                  <label for="inquiryType">申込・お問い合わせ内容 <span class="required">必須</span></label>
-                  <select id="inquiryType" name="inquiryType" required>
-                    <option value="">選択してください</option>
-                    <option value="体験希望">体験希望</option>
-                    <option value="見学希望">見学希望</option>
-                    <option value="入会希望">入会希望</option>
-                    <option value="問い合わせ">その他お問い合わせ</option>
-                  </select>
-                </div>
-              </div>
-
-              <div class="form-row">
-                <div class="field">
-                  <label for="phone">電話番号</label>
-                  <input id="phone" name="phone" type="tel" inputmode="tel" autocomplete="tel" placeholder="例：090-1234-5678" />
-                </div>
-                <div class="field">
-                  <label for="email">メールアドレス</label>
-                  <input id="email" name="email" type="email" autocomplete="email" placeholder="例：example@gmail.com" />
-                </div>
-              </div>
-              <p class="help">電話番号またはメールアドレスのどちらか一方は必須です。</p>
-
-              <div class="field">
-                <label for="consultation">バレーボール経験・健康面・配慮事項</label>
-                <textarea id="consultation" name="consultation" placeholder="経験年数、けが、アレルギー、服薬、活動時に配慮が必要なこと等"></textarea>
-              </div>
-
-              <div class="field">
-                <label for="message">希望日・その他のご質問</label>
-                <textarea id="message" name="message" placeholder="体験・見学の希望日、通い方、費用等についてご記入ください。"></textarea>
-              </div>
-
-              <label class="consent">
-                <input id="privacyConsent" name="privacyConsent" type="checkbox" value="同意する" required />
-                <span>
-                  <a href="./airforth_club_rules.html" target="_blank" rel="noopener noreferrer">クラブ規約</a>と
-                  <a href="./operation-policy.html" target="_blank" rel="noopener noreferrer">個人情報・運営方針</a>を確認し、
-                  入力情報を申込対応、安全管理、活動連絡等に利用することに同意します。<span class="required">必須</span>
-                </span>
-              </label>
-
-              <input id="legacyName" name="name" type="hidden" />
-              <input id="legacyCategory" name="category" type="hidden" />
-              <input id="legacyChildInfo" name="childInfo" type="hidden" />
-              <input name="sourcePage" type="hidden" value="AIRFORTH公式サイト" />
-
-              <div id="contactError" class="error" role="alert" aria-live="assertive"></div>
-              <div id="formStatus" class="success" role="status" aria-live="polite"></div>
-              <div class="submit-wrap">
-                <button id="submitBtn" class="btn btn-primary" type="submit">申込内容を送信する</button>
-                <span class="help">送信ボタンは1回だけ押してください。</span>
-              </div>
-              <noscript><p class="error">このフォームの送信にはJavaScriptが必要です。公式LINEからご連絡ください。</p></noscript>
-            </form>
+            <h3>申込前の確認</h3>
+            <ul class="check-list">
+              <li>クラブ規約と運営方針をご確認ください。</li>
+              <li>メールアドレスは任意です。</li>
+              <li>電話番号など必要な連絡先をご入力ください。</li>
+              <li>入会後のメンバー連絡先登録フォームは、入会者に個別でご案内します。</li>
+            </ul>
+            <div class="join-actions">
+              <a class="btn btn-light" href="./airforth_club_rules.html">クラブ規約</a>
+              <a class="btn btn-light" href="./operation-policy.html">運営方針・個人情報</a>
+              <a class="btn btn-line" href="https://lin.ee/ze1BxQ7p" target="_blank" rel="noopener noreferrer">公式LINEで相談する</a>
+            </div>
           </div>
         </div>
       </div>
@@ -502,7 +388,7 @@
       <div class="footer-links">
         <a href="./airforth_club_rules.html">クラブ規約</a>
         <a href="./operation-policy.html">運営方針・個人情報</a>
-        <a href="#contact">体験・入会申込</a>
+        <a href="https://docs.google.com/forms/d/e/1FAIpQLSeYPheau8bSLQtwWv5kDRGCWHSZRP3xhyA7OUJwCsXvJoRigw/viewform?usp=header" target="_blank" rel="noopener noreferrer">体験・入会申込</a>
       </div>
       <strong>AIRFORTH</strong>
       <div class="footer-copy">© <span id="year">2026</span> AIRFORTH. All Rights Reserved.</div>
@@ -512,74 +398,7 @@
   <a class="line-float" href="https://lin.ee/ze1BxQ7p" target="_blank" rel="noopener noreferrer" aria-label="AIRFORTH公式LINEで相談する">LINEで相談する</a>
 
   <script>
-    (() => {
-      const GAS_WEBAPP_URL = "https://script.google.com/macros/s/AKfycbxeAtYULIsp6dmjUzFQNr7hZZXOkA7MIJeKHYTbZ2tPS9LJdAfT3gZxDB_zrLXGc4a-/exec";
-      const form = document.getElementById("contactForm");
-      const inquiryType = document.getElementById("inquiryType");
-      const phone = document.getElementById("phone");
-      const email = document.getElementById("email");
-      const errorBox = document.getElementById("contactError");
-      const statusBox = document.getElementById("formStatus");
-      const submitBtn = document.getElementById("submitBtn");
-
-      document.getElementById("year").textContent = new Date().getFullYear();
-
-      document.querySelectorAll("[data-inquiry]").forEach((link) => {
-        link.addEventListener("click", () => {
-          const value = link.dataset.inquiry;
-          window.setTimeout(() => {
-            if (inquiryType && [...inquiryType.options].some((o) => o.value === value)) {
-              inquiryType.value = value;
-              inquiryType.focus({preventScroll:true});
-            }
-          }, 250);
-        });
-      });
-
-      if (!form) return;
-
-      form.addEventListener("submit", async (event) => {
-        event.preventDefault();
-        errorBox.textContent = "";
-        statusBox.textContent = "";
-        statusBox.classList.remove("show");
-
-        if (document.getElementById("website").value) return;
-
-        if (!form.checkValidity()) {
-          form.reportValidity();
-          errorBox.textContent = "必須項目をご確認ください。";
-          return;
-        }
-        if (!phone.value.trim() && !email.value.trim()) {
-          errorBox.textContent = "電話番号またはメールアドレスのどちらか一方を入力してください。";
-          (phone || email).focus();
-          return;
-        }
-
-        document.getElementById("legacyName").value = document.getElementById("participantName").value.trim();
-        document.getElementById("legacyCategory").value = inquiryType.value;
-        document.getElementById("legacyChildInfo").value =
-          document.getElementById("grade").value + " / " + document.getElementById("consultation").value.trim();
-
-        submitBtn.disabled = true;
-        submitBtn.textContent = "送信中…";
-
-        try {
-          const data = new URLSearchParams(new FormData(form));
-          await fetch(GAS_WEBAPP_URL, {method:"POST", mode:"no-cors", body:data});
-          form.reset();
-          statusBox.textContent = "送信を受け付けました。内容を確認のうえ、AIRFORTHからご連絡します。";
-          statusBox.classList.add("show");
-          statusBox.scrollIntoView({behavior:"smooth", block:"center"});
-        } catch (error) {
-          errorBox.textContent = "送信できませんでした。時間をおいて再度お試しいただくか、公式LINEからご連絡ください。";
-        } finally {
-          submitBtn.disabled = false;
-          submitBtn.textContent = "申込内容を送信する";
-        }
-      });
-    })();
+    document.getElementById("year").textContent = new Date().getFullYear();
   </script>
 </body>
 </html>
