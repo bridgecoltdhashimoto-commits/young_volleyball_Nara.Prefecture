@@ -1,67 +1,585 @@
 <!DOCTYPE html>
-<html lang='ja'>
+<html lang="ja">
 <head>
-  <meta charset='UTF-8' />
-  <meta name='viewport' content='width=device-width, initial-scale=1.0' />
-  <title>AIRFORTH | 奈良ヤングバレーボールクラブ</title>
-  <meta name='description' content='AIRFORTHは、小学4年生から中学生までを対象に、学びとバレーボールのバランスを大切にしながら、安心して楽しく活動できる奈良ヤングバレーボールクラブです。' />
-  <meta name='theme-color' content='#071e4a' />
-  <meta name='application-name' content='AIRFORTH' />
-  <meta name='apple-mobile-web-app-title' content='AIRFORTH' />
-  <meta name='apple-mobile-web-app-capable' content='yes' />
-  <meta name='mobile-web-app-capable' content='yes' />
-  <meta name='apple-mobile-web-app-status-bar-style' content='black-translucent' />
-  <link rel='icon' href='./logo-main.png?v=20260710-icon1' type='image/png' />
-  <link rel='apple-touch-icon' href='./logo-main.png?v=20260710-icon1' />
-  <link rel='apple-touch-icon-precomposed' href='./logo-main.png?v=20260710-icon1' />
-  <link rel='manifest' href='./site.webmanifest?v=20260710-icon1' />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AIRFORTH｜奈良ヤングバレーボールクラブ</title>
+  <meta name="description" content="AIRFORTHは、小学4年生から中学3年生を対象とする奈良のヤングバレーボールクラブです。体験・見学・入会相談をウェブフォームと公式LINEで受け付けています。" />
+  <meta name="theme-color" content="#071e4a" />
+  <meta name="application-name" content="AIRFORTH" />
+  <meta name="apple-mobile-web-app-title" content="AIRFORTH" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="mobile-web-app-capable" content="yes" />
+  <meta property="og:title" content="AIRFORTH｜奈良ヤングバレーボールクラブ" />
+  <meta property="og:description" content="たのしく学び、のびのび続ける。体験・見学・入会相談を受付中です。" />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="./logo-main.png" />
+  <link rel="icon" href="./logo-main.png?v=20260714-1" type="image/png" />
+  <link rel="apple-touch-icon" href="./logo-main.png?v=20260714-1" />
+  <link rel="manifest" href="./site.webmanifest?v=20260714-1" />
   <style>
-    :root{--navy:#071e4a;--navy-soft:#17366f;--sky:#55b5ff;--gold:#f4b400;--orange:#ff8200;--pink:#f53d80;--green:#06c755;--white:#ffffff;--bg:#f4f8ff;--text:#1f2d49;--muted:#52627d;--line:#d7e2f3;--shadow:0 16px 36px rgba(7,30,74,.11);--shadow-soft:0 10px 24px rgba(7,30,74,.08);--max:1080px;--section-gap:38px;}
-    *{box-sizing:border-box;margin:0;padding:0;}html{scroll-behavior:smooth;}body{font-family:'Yu Gothic','Hiragino Kaku Gothic ProN','Meiryo',sans-serif;color:var(--text);line-height:1.82;letter-spacing:.018em;font-weight:500;background:radial-gradient(circle at 10% 20%,rgba(85,181,255,.10),transparent 28%),radial-gradient(circle at 88% 16%,rgba(245,61,128,.07),transparent 24%),linear-gradient(180deg,#ffffff 0%,var(--bg) 100%);}a{color:inherit;text-decoration:none;}img{display:block;max-width:100%;}button,input,textarea,select{font-family:inherit;}.container{width:min(var(--max),92%);margin:0 auto;}
-    header{position:sticky;top:0;z-index:1000;background:rgba(255,255,255,.97);backdrop-filter:blur(10px);border-bottom:1px solid rgba(7,30,74,.08);}.header-inner{width:min(var(--max),92%);margin:0 auto;min-height:72px;display:flex;align-items:center;justify-content:space-between;gap:18px;}.brand-title{font-size:2rem;line-height:1;font-weight:1000;letter-spacing:.08em;background:linear-gradient(90deg,#24324c 0%,#f4b400 34%,#ff8200 67%,#f53d80 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;color:transparent;white-space:nowrap;}nav{display:flex;align-items:center;justify-content:flex-end;gap:9px;flex-wrap:wrap;}nav a{display:inline-flex;align-items:center;justify-content:center;min-height:38px;padding:8px 14px;border-radius:999px;border:1px solid rgba(85,181,255,.34);background:linear-gradient(135deg,rgba(85,181,255,.12),rgba(245,61,128,.07));color:var(--navy);font-size:.88rem;font-weight:900;line-height:1.2;box-shadow:0 7px 15px rgba(7,30,74,.07);transition:.22s;white-space:nowrap;}nav a:hover{transform:translateY(-2px);border-color:rgba(245,61,128,.32);}nav a.cta-mini{color:#fff;border:none;background:linear-gradient(135deg,var(--pink),var(--orange));box-shadow:0 10px 22px rgba(245,61,128,.20);}
-    section{padding:var(--section-gap) 0;}.section-head{margin-bottom:22px;}.section-head .label,.eyebrow{display:inline-block;font-size:.78rem;font-weight:1000;letter-spacing:.13em;color:var(--navy-soft);margin-bottom:10px;}.eyebrow{padding:8px 14px;border-radius:999px;background:rgba(85,181,255,.12);}.section-head h2{color:var(--navy);font-size:clamp(1.9rem,3.5vw,2.65rem);line-height:1.28;font-weight:1000;letter-spacing:.01em;margin-bottom:10px;}.section-head p{max-width:760px;color:var(--muted);font-size:1.02rem;font-weight:600;}
-    .club-mark{position:relative;overflow:hidden;padding:18px 0 8px;background:radial-gradient(circle at 14% 18%,rgba(85,181,255,.08),transparent 26%),radial-gradient(circle at 88% 16%,rgba(245,61,128,.05),transparent 22%),linear-gradient(180deg,rgba(243,248,255,.94) 0%,rgba(245,248,255,.88) 100%);}.club-mark-inner{width:min(var(--max),92%);margin:0 auto;display:flex;justify-content:center;}.club-mark-box{background:#fff;border:1px solid rgba(7,30,74,.07);border-radius:26px;padding:16px 24px;box-shadow:0 16px 34px rgba(7,30,74,.08);}.club-mark-box img{width:min(320px,74vw);height:auto;object-fit:contain;filter:drop-shadow(0 9px 18px rgba(0,0,0,.09));}
-    .hero{padding:30px 0 42px;background:radial-gradient(circle at 12% 12%,rgba(85,181,255,.13),transparent 26%),radial-gradient(circle at 90% 8%,rgba(245,61,128,.07),transparent 20%),linear-gradient(180deg,#ffffff 0%,#f5f8ff 100%);}.hero-grid{width:min(var(--max),92%);margin:0 auto;display:grid;grid-template-columns:minmax(0,1.02fr) minmax(340px,.78fr);gap:24px;align-items:start;}.hero h1{color:var(--navy);font-size:clamp(2.55rem,4.45vw,4rem);line-height:1.17;font-weight:1000;letter-spacing:.012em;margin-bottom:16px;}.hero h1 .accent{background:linear-gradient(90deg,var(--gold),var(--orange),var(--pink));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;color:transparent;}.hero-lead{max-width:620px;color:#33415f;font-size:1.04rem;font-weight:650;margin-bottom:18px;}.hero-actions{display:grid;grid-template-columns:repeat(2,minmax(200px,1fr));gap:11px;max-width:610px;}.hero-actions .primary-wide{grid-column:1 / -1;}
-    .hero-side,.panel,.card{background:#fff;border:1px solid var(--line);border-radius:24px;box-shadow:var(--shadow);}.hero-side{padding:20px;}.hero-side h3,.panel h3,.card h3{color:var(--navy);font-size:1.23rem;line-height:1.45;font-weight:1000;margin-bottom:13px;}.hero-side-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:12px;}.hero-side-card{border-radius:17px;background:#fff;border:1px solid var(--line);padding:14px 13px;min-height:90px;box-shadow:var(--shadow-soft);}.hero-side-card small{display:block;color:var(--navy-soft);font-size:.74rem;font-weight:1000;letter-spacing:.08em;margin-bottom:5px;}.hero-side-card strong{display:block;color:var(--navy);font-size:.96rem;font-weight:1000;line-height:1.5;}
-    .note,.fee-note,.support-caution-box,.policy-note{border:1px solid rgba(244,180,0,.24);border-radius:18px;padding:15px 16px;background:linear-gradient(135deg,rgba(244,180,0,.10),rgba(85,181,255,.08),rgba(245,61,128,.05));color:var(--muted);font-size:.94rem;font-weight:600;}.line-box,.join-form-box{margin-top:13px;border-radius:20px;padding:16px;border:1px solid rgba(7,30,74,.08);background:linear-gradient(135deg,rgba(85,181,255,.08),rgba(245,61,128,.05));}.line-box{border-color:rgba(6,199,85,.20);background:linear-gradient(135deg,rgba(6,199,85,.10),rgba(85,181,255,.08));}.line-box h4,.join-form-box h4{color:var(--navy);font-size:1rem;font-weight:1000;margin-bottom:5px;}.line-box p,.join-form-box p{color:var(--muted);font-size:.92rem;font-weight:600;margin-bottom:10px;}.join-form-actions{display:flex;gap:10px;flex-wrap:wrap;}
-    .btn{display:inline-flex;align-items:center;justify-content:center;min-width:172px;min-height:48px;padding:13px 18px;border-radius:18px;border:none;cursor:pointer;font-size:.96rem;font-weight:1000;line-height:1.35;transition:.25s;text-align:center;position:relative;overflow:hidden;}.btn:hover{transform:translateY(-2px);}.btn-primary{background:linear-gradient(135deg,var(--pink),var(--orange));color:#fff;box-shadow:0 13px 26px rgba(245,61,128,.21);}.btn-secondary{background:linear-gradient(135deg,#f5fbff 0%,#fff7fb 100%);color:var(--navy);border:1px solid rgba(85,181,255,.42);box-shadow:0 10px 22px rgba(7,30,74,.09);}.btn-download{background:linear-gradient(135deg,var(--navy-soft),var(--sky));color:#fff;box-shadow:0 12px 24px rgba(23,54,111,.18);}.btn-line{background:var(--green);color:#fff;box-shadow:0 12px 24px rgba(6,199,85,.22);}.btn-subtle{min-height:44px;padding:11px 16px;font-size:.92rem;}
-    .cards3{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;}.card{padding:24px 21px;}.card p,.panel p,.info-item dd,.policy-list li{color:var(--muted);font-size:.96rem;font-weight:600;}.icon{width:46px;height:46px;border-radius:14px;display:grid;place-items:center;font-size:1.1rem;font-weight:1000;color:#fff;margin-bottom:14px;}.icon-blue{background:linear-gradient(135deg,var(--sky),var(--navy-soft));}.icon-pink{background:linear-gradient(135deg,var(--pink),var(--orange));}.icon-lime{background:linear-gradient(135deg,#c7e63b,var(--gold));color:var(--navy);}
-    .join-grid,.support-grid{display:grid;grid-template-columns:minmax(0,1.02fr) minmax(0,.98fr);gap:22px;align-items:start;}.support-prep-grid{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(320px,.9fr);gap:18px;margin-bottom:22px;}.support-prep-panel{background:linear-gradient(180deg,#ffffff 0%,#f8fbff 100%);border:1px solid var(--line);border-radius:24px;padding:22px;box-shadow:var(--shadow-soft);}.support-prep-panel h3{color:var(--navy);font-size:1.18rem;font-weight:1000;margin-bottom:12px;}.support-card-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;}.support-card{min-height:108px;display:flex;flex-direction:column;justify-content:center;gap:9px;border:1px solid rgba(85,181,255,.28);border-radius:20px;padding:16px 15px;background:linear-gradient(135deg,rgba(85,181,255,.10),rgba(245,61,128,.06));box-shadow:0 10px 22px rgba(7,30,74,.07);}.support-card-icon{width:40px;height:40px;display:grid;place-items:center;border-radius:14px;background:#fff;box-shadow:0 8px 18px rgba(7,30,74,.08);font-size:1.18rem;}.support-card h4{color:var(--navy);font-size:.98rem;font-weight:1000;line-height:1.45;}.support-method-list,.policy-list{display:grid;gap:9px;list-style:none;}.support-method-list li,.policy-list li{position:relative;padding:11px 14px 11px 40px;border:1px solid rgba(85,181,255,.30);border-radius:16px;background:#fff;box-shadow:0 8px 18px rgba(7,30,74,.06);}.support-method-list li::before,.policy-list li::before{content:'';position:absolute;left:15px;top:50%;width:11px;height:11px;border-radius:999px;background:linear-gradient(135deg,var(--gold),var(--pink));transform:translateY(-50%);box-shadow:0 0 0 5px rgba(244,180,0,.12);}
-    .panel{padding:23px;}.info-list{display:grid;gap:0;}.info-item{display:grid;grid-template-columns:118px 1fr;gap:14px;padding:11px 0;border-bottom:1px solid var(--line);}.info-item:last-child{border-bottom:none;padding-bottom:0;}.info-item dt{color:var(--navy-soft);font-weight:1000;}.fee-note{margin-top:15px;}.policy-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px;}form{display:grid;gap:13px;}.form-row{display:grid;grid-template-columns:1fr 1fr;gap:13px;}.field{display:grid;gap:6px;}.field label{color:var(--navy);font-size:.92rem;font-weight:1000;}.required{color:var(--pink);font-size:.84rem;margin-left:6px;}.field input,.field textarea,.field select{width:100%;padding:13px 14px;border:1px solid var(--line);border-radius:14px;background:#fff;color:var(--text);font-size:.96rem;font-weight:600;outline:none;}.field input:focus,.field textarea:focus,.field select:focus{border-color:var(--sky);box-shadow:0 0 0 4px rgba(85,181,255,.12);}.field textarea{min-height:108px;resize:vertical;}.help{color:var(--muted);font-size:.84rem;font-weight:600;}.error{color:#d92c5a;font-size:.86rem;font-weight:900;}.success{color:#167a45;font-size:.9rem;font-weight:900;}.submit-wrap{display:flex;align-items:center;gap:14px;flex-wrap:wrap;margin-top:4px;}
-    .line-float{position:fixed;right:18px;bottom:18px;z-index:2000;display:flex;align-items:center;gap:10px;padding:14px 18px;border-radius:999px;background:var(--green);color:#fff;font-weight:1000;box-shadow:0 14px 30px rgba(6,199,85,.30);transition:.25s;}.line-float:hover{transform:translateY(-2px);}.line-badge{display:inline-flex;align-items:center;justify-content:center;min-width:44px;height:28px;padding:0 8px;border-radius:999px;background:#fff;color:var(--green);font-size:.78rem;font-weight:1000;line-height:1;}footer{margin-top:32px;background:#0d1d45;color:#eaf1ff;padding:28px 0 34px;}.footer-inner{width:min(var(--max),92%);margin:0 auto;text-align:center;}.footer-title{font-size:1rem;font-weight:1000;margin-bottom:6px;}.footer-copy{color:#bfd0f6;font-size:.84rem;}
-    @media (min-width:981px){#policy,#support,#join{padding-top:34px;}.support-grid .panel,.join-grid .panel{min-height:100%;}.hero-side .join-form-actions .btn{flex:1 1 150px;min-width:0;}}@media (max-width:980px){:root{--max:760px;--section-gap:34px;}.hero-grid,.join-grid,.support-grid,.support-prep-grid,.policy-grid,.cards3{grid-template-columns:1fr;}.hero-side{max-width:720px;}.hero-lead{max-width:none;}}@media (max-width:760px){.header-inner{min-height:auto;flex-direction:column;align-items:flex-start;padding:13px 0;}nav{width:100%;justify-content:flex-start;}nav a{flex:1 1 calc(50% - 8px);font-size:.86rem;padding:8px 12px;}.brand-title{font-size:1.85rem;}.hero{padding-top:28px;}.hero h1{font-size:clamp(2.25rem,10vw,3.2rem);}.hero-actions,.hero-side-grid,.support-card-grid,.form-row,.info-item{grid-template-columns:1fr;}.join-form-actions{flex-direction:column;}.btn{width:100%;min-height:44px;}.club-mark-box img{width:min(320px,84vw);}}@media (max-width:560px){body{padding-bottom:82px;}.container,.hero-grid,.header-inner,.club-mark-inner{width:92%;}.line-float{left:14px;right:14px;bottom:14px;justify-content:center;}}
+    :root{
+      --navy:#071e4a;--navy2:#17366f;--sky:#55b5ff;--gold:#f4b400;
+      --orange:#ff8200;--pink:#f53d80;--green:#06c755;--white:#fff;
+      --bg:#f4f8ff;--text:#1f2d49;--muted:#586780;--line:#d7e2f3;
+      --shadow:0 18px 44px rgba(7,30,74,.11);--soft:0 10px 24px rgba(7,30,74,.08);
+      --max:1120px
+    }
+    *{box-sizing:border-box;margin:0;padding:0}
+    html{scroll-behavior:smooth;scroll-padding-top:90px}
+    body{
+      font-family:"Yu Gothic","Hiragino Kaku Gothic ProN","Meiryo",sans-serif;
+      color:var(--text);line-height:1.8;letter-spacing:.018em;font-weight:500;
+      background:
+        radial-gradient(circle at 8% 8%,rgba(85,181,255,.11),transparent 28%),
+        radial-gradient(circle at 90% 12%,rgba(245,61,128,.07),transparent 24%),
+        linear-gradient(180deg,#fff 0%,var(--bg) 100%)
+    }
+    a{color:inherit;text-decoration:none}
+    img{display:block;max-width:100%}
+    button,input,textarea,select{font:inherit}
+    .container{width:min(var(--max),92%);margin-inline:auto}
+    .skip{position:absolute;left:-9999px;top:8px;background:#fff;padding:10px 14px;z-index:5000}
+    .skip:focus{left:8px}
+    header{
+      position:sticky;top:0;z-index:1000;background:rgba(255,255,255,.96);
+      backdrop-filter:blur(12px);border-bottom:1px solid rgba(7,30,74,.08)
+    }
+    .header-inner{
+      width:min(var(--max),92%);min-height:74px;margin:auto;display:flex;
+      align-items:center;justify-content:space-between;gap:18px
+    }
+    .brand{display:flex;align-items:center;gap:10px;min-width:0}
+    .brand img{width:48px;height:48px;object-fit:contain;border-radius:12px;background:#fff}
+    .brand-text{line-height:1.1}
+    .brand-name{
+      display:block;font-size:1.55rem;font-weight:1000;letter-spacing:.08em;
+      background:linear-gradient(90deg,#24324c 0%,var(--gold) 34%,var(--orange) 67%,var(--pink) 100%);
+      -webkit-background-clip:text;background-clip:text;color:transparent
+    }
+    .brand-sub{display:block;margin-top:4px;color:var(--muted);font-size:.69rem;font-weight:800;letter-spacing:.07em}
+    nav{display:flex;align-items:center;justify-content:flex-end;gap:8px;flex-wrap:wrap}
+    nav a{
+      display:inline-flex;align-items:center;justify-content:center;min-height:38px;padding:8px 13px;
+      border-radius:999px;border:1px solid rgba(85,181,255,.34);
+      background:linear-gradient(135deg,rgba(85,181,255,.10),rgba(245,61,128,.05));
+      color:var(--navy);font-size:.86rem;font-weight:900;white-space:nowrap
+    }
+    nav a:hover,nav a:focus-visible{transform:translateY(-1px);border-color:rgba(245,61,128,.42)}
+    nav .nav-cta{color:#fff;border:none;background:linear-gradient(135deg,var(--pink),var(--orange))}
+    section{padding:46px 0}
+    .hero{padding:32px 0 48px}
+    .hero-grid{display:grid;grid-template-columns:minmax(0,1.08fr) minmax(340px,.82fr);gap:26px;align-items:center}
+    .eyebrow{
+      display:inline-flex;align-items:center;gap:8px;padding:8px 14px;margin-bottom:16px;
+      border-radius:999px;background:rgba(85,181,255,.12);color:var(--navy2);
+      font-size:.78rem;font-weight:1000;letter-spacing:.12em
+    }
+    .hero h1{color:var(--navy);font-size:clamp(2.5rem,5vw,4.45rem);line-height:1.13;font-weight:1000;margin-bottom:17px}
+    .hero h1 span{
+      background:linear-gradient(90deg,var(--gold),var(--orange),var(--pink));
+      -webkit-background-clip:text;background-clip:text;color:transparent
+    }
+    .hero-lead{max-width:690px;color:#35435e;font-size:1.05rem;font-weight:650;margin-bottom:20px}
+    .hero-actions{display:flex;gap:11px;flex-wrap:wrap}
+    .btn{
+      display:inline-flex;align-items:center;justify-content:center;min-height:50px;padding:13px 19px;
+      border:0;border-radius:16px;cursor:pointer;text-align:center;font-size:.95rem;font-weight:1000;
+      transition:.2s;box-shadow:var(--soft)
+    }
+    .btn:hover,.btn:focus-visible{transform:translateY(-2px)}
+    .btn-primary{color:#fff;background:linear-gradient(135deg,var(--pink),var(--orange))}
+    .btn-blue{color:#fff;background:linear-gradient(135deg,var(--navy2),var(--sky))}
+    .btn-line{color:#fff;background:var(--green)}
+    .btn-light{color:var(--navy);background:#fff;border:1px solid var(--line)}
+    .hero-card,.panel,.card{
+      background:#fff;border:1px solid var(--line);border-radius:26px;box-shadow:var(--shadow)
+    }
+    .hero-card{padding:22px}
+    .logo-stage{
+      display:grid;place-items:center;min-height:168px;margin-bottom:16px;padding:16px;
+      border-radius:20px;background:
+        radial-gradient(circle at 25% 20%,rgba(85,181,255,.13),transparent 40%),
+        linear-gradient(145deg,#fff,#f5f9ff)
+    }
+    .logo-stage img{width:min(320px,78vw);filter:drop-shadow(0 10px 18px rgba(0,0,0,.09))}
+    .quick-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+    .quick{
+      padding:13px;border:1px solid var(--line);border-radius:17px;background:#fff;box-shadow:var(--soft)
+    }
+    .quick small{display:block;color:var(--navy2);font-size:.72rem;font-weight:1000;letter-spacing:.08em}
+    .quick strong{display:block;color:var(--navy);font-size:.95rem;line-height:1.45;margin-top:4px}
+    .status-note{
+      margin-top:12px;padding:13px 14px;border-radius:17px;color:var(--muted);font-size:.91rem;font-weight:700;
+      border:1px solid rgba(244,180,0,.25);
+      background:linear-gradient(135deg,rgba(244,180,0,.10),rgba(85,181,255,.08),rgba(245,61,128,.04))
+    }
+    .section-head{margin-bottom:23px}
+    .section-head .label{display:block;color:var(--navy2);font-size:.76rem;font-weight:1000;letter-spacing:.14em;margin-bottom:8px}
+    .section-head h2{color:var(--navy);font-size:clamp(1.85rem,3.6vw,2.75rem);line-height:1.28;font-weight:1000;margin-bottom:10px}
+    .section-head p{max-width:790px;color:var(--muted);font-size:1rem;font-weight:650}
+    .cards3{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+    .card{padding:23px 21px}
+    .icon{
+      width:48px;height:48px;display:grid;place-items:center;margin-bottom:14px;border-radius:15px;
+      color:#fff;font-size:1.05rem;font-weight:1000
+    }
+    .icon.blue{background:linear-gradient(135deg,var(--sky),var(--navy2))}
+    .icon.pink{background:linear-gradient(135deg,var(--pink),var(--orange))}
+    .icon.gold{background:linear-gradient(135deg,#c9e73d,var(--gold));color:var(--navy)}
+    .card h3,.panel h3{color:var(--navy);font-size:1.2rem;line-height:1.42;font-weight:1000;margin-bottom:10px}
+    .card p,.panel p,.panel li,.info dd{color:var(--muted);font-size:.95rem;font-weight:600}
+    .split{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:20px;align-items:start}
+    .panel{padding:24px}
+    .check-list{display:grid;gap:10px;list-style:none}
+    .check-list li{position:relative;padding:12px 14px 12px 42px;border:1px solid var(--line);border-radius:16px;background:#fff}
+    .check-list li:before{
+      content:"✓";position:absolute;left:14px;top:11px;width:20px;height:20px;display:grid;place-items:center;
+      border-radius:50%;background:linear-gradient(135deg,var(--gold),var(--pink));color:#fff;font-size:.75rem;font-weight:1000
+    }
+    .info{display:grid}
+    .info-row{display:grid;grid-template-columns:122px 1fr;gap:14px;padding:11px 0;border-bottom:1px solid var(--line)}
+    .info-row:last-child{border-bottom:0}
+    .info dt{color:var(--navy2);font-weight:1000}
+    .notice{
+      margin-top:16px;padding:15px 16px;border:1px solid rgba(85,181,255,.27);border-radius:18px;
+      background:linear-gradient(135deg,rgba(85,181,255,.09),rgba(245,61,128,.04));
+      color:var(--muted);font-size:.92rem;font-weight:650
+    }
+    .join-actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:16px}
+    .support-use{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin-top:14px}
+    .support-use div{padding:14px;border:1px solid var(--line);border-radius:17px;background:#fff;font-weight:800;color:var(--navy)}
+    .form-wrap{display:grid;grid-template-columns:minmax(280px,.72fr) minmax(0,1.28fr);gap:22px;align-items:start}
+    form{display:grid;gap:14px}
+    .form-row{display:grid;grid-template-columns:1fr 1fr;gap:13px}
+    .field{display:grid;gap:6px}
+    .field label{color:var(--navy);font-size:.91rem;font-weight:1000}
+    .required{color:var(--pink);font-size:.8rem;margin-left:6px}
+    .field input,.field textarea,.field select{
+      width:100%;padding:13px 14px;border:1px solid var(--line);border-radius:14px;
+      background:#fff;color:var(--text);font-size:.95rem;font-weight:600;outline:none
+    }
+    .field input:focus,.field textarea:focus,.field select:focus{border-color:var(--sky);box-shadow:0 0 0 4px rgba(85,181,255,.13)}
+    .field textarea{min-height:104px;resize:vertical}
+    .help{color:var(--muted);font-size:.82rem;font-weight:600}
+    .consent{
+      display:flex;gap:10px;align-items:flex-start;padding:13px 14px;border:1px solid var(--line);
+      border-radius:14px;background:#f9fbff;color:var(--muted);font-size:.87rem;font-weight:650
+    }
+    .consent input{margin-top:5px;flex:0 0 auto}
+    .consent a{text-decoration:underline;color:var(--navy2)}
+    .error{color:#d92c5a;font-size:.87rem;font-weight:900}
+    .success{
+      display:none;padding:13px 14px;border-radius:14px;background:#ebfff3;border:1px solid #bfe8ce;
+      color:#167a45;font-size:.9rem;font-weight:900
+    }
+    .success.show{display:block}
+    .submit-wrap{display:flex;align-items:center;gap:12px;flex-wrap:wrap}
+    .hp{position:absolute!important;left:-9999px!important;width:1px!important;height:1px!important;overflow:hidden!important}
+    footer{margin-top:34px;padding:31px 0;background:#0d1d45;color:#eaf1ff}
+    .footer-inner{width:min(var(--max),92%);margin:auto;text-align:center}
+    .footer-links{display:flex;justify-content:center;gap:14px;flex-wrap:wrap;margin-bottom:10px}
+    .footer-links a{color:#dce8ff;text-decoration:underline;font-size:.88rem}
+    .footer-copy{color:#bfd0f6;font-size:.83rem}
+    .line-float{
+      position:fixed;right:18px;bottom:18px;z-index:1200;display:flex;align-items:center;gap:8px;
+      padding:13px 17px;border-radius:999px;background:var(--green);color:#fff;font-size:.9rem;font-weight:1000;
+      box-shadow:0 14px 30px rgba(6,199,85,.30)
+    }
+    @media(max-width:980px){
+      .hero-grid,.split,.form-wrap{grid-template-columns:1fr}
+      .cards3{grid-template-columns:1fr}
+      .hero-card{max-width:760px}
+    }
+    @media(max-width:760px){
+      html{scroll-padding-top:150px}
+      .header-inner{align-items:flex-start;flex-direction:column;padding:11px 0}
+      nav{width:100%;justify-content:flex-start}
+      nav a{flex:1 1 calc(50% - 8px)}
+      .hero{padding-top:25px}
+      .hero h1{font-size:clamp(2.2rem,11vw,3.35rem)}
+      .hero-actions,.join-actions{display:grid;grid-template-columns:1fr}
+      .btn{width:100%}
+      .form-row,.info-row{grid-template-columns:1fr}
+      .support-use{grid-template-columns:1fr}
+      body{padding-bottom:82px}
+      .line-float{left:14px;right:14px;bottom:14px;justify-content:center}
+    }
+    @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.btn,nav a{transition:none}}
   </style>
 </head>
 <body>
-  <header><div class='header-inner'><a href='#' class='brand-title' aria-label='AIRFORTH トップへ'>AIRFORTH</a><nav aria-label='メインメニュー'><a href='#concept'>クラブ紹介</a><a href='#support'>ご協賛・ご支援</a><a href='#join'>募集案内</a><a href='./operation-policy.html'>運営方針</a><a href='#contact' class='cta-mini'>体験・見学はこちら</a></nav></div></header>
-  <main>
-    <section class='club-mark' aria-label='AIRFORTH ロゴ'><div class='club-mark-inner'><div class='club-mark-box'><img src='./logo-main.png?v=10' alt='AIRFORTH ロゴ' onerror='this.closest(&quot;.club-mark&quot;).style.display=&quot;none&quot;;' /></div></div></section>
-    <section class='hero'><div class='hero-grid'><div><div class='eyebrow'>NARA YOUNG VOLLEYBALL CLUB</div><h1>たのしく学び、<br /><span class='accent'>のびのび続ける。</span></h1><p class='hero-lead'>AIRFORTHは、小学4年生から中学生までを対象に、バレーボールの楽しさと毎日の学びとのバランスを大切にするクラブです。はじめての方も、経験のある方も、それぞれのペースを大切にしながら、安心して参加できる環境づくりを目指しています。</p><div class='hero-actions'><a href='#contact' class='btn btn-primary primary-wide'>体験・見学を相談する</a><a id='lineTopBtn' href='#' class='btn btn-line primary-wide' target='_blank' rel='noopener noreferrer'>公式LINEで相談する</a><a id='joinFormTopBtn' href='#' class='btn btn-download' target='_blank' rel='noopener noreferrer'>入会申込はこちら</a><a href='./operation-policy.html' class='btn btn-secondary'>運営方針を見る</a><a href='#support' class='btn btn-secondary'>設立準備を応援する</a><a href='#concept' class='btn btn-secondary'>クラブ紹介を見る</a></div></div><aside class='hero-side'><h3>体験・見学受付中</h3><div class='hero-side-grid'><div class='hero-side-card'><small>対象</small><strong>小学4年生〜中学3年生</strong></div><div class='hero-side-card'><small>経験</small><strong>初心者・経験者ともに歓迎</strong></div><div class='hero-side-card'><small>会費</small><strong>月額 2,000円</strong></div><div class='hero-side-card'><small>地域</small><strong>奈良県内体育館を中心に活動</strong></div></div><div class='note'>体験や見学は、はじめての方でも安心してご参加いただけます。費用、通い方、活動内容など、事前に確認しておきたいことがあればお気軽にご相談ください。</div><div class='line-box'><h4>公式LINEでもご相談できます</h4><p>体験・見学、入会前のご質問、スポンサー・協賛のご相談も、公式LINEからお問い合わせいただけます。</p><div class='join-form-actions'><a id='lineSideBtn' href='#' class='btn btn-line' target='_blank' rel='noopener noreferrer'>公式LINEを開く</a></div></div><div class='join-form-box'><h4>入会・規約確認</h4><p>入会申込フォーム、クラブ規約、運営方針をこちらから確認できます。</p><div class='join-form-actions'><a id='joinFormSideBtn' href='#' class='btn btn-download btn-subtle' target='_blank' rel='noopener noreferrer'>入会申込</a><a id='rulesOpenBtn' href='#' class='btn btn-secondary btn-subtle' target='_blank' rel='noopener noreferrer'>クラブ規約</a><a href='./operation-policy.html' class='btn btn-secondary btn-subtle'>運営方針</a></div></div></aside></div></section>
-    <section id='concept'><div class='container'><div class='section-head'><div class='label'>Club Concept</div><h2>安心して続けられる、あたたかなクラブづくり。</h2><p>競技としての楽しさはもちろん、毎日の生活や学びとのバランスも大切にしながら、お子さまが自分らしく成長していける環境を目指しています。</p></div><div class='cards3'><article class='card'><div class='icon icon-blue'>学</div><h3>学びとのバランス</h3><p>練習だけに偏らず、学校生活や家庭での時間との両立も大切に考えています。</p></article><article class='card'><div class='icon icon-pink'>和</div><h3>仲間を大切に</h3><p>あいさつや思いやり、チームワークを通して、気持ちよく活動できる雰囲気づくりを大事にしています。</p></article><article class='card'><div class='icon icon-lime'>成</div><h3>一歩ずつ成長</h3><p>初心者の方も経験者の方も、それぞれの段階に合わせて無理なくステップアップしていけます。</p></article></div></div></section>
-    <section id='policy'><div class='container'><div class='section-head'><div class='label'>Safety & Policy</div><h2>安心して参加・相談できるように。</h2><p>会員募集、協賛受付、公式LINEの運用に向けて、個人情報、写真動画、ハラスメント防止、会計管理の基本方針を見える形にしました。</p></div><div class='policy-grid'><div class='panel'><h3>個人情報の取扱い</h3><ul class='policy-list'><li>体験・見学、入会手続、活動連絡、安全管理、緊急時対応に必要な範囲で利用します。</li><li>フォーム、スプレッドシート、ドライブの共有権限を必要最小限にします。</li><li>写真・動画の掲載を希望されない場合は、事前にご相談いただけます。</li></ul></div><div class='panel'><h3>安全・相談窓口</h3><ul class='policy-list'><li>暴力、暴言、いじめ、差別、過度な叱責、ハラスメントを認めません。</li><li>気になることは公式LINE又はお問い合わせフォームから相談できます。</li><li>活動中のけが、体調不良、緊急時は保護者への連絡を優先します。</li></ul></div></div><div class='policy-note' style='margin-top:18px;'>詳しい運営方針、個人情報、写真・動画、協賛・ご支援、補助金等の管理方針は、専用ページにまとめています。<div class='join-form-actions' style='margin-top:12px;'><a href='./operation-policy.html' class='btn btn-secondary btn-subtle'>運営方針ページを見る</a></div></div></div></section>
-    <section id='support'><div class='container'><div class='section-head'><div class='label'>Support AIRFORTH</div><h2>AIRFORTH設立準備・活動環境づくりへのご支援のお願い</h2><p>AIRFORTHでは、子どもたちが安心してバレーボールに取り組める環境づくりに向けて、設立準備・備品整備・運営準備を進めています。活動に共感いただける企業・団体・個人の皆さまからの、あたたかいご協賛・ご支援を受け付けています。</p></div><div class='support-prep-grid'><div class='support-prep-panel'><h3>ご支援の使い道</h3><div class='support-card-grid'><article class='support-card'><span class='support-card-icon'>🏐</span><h4>ボール・練習備品の準備</h4></article><article class='support-card'><span class='support-card-icon'>🏟️</span><h4>会場利用・活動環境づくり</h4></article><article class='support-card'><span class='support-card-icon'>🩹</span><h4>救急用品・安全面の備え</h4></article><article class='support-card'><span class='support-card-icon'>📣</span><h4>広報・運営準備</h4></article></div></div><div class='support-prep-panel'><h3>ご支援方法</h3><ul class='support-method-list'><li>ご寄付・ご支援金</li><li>ご協賛・スポンサー支援</li><li>物品支援</li><li>その他のご支援</li><li>まずは相談したい</li></ul></div></div><div class='join-grid support-grid'><div class='panel'><h3>ご支援いただける内容</h3><dl class='info-list'><div class='info-item'><dt>対象</dt><dd>企業・団体・個人の皆さま</dd></div><div class='info-item'><dt>目的</dt><dd>設立準備、練習環境の整備、備品の準備、子どもたちの継続的な活動運営</dd></div><div class='info-item'><dt>掲載</dt><dd>ご希望に応じて、AIRFORTHからの感謝掲載としてご紹介いたします</dd></div></dl><div class='support-caution-box' style='margin-top:18px;'><p>ご協賛・ご支援金、物品支援等の税務上・会計上の処理につきましては、支援者様ご自身、または顧問税理士・会計担当者様等へご確認ください。AIRFORTHでは、広告宣伝費・寄附金・販売促進費・経費処理・寄附金控除等に該当するかどうかについて、個別の判断や保証は行っておりません。</p><p>会社名・個人名・ロゴ等の掲載は、ご協賛・ご支援への感謝をお伝えする目的で行うものであり、広告効果、集客効果、売上向上、その他の成果を保証するものではありません。</p></div></div><div class='panel'><h3>ご協賛・ご支援申込フォーム</h3><p>ご協賛・ご支援をご検討いただける方は、下記フォームよりお申し込みください。内容を確認後、AIRFORTHよりご連絡いたします。</p><div class='join-form-box'><h4>フォームからお申し込み</h4><p>ご支援内容や感謝掲載のご希望について、フォーム内でお知らせください。</p><div class='join-form-actions'><a id='supportFormBottomBtn' href='#' class='btn btn-primary' target='_blank' rel='noopener noreferrer'>設立準備へのご支援フォームを開く</a><a href='#contact' class='btn btn-secondary'>先に相談する</a><a href='./operation-policy.html' class='btn btn-secondary'>注意事項を見る</a></div></div></div></div></div></section>
-    <section id='join'><div class='container'><div class='section-head'><div class='label'>Join Us</div><h2>体験・見学、歓迎しています。</h2><p>「ちょっと見てみたい」「一度やってみたい」という方も歓迎です。体験・見学のご相談はもちろん、スポンサーに関するお問い合わせも受け付けています。</p></div><div class='join-grid'><div class='panel'><h3>募集案内</h3><dl class='info-list'><div class='info-item'><dt>対象</dt><dd>小学4年生〜中学3年生</dd></div><div class='info-item'><dt>区分</dt><dd>男子・女子ともに歓迎</dd></div><div class='info-item'><dt>経験</dt><dd>初心者・経験者どちらも歓迎</dd></div><div class='info-item'><dt>雰囲気</dt><dd>一人ひとりのペースを大切にしながら、安心して参加しやすい環境づくりを心がけています</dd></div><div class='info-item'><dt>活動</dt><dd>平日練習 / 土日練習・練習試合 など</dd></div><div class='info-item'><dt>地域</dt><dd>奈良県内体育館を中心に活動</dd></div></dl><div class='fee-note'>月額 2,000円です。保険料、登録費、大会参加費、遠征費、合宿費、備品費等が必要になる場合は、別途ご案内します。<br /><br />入会をご希望の方は、下記ボタンよりGoogleフォームへお進みください。クラブ規約と運営方針も事前にご確認いただけます。</div><div class='join-form-box'><h4>入会申込・規約確認</h4><p>必要事項をご入力いただくと、内容確認後にAIRFORTHよりご連絡いたします。</p><div class='join-form-actions'><a id='joinFormBottomBtn' href='#' class='btn btn-download' target='_blank' rel='noopener noreferrer'>入会申込フォーム</a><a id='rulesOpenBtn2' href='#' class='btn btn-secondary' target='_blank' rel='noopener noreferrer'>クラブ規約</a><a href='./operation-policy.html' class='btn btn-secondary'>運営方針</a></div></div></div><div id='contact' class='panel'><h3>お問い合わせフォーム</h3><form id='contactForm'><div class='form-row'><div class='field'><label for='name'>お名前 <span class='required'>必須</span></label><input id='name' name='name' type='text' autocomplete='name' required /></div><div class='field'><label for='category'>お問い合わせ内容 <span class='required'>必須</span></label><select id='category' name='category' required><option value=''>選択してください</option><option value='体験・見学'>体験・見学について</option><option value='入会'>入会について</option><option value='スポンサー・協賛'>スポンサー・協賛について</option><option value='その他'>その他</option></select></div></div><div class='form-row'><div class='field'><label for='phone'>電話番号</label><input id='phone' name='phone' type='tel' autocomplete='tel' /></div><div class='field'><label for='email'>メールアドレス</label><input id='email' name='email' type='email' autocomplete='email' /></div></div><p class='help'>電話番号またはメールアドレスのどちらかをご入力ください。お預かりした情報は、お問い合わせ対応、体験・見学、入会案内、安全管理、活動連絡に必要な範囲で利用します。</p><div id='contactError' class='error' aria-live='polite'></div><div class='field'><label for='childInfo'>お子さまの学年・経験など</label><textarea id='childInfo' name='childInfo' placeholder='例：小学5年生、バレーボール経験あり / 体験希望日など'></textarea></div><div class='field'><label for='message'>その他ご質問・ご相談</label><textarea id='message' name='message' placeholder='体験・見学・スポンサーについてなど、ご質問があればご記入ください。'></textarea></div><div class='policy-note'>送信前に、<a href='./operation-policy.html' target='_blank' rel='noopener noreferrer'>個人情報・写真動画・運営方針</a>をご確認ください。</div><div class='submit-wrap'><button id='submitBtn' type='submit' class='btn btn-primary'>送信する</button><div id='formStatus' class='success' aria-live='polite'></div></div></form></div></div></div></section>
+  <a class="skip" href="#main">本文へ移動</a>
+  <header>
+    <div class="header-inner">
+      <a class="brand" href="#top" aria-label="AIRFORTH トップへ">
+        <img src="./logo-main.png?v=20260714-1" alt="" />
+        <span class="brand-text">
+          <span class="brand-name">AIRFORTH</span>
+          <span class="brand-sub">NARA YOUNG VOLLEYBALL CLUB</span>
+        </span>
+      </a>
+      <nav aria-label="メインメニュー">
+        <a href="#concept">クラブ紹介</a>
+        <a href="#join">募集案内</a>
+        <a href="#support">ご支援</a>
+        <a href="./airforth_club_rules.html">クラブ規約</a>
+        <a href="./operation-policy.html">運営方針</a>
+        <a href="#contact" class="nav-cta" data-inquiry="体験希望">体験・入会相談</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="hero" id="top">
+      <div class="container hero-grid">
+        <div>
+          <div class="eyebrow">🏐 NARA YOUNG VOLLEYBALL CLUB</div>
+          <h1>たのしく学び、<br><span>のびのび続ける。</span></h1>
+          <p class="hero-lead">
+            AIRFORTHは、小学4年生から中学3年生までを対象に、バレーボールの楽しさと
+            学校生活とのバランスを大切にするクラブです。初心者も経験者も、それぞれの
+            ペースで安心して参加できる環境づくりを目指しています。
+          </p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#contact" data-inquiry="体験希望">体験・見学を申し込む</a>
+            <a class="btn btn-blue" href="#contact" data-inquiry="入会希望">入会を申し込む</a>
+            <a class="btn btn-line" href="https://lin.ee/ze1BxQ7p" target="_blank" rel="noopener noreferrer">公式LINEで相談する</a>
+            <a class="btn btn-light" href="./airforth_club_rules.html">クラブ規約を見る</a>
+          </div>
+        </div>
+
+        <aside class="hero-card" aria-label="募集概要">
+          <div class="logo-stage">
+            <img src="./logo-main.png?v=20260714-1" alt="AIRFORTH ロゴ" />
+          </div>
+          <div class="quick-grid">
+            <div class="quick"><small>対象</small><strong>小学4年生〜中学3年生</strong></div>
+            <div class="quick"><small>経験</small><strong>初心者・経験者ともに歓迎</strong></div>
+            <div class="quick"><small>月額会費</small><strong>2,000円</strong></div>
+            <div class="quick"><small>活動地域</small><strong>奈良県内体育館を中心</strong></div>
+          </div>
+          <div class="status-note">
+            入会・体験の申込は、このページ内のフォームから送信できます。
+            外部の申込ファイルを開く必要はありません。
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <section id="concept">
+      <div class="container">
+        <div class="section-head">
+          <span class="label">CLUB CONCEPT</span>
+          <h2>安心して続けられる、あたたかなクラブづくり。</h2>
+          <p>競技力だけでなく、学校生活、仲間への思いやり、子ども一人ひとりの成長を大切にします。</p>
+        </div>
+        <div class="cards3">
+          <article class="card"><div class="icon blue">学</div><h3>学びとのバランス</h3><p>練習だけに偏らず、学校生活や家庭での時間との両立も大切に考えます。</p></article>
+          <article class="card"><div class="icon pink">和</div><h3>仲間を大切に</h3><p>あいさつ、思いやり、チームワークを通して、気持ちよく活動できる雰囲気を育てます。</p></article>
+          <article class="card"><div class="icon gold">成</div><h3>一歩ずつ成長</h3><p>初心者も経験者も、それぞれの段階に合わせて無理なくステップアップします。</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section id="safety">
+      <div class="container">
+        <div class="section-head">
+          <span class="label">SAFETY & POLICY</span>
+          <h2>子どもの安全と、保護者の安心を優先します。</h2>
+          <p>安全管理、個人情報、写真・動画、ハラスメント防止について、基本方針を明示しています。</p>
+        </div>
+        <div class="split">
+          <div class="panel">
+            <h3>活動時の基本方針</h3>
+            <ul class="check-list">
+              <li>体調、けが、年齢、経験に配慮して活動します。</li>
+              <li>暴力、暴言、いじめ、差別、過度な叱責を認めません。</li>
+              <li>緊急時は、参加者の生命・身体の安全確保を優先します。</li>
+              <li>写真・動画の掲載可否は、保護者の意向を確認します。</li>
+            </ul>
+          </div>
+          <div class="panel">
+            <h3>規約・運営方針</h3>
+            <p>入会前に、クラブ規約と運営方針をご確認ください。個人情報の利用目的、費用、安全管理、禁止事項、相談窓口等を掲載しています。</p>
+            <div class="join-actions">
+              <a class="btn btn-light" href="./airforth_club_rules.html">クラブ規約</a>
+              <a class="btn btn-light" href="./operation-policy.html">運営方針・個人情報</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="join">
+      <div class="container">
+        <div class="section-head">
+          <span class="label">JOIN US</span>
+          <h2>体験・見学・入会を受け付けています。</h2>
+          <p>まずは体験や見学からでも大丈夫です。費用、通い方、活動内容なども事前にご相談いただけます。</p>
+        </div>
+        <div class="split">
+          <div class="panel">
+            <h3>募集案内</h3>
+            <dl class="info">
+              <div class="info-row"><dt>対象</dt><dd>小学4年生〜中学3年生</dd></div>
+              <div class="info-row"><dt>区分</dt><dd>男子・女子ともに歓迎</dd></div>
+              <div class="info-row"><dt>経験</dt><dd>初心者・経験者どちらも歓迎</dd></div>
+              <div class="info-row"><dt>活動</dt><dd>平日練習、土日練習、練習試合等</dd></div>
+              <div class="info-row"><dt>地域</dt><dd>奈良県内体育館を中心に活動</dd></div>
+              <div class="info-row"><dt>月額会費</dt><dd>2,000円</dd></div>
+            </dl>
+            <div class="notice">
+              保険料、登録費、大会参加費、遠征費、合宿費、備品費等が別途必要になる場合は、事前にご案内します。
+            </div>
+          </div>
+          <div class="panel">
+            <h3>申込の流れ</h3>
+            <ul class="check-list">
+              <li>下の申込フォームまたは公式LINEからご連絡ください。</li>
+              <li>AIRFORTHから活動日、会場、持ち物等をご案内します。</li>
+              <li>体験・見学後、入会希望を確認します。</li>
+              <li>入会時に規約、費用、写真・動画掲載等を確認します。</li>
+            </ul>
+            <div class="join-actions">
+              <a class="btn btn-primary" href="#contact" data-inquiry="体験希望">体験・見学を申し込む</a>
+              <a class="btn btn-blue" href="#contact" data-inquiry="入会希望">入会を申し込む</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="support">
+      <div class="container">
+        <div class="section-head">
+          <span class="label">SUPPORT AIRFORTH</span>
+          <h2>設立準備・活動環境づくりへのご支援のお願い</h2>
+          <p>子どもたちが安心して活動できる環境づくりに向けて、企業・団体・個人の皆さまからのご協賛・ご支援を受け付けています。</p>
+        </div>
+        <div class="split">
+          <div class="panel">
+            <h3>主な使い道</h3>
+            <div class="support-use">
+              <div>🏐 ボール・練習備品</div>
+              <div>🏟️ 会場利用・活動環境</div>
+              <div>🩹 救急用品・安全対策</div>
+              <div>📣 広報・運営準備</div>
+            </div>
+          </div>
+          <div class="panel">
+            <h3>ご協賛・ご支援申込</h3>
+            <p>ご支援内容や、会社名・個人名・ロゴ等の感謝掲載のご希望は、専用フォームからお知らせください。</p>
+            <div class="notice">
+              税務・会計上の処理や広告効果等を保証するものではありません。詳しくは運営方針をご確認ください。
+            </div>
+            <div class="join-actions">
+              <a class="btn btn-primary" href="https://forms.gle/RPLDX1J5Qfj9712z5" target="_blank" rel="noopener noreferrer">ご支援申込フォーム</a>
+              <a class="btn btn-light" href="./operation-policy.html">注意事項を見る</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="container">
+        <div class="section-head">
+          <span class="label">APPLICATION & CONTACT</span>
+          <h2>体験・見学・入会申込フォーム</h2>
+          <p>必要事項をご入力ください。内容を確認後、AIRFORTHからご連絡します。</p>
+        </div>
+        <div class="form-wrap">
+          <aside class="panel">
+            <h3>このフォームで受付できる内容</h3>
+            <ul class="check-list">
+              <li>体験希望</li>
+              <li>見学希望</li>
+              <li>入会希望</li>
+              <li>その他のお問い合わせ</li>
+            </ul>
+            <div class="notice">
+              電話番号またはメールアドレスのどちらか一方は必ずご入力ください。
+              公式LINEからのご相談も可能です。
+            </div>
+            <div class="join-actions">
+              <a class="btn btn-line" href="https://lin.ee/ze1BxQ7p" target="_blank" rel="noopener noreferrer">公式LINEを開く</a>
+            </div>
+          </aside>
+
+          <div class="panel">
+            <form id="contactForm" novalidate>
+              <div class="hp" aria-hidden="true">
+                <label for="website">この項目は入力しないでください</label>
+                <input id="website" name="website" type="text" tabindex="-1" autocomplete="off" />
+              </div>
+
+              <div class="form-row">
+                <div class="field">
+                  <label for="participantName">参加者本人のお名前 <span class="required">必須</span></label>
+                  <input id="participantName" name="participantName" type="text" autocomplete="name" required />
+                </div>
+                <div class="field">
+                  <label for="guardianName">保護者のお名前 <span class="required">必須</span></label>
+                  <input id="guardianName" name="guardianName" type="text" autocomplete="name" required />
+                </div>
+              </div>
+
+              <div class="form-row">
+                <div class="field">
+                  <label for="grade">学年 <span class="required">必須</span></label>
+                  <select id="grade" name="grade" required>
+                    <option value="">選択してください</option>
+                    <option>小学4年生</option><option>小学5年生</option><option>小学6年生</option>
+                    <option>中学1年生</option><option>中学2年生</option><option>中学3年生</option>
+                    <option>その他・相談</option>
+                  </select>
+                </div>
+                <div class="field">
+                  <label for="inquiryType">申込・お問い合わせ内容 <span class="required">必須</span></label>
+                  <select id="inquiryType" name="inquiryType" required>
+                    <option value="">選択してください</option>
+                    <option value="体験希望">体験希望</option>
+                    <option value="見学希望">見学希望</option>
+                    <option value="入会希望">入会希望</option>
+                    <option value="問い合わせ">その他お問い合わせ</option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="form-row">
+                <div class="field">
+                  <label for="phone">電話番号</label>
+                  <input id="phone" name="phone" type="tel" inputmode="tel" autocomplete="tel" placeholder="例：090-1234-5678" />
+                </div>
+                <div class="field">
+                  <label for="email">メールアドレス</label>
+                  <input id="email" name="email" type="email" autocomplete="email" placeholder="例：example@gmail.com" />
+                </div>
+              </div>
+              <p class="help">電話番号またはメールアドレスのどちらか一方は必須です。</p>
+
+              <div class="field">
+                <label for="consultation">バレーボール経験・健康面・配慮事項</label>
+                <textarea id="consultation" name="consultation" placeholder="経験年数、けが、アレルギー、服薬、活動時に配慮が必要なこと等"></textarea>
+              </div>
+
+              <div class="field">
+                <label for="message">希望日・その他のご質問</label>
+                <textarea id="message" name="message" placeholder="体験・見学の希望日、通い方、費用等についてご記入ください。"></textarea>
+              </div>
+
+              <label class="consent">
+                <input id="privacyConsent" name="privacyConsent" type="checkbox" value="同意する" required />
+                <span>
+                  <a href="./airforth_club_rules.html" target="_blank" rel="noopener noreferrer">クラブ規約</a>と
+                  <a href="./operation-policy.html" target="_blank" rel="noopener noreferrer">個人情報・運営方針</a>を確認し、
+                  入力情報を申込対応、安全管理、活動連絡等に利用することに同意します。<span class="required">必須</span>
+                </span>
+              </label>
+
+              <input id="legacyName" name="name" type="hidden" />
+              <input id="legacyCategory" name="category" type="hidden" />
+              <input id="legacyChildInfo" name="childInfo" type="hidden" />
+              <input name="sourcePage" type="hidden" value="AIRFORTH公式サイト" />
+
+              <div id="contactError" class="error" role="alert" aria-live="assertive"></div>
+              <div id="formStatus" class="success" role="status" aria-live="polite"></div>
+              <div class="submit-wrap">
+                <button id="submitBtn" class="btn btn-primary" type="submit">申込内容を送信する</button>
+                <span class="help">送信ボタンは1回だけ押してください。</span>
+              </div>
+              <noscript><p class="error">このフォームの送信にはJavaScriptが必要です。公式LINEからご連絡ください。</p></noscript>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
   </main>
-  <footer><div class='footer-inner'><div class='footer-title'>AIRFORTH</div><div class='footer-copy'>© 2026 AIRFORTH. All Rights Reserved.</div></div></footer>
-  <a id='lineFloatBtn' class='line-float' href='#' target='_blank' rel='noopener noreferrer' aria-label='AIRFORTH公式LINEで相談する'><span class='line-badge'>LINE</span><span>公式LINEで相談する</span></a>
+
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-links">
+        <a href="./airforth_club_rules.html">クラブ規約</a>
+        <a href="./operation-policy.html">運営方針・個人情報</a>
+        <a href="#contact">体験・入会申込</a>
+      </div>
+      <strong>AIRFORTH</strong>
+      <div class="footer-copy">© <span id="year">2026</span> AIRFORTH. All Rights Reserved.</div>
+    </div>
+  </footer>
+
+  <a class="line-float" href="https://lin.ee/ze1BxQ7p" target="_blank" rel="noopener noreferrer" aria-label="AIRFORTH公式LINEで相談する">LINEで相談する</a>
+
   <script>
-    const JOIN_FORM_URL = 'https://docs.google.com/forms/d/e/1FAIpQLSeYPheau8bSLQtwWv5kDRGCWHSZRP3xhyA7OUUwCsXvJoRigw/viewform?usp=header';
-    const SUPPORT_FORM_URL = 'https://forms.gle/RPLDX1J5Qfj9712z5';
-    const RULES_URL = './airforth_club_rules.html';
-    const GAS_WEBAPP_URL = 'https://script.google.com/macros/s/AKfycbxeAtYULIsp6dmjUzFQNr7hZZXOkA7MIJeKHYTbZ2tPS9LJdAfT3gZxDB_zrLXGc4a-/exec';
-    const LINE_URL = 'https://lin.ee/ze1BxQ7p';
-    const setHref = (id, url) => { const el = document.getElementById(id); if(el) el.href = url; };
-    ['joinFormTopBtn','joinFormSideBtn','joinFormBottomBtn'].forEach(id => setHref(id, JOIN_FORM_URL));
-    ['supportFormBottomBtn'].forEach(id => setHref(id, SUPPORT_FORM_URL));
-    ['rulesOpenBtn','rulesOpenBtn2'].forEach(id => setHref(id, RULES_URL));
-    ['lineTopBtn','lineSideBtn','lineFloatBtn'].forEach(id => setHref(id, LINE_URL));
-    const form = document.getElementById('contactForm');
-    const phone = document.getElementById('phone');
-    const email = document.getElementById('email');
-    const contactError = document.getElementById('contactError');
-    const formStatus = document.getElementById('formStatus');
-    const submitBtn = document.getElementById('submitBtn');
-    if(form){form.addEventListener('submit', async (e) => {e.preventDefault();contactError.textContent = '';formStatus.textContent = '';if(!phone.value.trim() && !email.value.trim()){contactError.textContent = '電話番号かメールアドレスのどちらかを入力してください。';return;}submitBtn.disabled = true;submitBtn.textContent = '送信中...';try{const formData = new FormData(form);await fetch(GAS_WEBAPP_URL, { method:'POST', mode:'no-cors', body:new URLSearchParams(formData) });form.reset();formStatus.textContent = '送信を受け付けました。内容を確認のうえご連絡いたします。';}catch(error){contactError.textContent = '送信に失敗しました。時間をおいて再度お試しください。';}finally{submitBtn.disabled = false;submitBtn.textContent = '送信する';}});}
+    (() => {
+      const GAS_WEBAPP_URL = "https://script.google.com/macros/s/AKfycbxeAtYULIsp6dmjUzFQNr7hZZXOkA7MIJeKHYTbZ2tPS9LJdAfT3gZxDB_zrLXGc4a-/exec";
+      const form = document.getElementById("contactForm");
+      const inquiryType = document.getElementById("inquiryType");
+      const phone = document.getElementById("phone");
+      const email = document.getElementById("email");
+      const errorBox = document.getElementById("contactError");
+      const statusBox = document.getElementById("formStatus");
+      const submitBtn = document.getElementById("submitBtn");
+
+      document.getElementById("year").textContent = new Date().getFullYear();
+
+      document.querySelectorAll("[data-inquiry]").forEach((link) => {
+        link.addEventListener("click", () => {
+          const value = link.dataset.inquiry;
+          window.setTimeout(() => {
+            if (inquiryType && [...inquiryType.options].some((o) => o.value === value)) {
+              inquiryType.value = value;
+              inquiryType.focus({preventScroll:true});
+            }
+          }, 250);
+        });
+      });
+
+      if (!form) return;
+
+      form.addEventListener("submit", async (event) => {
+        event.preventDefault();
+        errorBox.textContent = "";
+        statusBox.textContent = "";
+        statusBox.classList.remove("show");
+
+        if (document.getElementById("website").value) return;
+
+        if (!form.checkValidity()) {
+          form.reportValidity();
+          errorBox.textContent = "必須項目をご確認ください。";
+          return;
+        }
+        if (!phone.value.trim() && !email.value.trim()) {
+          errorBox.textContent = "電話番号またはメールアドレスのどちらか一方を入力してください。";
+          (phone || email).focus();
+          return;
+        }
+
+        document.getElementById("legacyName").value = document.getElementById("participantName").value.trim();
+        document.getElementById("legacyCategory").value = inquiryType.value;
+        document.getElementById("legacyChildInfo").value =
+          document.getElementById("grade").value + " / " + document.getElementById("consultation").value.trim();
+
+        submitBtn.disabled = true;
+        submitBtn.textContent = "送信中…";
+
+        try {
+          const data = new URLSearchParams(new FormData(form));
+          await fetch(GAS_WEBAPP_URL, {method:"POST", mode:"no-cors", body:data});
+          form.reset();
+          statusBox.textContent = "送信を受け付けました。内容を確認のうえ、AIRFORTHからご連絡します。";
+          statusBox.classList.add("show");
+          statusBox.scrollIntoView({behavior:"smooth", block:"center"});
+        } catch (error) {
+          errorBox.textContent = "送信できませんでした。時間をおいて再度お試しいただくか、公式LINEからご連絡ください。";
+        } finally {
+          submitBtn.disabled = false;
+          submitBtn.textContent = "申込内容を送信する";
+        }
+      });
+    })();
   </script>
 </body>
 </html>
