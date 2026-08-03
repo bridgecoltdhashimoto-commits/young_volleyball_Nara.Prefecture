@@ -57,21 +57,30 @@
     .list li{position:relative;padding:10px 12px 10px 36px;border-radius:14px;background:#f8fbff;border:1px solid var(--line)}
     .list li:before{content:"✓";position:absolute;left:12px;color:var(--pink);font-weight:1000}
     .important{padding:15px;border-radius:17px;background:#fff9e9;border:1px solid #efd58a;color:#665425;font-size:.87rem;font-weight:700}
-    .equal{padding:21px;border-radius:22px;background:linear-gradient(135deg,var(--navy),var(--navy2));color:#fff;box-shadow:var(--shadow)}
-    .equal h2{color:#fff}
-    .equal p{color:#deebff;font-size:.92rem;font-weight:650}
+    .principle{padding:21px;border-radius:22px;background:linear-gradient(135deg,var(--navy),var(--navy2));color:#fff;box-shadow:var(--shadow)}
+    .principle h2{color:#fff}
+    .principle p{color:#deebff;font-size:.92rem;font-weight:650}
     details{margin-top:12px;background:#fff;border:1px solid var(--line);border-radius:15px}
     summary{cursor:pointer;padding:12px 14px;color:var(--navy);font-weight:1000}
     details div{padding:0 14px 14px;color:var(--muted);font-size:.88rem;font-weight:600}
     .final-cta{text-align:center;padding:31px 20px;border-radius:24px;background:#fff;border:1px solid var(--line);box-shadow:var(--shadow)}
     .final-cta p{color:var(--muted);font-weight:650;margin:7px auto 16px;max-width:680px}
+    .mobile-cta{display:none}
     footer{margin-top:30px;background:#0d1d45;color:#eef4ff;text-align:center;padding:24px 0;font-size:.84rem}
     @media(max-width:760px){
+      body{padding-bottom:76px}
       .grid3,.split,.use-grid{grid-template-columns:1fr}
       .hero{padding-top:28px}
       .cta-row{display:grid}
       .btn{width:100%}
       .card,.panel{padding:18px}
+      .mobile-cta{
+        position:fixed;left:10px;right:10px;bottom:calc(8px + env(safe-area-inset-bottom));z-index:30;
+        display:flex;align-items:center;justify-content:center;min-height:52px;padding:12px 16px;
+        border-radius:16px;color:#fff;font-weight:1000;text-align:center;
+        background:linear-gradient(135deg,#d5a000,var(--orange),var(--pink));
+        box-shadow:0 12px 28px rgba(7,30,74,.2);
+      }
     }
   </style>
 </head>
@@ -93,7 +102,7 @@
         <h1>子どもたちの挑戦を、<br><span>地域の力で支える。</span></h1>
         <p class="lead">一般社団法人AIRFORTHでは、企業・団体・個人の皆さまから、スポンサー協賛、ご寄付、物品・サービス提供を受け付けています。</p>
         <div class="cta-row">
-          <a class="btn form" href="https://forms.gle/RPLDX1J5Qfj9712z5" target="_blank" rel="noopener noreferrer">スポンサー・ご支援申込フォーム</a>
+          <a class="btn form" href="https://forms.gle/RPLDX1J5Qfj9712z5" target="_blank" rel="noopener noreferrer">今すぐスポンサー・支援を申し込む</a>
           <a class="btn line" href="https://lin.ee/ze1BxQ7p" target="_blank" rel="noopener noreferrer">公式LINEで相談</a>
         </div>
       </div>
@@ -102,7 +111,7 @@
     <section>
       <div class="container">
         <h2>支援のかたち</h2>
-        <p class="section-lead">金銭だけでなく、物品・サービス・人材協力など、現実的に続けやすい方法でご参加いただけます。</p>
+        <p class="section-lead">金銭だけでなく、物品・サービス・人材協力など、続けやすい方法でご参加いただけます。</p>
         <div class="grid3">
           <article class="card">
             <span class="tag">企業・団体</span>
@@ -117,7 +126,7 @@
           <article class="card">
             <span class="tag">物品・サービス</span>
             <h3>現物によるご支援</h3>
-            <p>ボール、救急用品、ビブス、印刷、車両・移動、会場、専門サービス等を受け付けます。</p>
+            <p>ボール、救急用品、ビブス、印刷、移動、会場、専門サービス等を受け付けます。</p>
           </article>
         </div>
       </div>
@@ -141,7 +150,7 @@
           <ul class="list">
             <li>フォームまたはLINEからお申込み</li>
             <li>支援内容・受入方法を確認</li>
-            <li>必要に応じて名称・ロゴ掲載を確認</li>
+            <li>名称・ロゴ掲載の希望を確認</li>
             <li>受領・記録・活動への活用</li>
             <li>ウェブ等で活用内容をご報告</li>
           </ul>
@@ -150,9 +159,9 @@
     </section>
 
     <section>
-      <div class="container equal">
-        <h2>支援額の大小で、優劣を設けません</h2>
-        <p>寄付、物品、スポンサー協賛を問わず、すべてのご支援を大切に扱います。名称・ロゴ・個人名の掲載は、金額にかかわらず掲載希望を確認したうえで行います。</p>
+      <div class="container principle">
+        <h2>すべてのご支援に、きちんと感謝を伝えます</h2>
+        <p>支援額だけで機械的に序列化しません。ただし、スポンサー掲載の内容・方法・期間は、支援内容、継続性、ご希望、掲載媒体の状況を確認して個別に決定します。</p>
       </div>
     </section>
 
@@ -189,13 +198,14 @@
         <h2>まずは、できる形からご相談ください</h2>
         <p>金額や物品の内容が決まっていない段階でも構いません。フォームまたは公式LINEからご連絡ください。</p>
         <div class="cta-row" style="justify-content:center">
-          <a class="btn form" href="https://forms.gle/RPLDX1J5Qfj9712z5" target="_blank" rel="noopener noreferrer">ご支援申込フォームを開く</a>
+          <a class="btn form" href="https://forms.gle/RPLDX1J5Qfj9712z5" target="_blank" rel="noopener noreferrer">スポンサー・ご支援申込フォーム</a>
           <a class="btn line" href="https://lin.ee/ze1BxQ7p" target="_blank" rel="noopener noreferrer">LINEで相談する</a>
         </div>
       </div>
     </section>
   </main>
 
+  <a class="mobile-cta" href="https://forms.gle/RPLDX1J5Qfj9712z5" target="_blank" rel="noopener noreferrer">スポンサー・支援を申し込む</a>
   <footer>一般社団法人AIRFORTH</footer>
 </body>
 </html>
