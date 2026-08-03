@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>スポンサー・ご支援｜一般社団法人AIRFORTH</title>
+  <meta name="description" content="一般社団法人AIRFORTHでは、スポンサー・協賛、ご寄付、物品・サービス支援を募集しています。">
+  <meta name="theme-color" content="#071e4a">
+  <link rel="icon" href="./logo-main.png?v=20260803" type="image/png">
+  <style>
+    :root{
+      --navy:#071e4a;--navy2:#17366f;--blue:#38a8ff;--pink:#f53d80;--orange:#ff8200;
+      --gold:#f4b400;--green:#06c755;--text:#20304d;--muted:#5c6a82;--line:#d8e4f3;
+      --bg:#f4f8ff;--shadow:0 18px 42px rgba(7,30,74,.11);--soft:0 8px 22px rgba(7,30,74,.08);--max:980px;
+    }
+    *{box-sizing:border-box;margin:0;padding:0}
+    body{
+      font-family:"Yu Gothic","Hiragino Kaku Gothic ProN","Meiryo",sans-serif;color:var(--text);
+      line-height:1.72;background:
+        radial-gradient(circle at 8% 7%,rgba(56,168,255,.12),transparent 28%),
+        radial-gradient(circle at 92% 8%,rgba(245,61,128,.08),transparent 22%),
+        linear-gradient(180deg,#fff,var(--bg));
+    }
+    a{text-decoration:none;color:inherit}
+    .container{width:min(var(--max),92%);margin:auto}
+    header{position:sticky;top:0;z-index:10;background:rgba(255,255,255,.97);border-bottom:1px solid var(--line)}
+    .header{min-height:70px;display:flex;align-items:center;justify-content:space-between;gap:12px}
+    .brand{display:flex;align-items:center;gap:9px;font-weight:1000}
+    .brand img{width:46px;height:46px;object-fit:contain}
+    .brand-name{
+      font-size:1.25rem;letter-spacing:.07em;
+      background:linear-gradient(90deg,#24324c 0%,#f4b400 34%,#ff8200 67%,#f53d80 100%);
+      -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;color:transparent;
+    }
+    .back{padding:9px 13px;border:1px solid var(--line);border-radius:999px;color:var(--navy);font-size:.85rem;font-weight:900}
+    .hero{padding:38px 0 26px}
+    .eyebrow{display:inline-block;padding:7px 12px;border-radius:999px;background:#fff4db;color:#865300;font-size:.74rem;font-weight:1000;letter-spacing:.11em;margin-bottom:12px}
+    h1{color:var(--navy);font-size:clamp(2.2rem,6vw,3.8rem);line-height:1.16;margin-bottom:13px}
+    h1 span{background:linear-gradient(90deg,var(--gold),var(--orange),var(--pink));-webkit-background-clip:text;background-clip:text;color:transparent}
+    .lead{max-width:760px;color:var(--muted);font-weight:650}
+    .cta-row{display:flex;gap:10px;flex-wrap:wrap;margin-top:18px}
+    .btn{display:inline-flex;align-items:center;justify-content:center;min-height:50px;padding:12px 17px;border-radius:15px;font-weight:1000;text-align:center}
+    .form{color:#fff;background:linear-gradient(135deg,#d5a000,var(--orange),var(--pink));box-shadow:0 13px 26px rgba(255,130,0,.2)}
+    .line{color:#fff;background:var(--green);box-shadow:0 13px 26px rgba(6,199,85,.2)}
+    section{padding:28px 0}
+    h2{color:var(--navy);font-size:clamp(1.55rem,4vw,2.35rem);line-height:1.3;margin-bottom:9px}
+    .section-lead{color:var(--muted);font-size:.95rem;font-weight:600;margin-bottom:17px}
+    .grid3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:13px}
+    .card,.panel{background:#fff;border:1px solid var(--line);border-radius:22px;padding:20px;box-shadow:var(--soft)}
+    .card .tag{display:inline-block;margin-bottom:10px;padding:5px 9px;border-radius:999px;background:#eaf6ff;color:var(--navy2);font-size:.67rem;font-weight:1000}
+    .card h3,.panel h3{color:var(--navy);font-size:1.08rem;margin-bottom:7px}
+    .card p,.panel p,.panel li{color:var(--muted);font-size:.9rem;font-weight:600}
+    .use-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:9px}
+    .use{padding:13px;border-radius:15px;background:linear-gradient(135deg,rgba(56,168,255,.1),rgba(245,61,128,.05));border:1px solid rgba(56,168,255,.22);color:var(--navy);font-weight:900;font-size:.88rem}
+    .split{display:grid;grid-template-columns:1fr 1fr;gap:14px;align-items:start}
+    .list{display:grid;gap:8px;list-style:none}
+    .list li{position:relative;padding:10px 12px 10px 36px;border-radius:14px;background:#f8fbff;border:1px solid var(--line)}
+    .list li:before{content:"✓";position:absolute;left:12px;color:var(--pink);font-weight:1000}
+    .important{padding:15px;border-radius:17px;background:#fff9e9;border:1px solid #efd58a;color:#665425;font-size:.87rem;font-weight:700}
+    .equal{padding:21px;border-radius:22px;background:linear-gradient(135deg,var(--navy),var(--navy2));color:#fff;box-shadow:var(--shadow)}
+    .equal h2{color:#fff}
+    .equal p{color:#deebff;font-size:.92rem;font-weight:650}
+    details{margin-top:12px;background:#fff;border:1px solid var(--line);border-radius:15px}
+    summary{cursor:pointer;padding:12px 14px;color:var(--navy);font-weight:1000}
+    details div{padding:0 14px 14px;color:var(--muted);font-size:.88rem;font-weight:600}
+    .final-cta{text-align:center;padding:31px 20px;border-radius:24px;background:#fff;border:1px solid var(--line);box-shadow:var(--shadow)}
+    .final-cta p{color:var(--muted);font-weight:650;margin:7px auto 16px;max-width:680px}
+    footer{margin-top:30px;background:#0d1d45;color:#eef4ff;text-align:center;padding:24px 0;font-size:.84rem}
+    @media(max-width:760px){
+      .grid3,.split,.use-grid{grid-template-columns:1fr}
+      .hero{padding-top:28px}
+      .cta-row{display:grid}
+      .btn{width:100%}
+      .card,.panel{padding:18px}
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container header">
+      <a class="brand" href="./index.html">
+        <img src="./logo-main.png?v=20260803" alt="">
+        <span class="brand-name">AIRFORTH</span>
+      </a>
+      <a class="back" href="./index.html">トップへ戻る</a>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container">
+        <span class="eyebrow">SPONSOR & SUPPORT</span>
+        <h1>子どもたちの挑戦を、<br><span>地域の力で支える。</span></h1>
+        <p class="lead">一般社団法人AIRFORTHでは、企業・団体・個人の皆さまから、スポンサー協賛、ご寄付、物品・サービス提供を受け付けています。</p>
+        <div class="cta-row">
+          <a class="btn form" href="https://forms.gle/RPLDX1J5Qfj9712z5" target="_blank" rel="noopener noreferrer">スポンサー・ご支援申込フォーム</a>
+          <a class="btn line" href="https://lin.ee/ze1BxQ7p" target="_blank" rel="noopener noreferrer">公式LINEで相談</a>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+        <h2>支援のかたち</h2>
+        <p class="section-lead">金銭だけでなく、物品・サービス・人材協力など、現実的に続けやすい方法でご参加いただけます。</p>
+        <div class="grid3">
+          <article class="card">
+            <span class="tag">企業・団体</span>
+            <h3>スポンサー・協賛</h3>
+            <p>協賛金、物品、サービス、人材協力など。掲載を希望される場合は名称・ロゴをご紹介します。</p>
+          </article>
+          <article class="card">
+            <span class="tag">個人・法人</span>
+            <h3>ご寄付</h3>
+            <p>会場費、安全対策、練習備品、大会・遠征活動など、クラブ運営に活用します。</p>
+          </article>
+          <article class="card">
+            <span class="tag">物品・サービス</span>
+            <h3>現物によるご支援</h3>
+            <p>ボール、救急用品、ビブス、印刷、車両・移動、会場、専門サービス等を受け付けます。</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="container split">
+        <div class="panel">
+          <h3>主な活用先</h3>
+          <div class="use-grid">
+            <div class="use">🏐 ボール・練習備品</div>
+            <div class="use">🩹 救急用品・安全対策</div>
+            <div class="use">🏟️ 体育館・会場費</div>
+            <div class="use">🚐 大会・遠征活動</div>
+            <div class="use">👕 ビブス・チーム用品</div>
+            <div class="use">📣 広報・運営環境</div>
+          </div>
+        </div>
+        <div class="panel">
+          <h3>お申込み後の流れ</h3>
+          <ul class="list">
+            <li>フォームまたはLINEからお申込み</li>
+            <li>支援内容・受入方法を確認</li>
+            <li>必要に応じて名称・ロゴ掲載を確認</li>
+            <li>受領・記録・活動への活用</li>
+            <li>ウェブ等で活用内容をご報告</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="container equal">
+        <h2>支援額の大小で、優劣を設けません</h2>
+        <p>寄付、物品、スポンサー協賛を問わず、すべてのご支援を大切に扱います。名称・ロゴ・個人名の掲載は、金額にかかわらず掲載希望を確認したうえで行います。</p>
+      </div>
+    </section>
+
+    <section>
+      <div class="container split">
+        <div class="panel">
+          <h3>スポンサーとしての関わり方</h3>
+          <ul class="list">
+            <li>公式ウェブサイトへの名称・ロゴ掲載</li>
+            <li>活動報告・SNS等での感謝掲載</li>
+            <li>大会・イベント等での協力紹介</li>
+            <li>地域の青少年育成への継続的な参画</li>
+          </ul>
+          <div class="important" style="margin-top:12px">掲載内容や期間は、支援内容とご希望を確認して個別に決定します。広告効果や税務上の取扱いを保証するものではありません。</div>
+        </div>
+        <div class="panel">
+          <h3>信頼できる運用のために</h3>
+          <ul class="list">
+            <li>支援内容、金額、物品、使途を記録</li>
+            <li>法人の活動目的に沿って管理</li>
+            <li>個人口座では受け付けない</li>
+            <li>活動報告・活用報告を分かりやすく公開</li>
+          </ul>
+          <details>
+            <summary>税務・会計について</summary>
+            <div>協賛、広告、寄付、物品提供の税務・会計上の取扱いは、支援内容や対価関係により異なります。必要に応じて税理士等へご確認ください。</div>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="container final-cta">
+        <h2>まずは、できる形からご相談ください</h2>
+        <p>金額や物品の内容が決まっていない段階でも構いません。フォームまたは公式LINEからご連絡ください。</p>
+        <div class="cta-row" style="justify-content:center">
+          <a class="btn form" href="https://forms.gle/RPLDX1J5Qfj9712z5" target="_blank" rel="noopener noreferrer">ご支援申込フォームを開く</a>
+          <a class="btn line" href="https://lin.ee/ze1BxQ7p" target="_blank" rel="noopener noreferrer">LINEで相談する</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>一般社団法人AIRFORTH</footer>
+</body>
+</html>
