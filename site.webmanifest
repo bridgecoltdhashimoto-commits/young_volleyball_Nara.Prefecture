@@ -1,7 +1,7 @@
 {
-  "name": "AIRFORTH 奈良ヤングバレーボールクラブ",
+  "name": "一般社団法人AIRFORTH",
   "short_name": "AIRFORTH",
-  "description": "AIRFORTHは奈良ヤングバレーボールクラブの公式ページです。",
+  "description": "奈良のヤングバレーボールクラブ・一般社団法人AIRFORTHの公式サイトです。",
   "start_url": "./",
   "scope": "./",
   "display": "standalone",
@@ -9,7 +9,7 @@
   "theme_color": "#071e4a",
   "icons": [
     {
-      "src": "logo-main.png?v=20260710-icon1",
+      "src": "logo-main.png?v=20260803",
       "sizes": "180x180 192x192 512x512",
       "type": "image/png",
       "purpose": "any maskable"
